@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário OWASP TOP-10</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;">Questionario OWASP TOP-10</h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: "Ocorre quando um atacante consegue acessar recursos ou funcoes de uma aplicação que não deveriam estar disponiveis para ele. Isso pode levar a vazamento de dados confidenciais, modificacao não autorizada de dados ou até mesmo a tomada de controle da aplicacao.",
+                answers: ["Broken Control Acess", "Security Misconfiguration", "Vulnarable and Outdated Components", "Server-Side Request Forgery(SSRF)"],
+                correct: 0
+            },
+            {
+                question: "Relacionadas ao uso incorreto de algoritmos criptográficos, chaves, ou protocolos. Ataques como criptografia fraca, gestão de chaves inadequada e uso de protocolos inseguros podem comprometer a confidencialidade, integridade e autenticidade dos dados.?",
+                answers: ["Software and Data Integrity Failures", "Security Misconfiguration", "Cryptographic Failures", "Server-Side Request Forgery(SSRF)"],
+                correct: 2
+            },
+            {
+                question: "Ocorre quando um atacante insere dados maliciosos em entradas não filtradas de uma aplicação, como campos de formulários ou URLs. Isso pode levar à execução de código malicioso, roubo de dados ou negação de serviço.",
+                answers: ["Insecure Design", "Injection", "Security Misconfiguration", "Security Logging and Monitority Failures"],
+                correct: 1
+            },
+            {
+                question: "Refere-se a falhas de design na aplicação que podem levar a vulnerabilidades exploráveis. Exemplos incluem falta de autenticação, autorização inadequada, gestão de erros insuficiente e falta de validação de entrada.",
+                answers: ["Cryptographic Failures", "Vulnarable and Outdated Components", "Security Misconfiguration", "Insecure Design"],
+                correct: 3
+            }, 
+            {
+                question: "O uso de componentes de terceiros com vulnerabilidades conhecidas pode comprometer a segurança da aplicação. É crucial manter os componentes atualizados e utilizar fontes confiáveis.   ",
+                answers: ["Vulnarable and Outdated Components","Cryptographic Failures", "Broken Control Acess", "Software and Data Integrity Failures"],
+                correct: 0
+            },
+            {
+                question: " Configurações incorretas de servidores, frameworks, bancos de dados e outras tecnologias podem expor a aplicação a riscos. É fundamental seguir as melhores práticas de configuração e realizar auditorias regulares. ",
+                answers: ["Software and Data Integrity Failures","Security Misconfiguration", "Insecure Design","Broken Control Acess"],
+                correct: 1
+            }, 
+            {
+                question: "A falta de logs adequados e mecanismos de monitoramento dificulta a detecção de ataques e a investigação de incidentes de segurança.  ",
+                answers: ["Insecure Design", "Injection", "Server-Side Request Forgery(SSRF)", "Security Logging and Monitority Failures"],
+                correct: 3
+            },
+            {
+                question: " Com foco em bibliotecas e frameworksAplicações que utilizam serviços em nuvem podem estar sujeitas a riscos específicos, como configuração incorreta, acesso não autorizado e vazamento de dados.   ",
+                answers: ["Software and Data Integrity Failures", "Server-Side Request Forgery(SSRF)", "Security Misconfiguration", "Cryptographic Failures"],
+                correct: 1
+            },
+            {
+                question: " Falta de Verificação de Atualizações de Software : Baixar e aplicar automaticamente atualizações de software, bibliotecas e plugins sem verificação pode introduzir código malicioso na aplicação.  ",
+                answers: [ "Server-Side Request Forgery(SSRF)", "Security Misconfiguration", "Software and Data Integrity Failures", "Injection"],
+                correct: 2
+            },
+            {
+                question: "Senhas Fracas e Gerenciamento Deficiente : Uso de senhas simples de adivinhar, falta de requisitos de complexidade e gerenciamento inadequado de detalhes (como armazenamento inseguro).   ",
+                answers: ["Identification and Authentication Failures", "Broken Control Acess", "Software and Data Integrity Failures", "Vulnarable and Outdated Components"],
+                correct: 0
+            },
+            {
+                question: " O OWASP Top 10, uma lista das principais vulnerabilidades de segurança para aplicações web, foi atualizada em 2021. O item que aborda problemas relacionados ao uso inadequado de algoritmos criptográficos, chaves ou protocolos é: ",
+                answers: ["(A) Injeção  ", " B) Controle de acesso quebrado  ", "(C) Falhas criptográficas   ", " (D) Falsificação de solicitação do lado do servidor (SSRF)  "],
+                correct: 2
+            } ,
+            {
+                question: "Falhas de controle de acesso quebrado ocorrem quando:  ",
+                answers: [" (A) O aplicativo permite que um usuário execute funções ou acesse dados sem permissão.  ", " (B) Um ap", "(C) As chaves criptográficas são armazenadas de maneira insegura.  ", "(D) O usuário não possui autenticação multifator. "],
+                correct: 0
+            } ,
+            {
+                question: "Qual dos seguintes itens representa uma vulnerabilidade causada pela execução de código malicioso através de dados fornecidos pelo usuário, caracterizando uma falha de injeção ?  ",
+                answers: ["(A) Um atacante acessa diretamente recursos internos da aplicação.   ",  "(B) A aplicação utiliza componentes de terceiros desatualizados.  ", "(C) Dados sensíveis são expostos por falhas de criptografia.  " , "(D) Um usuário envia uma entrada que resulta em uma execução indesejada de comandos SQL. "],
+                correct: 3
+            } ,
+            {
+                question: " A falta de Logging e Monitoramento de Segurança compromete a detecção de ataques e investigação ",
+                answers: ["(A) Ela ocorre devido ao uso de senhas incorretas.  ", "(B) Relaciona-se à exposição de dados sensíveis. ", "(C) Resultado da falta de registros e monitoramento de atividades suspeitas. ","(D) Correção pelo uso de algoritmos criptográficos obsoletos. "],
+                correct: 2
+            } ,
+            {
+                question: "Em uma aplicação que utiliza componentes de terceiros desatualizados e com vulnerabilidades conhecidas, a falha que mais provavelmente será explorada pertence ao item: ",
+                answers: ["(A) Vulnerable and Outdated Components  ", "(B) Identification and Authentication Failures ", "(C) Broken Access Control ", "(D) Injection "],
+
+                correct: 0
+            } ,
+            {
+                question: "Falhas em bibliotecas de software, frameworks, e componentes de terceiros comprometem a integridade de uma aplicação. O OWASP chama essas falhas de: ",
+                answers: ["(A) Cryptographic Failures ", "(B) Security Misconfiguration ","(C) Software and Data Integrity Failures  ", "(D) Identification and Authentication Failures "],
+
+                correct: 2
+            } ,
+            {
+                question: "A vulnerabilidade chamada de Server-Side Request Forgery (SSRF) ocorre quando: ",
+                answers: ["(A) A aplicação força a conexão direta entre cliente e servidor.  ", "(B) A aplicação permite que usuários forcem o servidor a fazer requisições para sistemas internos ou externos. ", "(C) O servidor armazena senhas em texto plano. ", "(D) Um atacante consegue acesso à autenticação de multi-fator. "],
+
+                correct: 1
+            } ,
+            {
+                question: "No contexto do OWASP Top 10 de 2021, o item Security Misconfiguration ocorre frequentemente quando: ",
+                answers: ["(A) São utilizadas criptografias fracas.  ", "(B) São aplicadas permissões inadequadas ou configurações inseguras. ", "(C) São utilizados algoritmos de hashing antigos. ", "(D) São configurados ataques de negação de serviço. "],
+
+                correct: 1
+            } ,
+            {
+                question: "A categoria Identification and Authentication Failures do OWASP Top 10 aborda principalmente: ",
+                answers: ["(A) A falta de logs adequados.  ", "(B) O armazenamento inseguro de dados criptográficos. ", "(C) A ausência de mecanismos fortes de autenticação e verificação de identidade. ", "(D) A execução de consultas SQL inseguras. "],
+
+                correct: 2
+            } ,
+            {
+                question: "Uma falha de design que permite que um invasor explore vulnerabilidades conhecidas ou problemas na aplicação é melhor classificada como: ",
+                answers: ["(A) Cryptographic Failures ", "(B) Server-Side Request Forgery (SSRF) ", "(C) Vulnerable and Outdated Components ", "(D) Insecure Design "],
+
+                correct: 3
+            } 
+        
+        
+        
+        
+
+
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>

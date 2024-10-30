@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário Banco de Dados Estrategia</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;">Questionário Banco de Dados Estrategia</h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: "2) FGV - 2024 - Técnico de Nível Superior (TJ MS)/Analista de Sistemas Computacionais/Analista de Governança Os principais sistemas de informação de uma organização armazenam seus dados transacionais em bancos de dados relacionais que são estruturados em tabelas que se relacionam entre si por meio da implementação de: ",
+                answers: ["A) chaves;  ", "B) índices;   ", "C) matrizes;  ", "D) métricas;  "," E)nós e arestas. "],
+                correct: 2
+            },
+            
+            {
+                question: "FGV - 2024 - Tecnólogo em Processamento de Dados (Pref Caraguatatuba)Um tecnólogo necessita executar comandos SQL.Com relação à especificação de chaves e integridade referencial, assinale Vpara a afirmativa verdadeira e F para a falsa.I. a cláusula PRIMARY KEY especifica um ou mais atributos que compõe achave primária de uma relação. Se a chave primária tiver um único atributo,a cláusula pode acompanhar o atributo diretamente.II. a cláusula UNIQUE indica chaves alternativas (secundárias). Essa cláusulatambém pode ser especificada diretamente para uma chave secundária seesta for um único atributo.      III. a integridade referencial é especificada por meio da cláusula FOREIGNKEY.        As afirmativas são, respectivamente, ",
+                answers: ["A) V – V – V.  ", "B) V – F – F.  ", "C) F – V – F.  ", "D) F – V – V.  ", "E) F – F – F.  "],
+                correct: 2
+            },
+            {
+                question: "FGV - 2024 - Tecnólogo em Processamento de Dados (Pref Caraguatatuba)Os dados podem ser classificados de diversas formas, uma das categorias de classificação diz respeito a forma da estruturação dos dados em repositórios de dados, analise os itens a seguir. I. Dados estruturados são dados que foram formatados e transformados para se adaptar a um modelo de dados relacional bem definido. Os dados brutos são mapeados em campos predefinidos que podem ser extraídos e lidos por meio de declarações SQL. II. Dados semiestruturados é categoria localizada entre dados estruturados e não estruturados. São um tipo de dado que possui algumas características consistentes e definidas e não se limitam a uma estrutura rígida como a necessária para bancos de dados relacionais. III. Dados não estruturados podem ser qualquer tipo de dado não esteja em  um formato específico. São suportados apenas pelos sistemas de arquivos e  não pelos sistemas de bancos de dados, exemplos podem imagens, sons ou desenhos         Está correto o que se afirma em : ",
+                answers: ["A) I apenas. ", "B) III apenas. ", "C) I, II e III. ", " D) I e II, apenas.", "E) II e III, apenas. "],
+                correct: 0
+            }, 
+             {
+                question: "FGV - 2024 - Residente (TJ RJ)/Tecnologia da Informação Com relação às três fases de um projeto de um novo banco de dados, avalie se as afirmativas a seguir são verdadeiras (V) ou falsas (F).    ( ) O modelo conceitual pode ter a forma de um diagrama entidade-relacionamentos e captura as necessidades de uma organização em termos de armazenamento de dados independentemente da sua implementação.    ( ) O projeto lógico tem como objetivo transformar o modelo conceitual  obtido na primeira fase em um modelo lógico que definirá como o banco de  dados será implementado em um SGBD.     ( ) Na etapa do projeto físico, o modelo de banco d e dados é enriquecido  com detalhes que influenciam no desempenho do banco mas interferem em suas funcionalidades.        As afirmativas são, respectivamente, ",
+                answers: ["A) V – F – F.  ", "B) V – V – F.  ", "C)  F – F – F. ", "D) F – V – V.  ", "E)  F – F – V. "],
+                correct: 2
+            }, 
+            {
+                question: " FGV - 2023 - Técnico (BBTS)/Perfil Interno  Em projetos de banco de dados, os modelos conceituais são elaborados para descrever, necessariamente, ",
+                answers: ["A) os aspectos de software e de hardware que serão utilizados para  armazenamento de dados.  ", "B)  as chaves de acesso, os controles de chaves duplicadas e a integridade referencial. ", "C) a visão geral dos principais dados e suas relações, independentemente das restrições de implementação. ", "D)  as entidades, os relacionamentos, os índices e o sistema gerenciador de banco de dados escolhido.  ", "E) as necessidades e as preocupações para normalização das estruturas de dados. "],
+                correct: 0
+            }, 
+           {
+                question: " FGV - 2023 - Analista (DPE RS)/Apoio Especializado (TI)/Banco de Dados Na fase de projeto de um banco de dados relacional, é comum que seja  construído um modelo E-R, pois isso permite uma compreensão lógica das entidades envolvidas e suas respectivas propriedades.  Uma das vantagens desses modelos é a identificação imediata da lista de: ",
+                answers: ["A) chaves estrangeiras a serem estabelecidas; ", "B) índices auxiliares para as eventuais buscas; ", "C) permissões de acesso a serem concedidas; ", " D) triggers a serem implementados;", "E) tipos de dados adequados a cada um dos atributos. "],
+                correct: 1
+            },
+ 
+           {
+                question: " FGV - 2023 - Analista (Pref Niterói)/Tecnologia da Informação/(PGM)  Considere o comando SQL a seguir.  SELECT a.X, b.Y FROM T1 a, T2 b WHERE a.R = b.S   -  Dado que essa consulta pode ser expressa usando as operações primitivas da Álgebra Relacional, a lista que contém as operações necessárias e suficientes  para essa conversão é, em ordem alfabética: ",
+                answers: ["A) Diferença, Produto, Projeção;  ", "B) Produto, Projeção, União ", "C) Projeção, União; ", " D) Produto, Projeção, Seleção; ", "E) Seleção, União.  "],
+                correct: 1
+            },
+            {
+                question: "FGV - 2023 - Auditor do Estado (CGE SC)/Ciências da Computação Um Sistema de Gerenciamento de Banco de Dados Relacional (SGBDR) permite manipular bancos de dados sobre uma camada de software, dispondo os dados em formato de tabelas ao invés de arquivos em pastas. Para servir à finalidade de aplicações transacionais, as boas práticas apontam o uso do conceito de normalização. Assinale a afirmativa incorreta em relação às vantagens da normalização.  ",
+                answers: ["A) Melhora a performance de consultas analíticas em um Data Warehouse, pois o modelo dimensional estrela depende da normalização.  ", "B) A metodologia em etapas (1FN -> 2FN -> 3FN) facilita o processo de eliminação de dependências funcionais.", "C) Diminui o esforço computacional de operações de UPDATE, pois as atualizações ocorrem apenas onde necessário. ", " D) Economiza espaço em disco, pois evita repetições de dados. ", "E) Melhora o desempenho geral sistêmico de uma aplicação, sobretudo com grandes volumes de dados, pois as transações ocorrem sob escopos específicos. "],
+                correct: 1
+            },
+            {
+                question: " FGV - 2023 - Fiscal de Tributos Estaduais (MT) A normalização das estruturas de dados é uma etapa importante do processo de modelagem relacional para eliminar distorções ou anomalias no modelo. Diz-se que uma tabela está na segunda forma normal, de acordo com as regras de normalização, se ela está na primeira forma normal e ",
+                answers: ["A) as linhas da tabela são unívocas, sem chaves compostas e todos os seus atributos são atômicos. ", "B) as linhas não contêm itens repetitivos, atributos com valores nulos e nem multidimensionais. ", "C) cada uma das colunas não pertencentes à chave primária não for dependente parcialmente dessa chave. ", " D) contém apenas chaves externas e conecta-se a outras tabelas por múltiplas junções. ", "E) as colunas não pertencentes à chave primária ficam determinadas transitivamente por esta. "],
+                correct: 1
+            },
+            {
+                question: "  ",
+                answers: ["A)  ", "B) ", "C) ", " D)", "E)  "],
+                correct: 1
+            },
+            {
+                question: "  ",
+                answers: ["A)  ", "B) ", "C) ", " D)", "E)  "],
+                correct: 1
+            },
+
+           {
+                question: "  ",
+                answers: ["A)  ", "B) ", "C) ", " D)", "E)  "],
+                correct: 1
+            },
+
+
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>

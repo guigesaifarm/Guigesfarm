@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário OWASP TOP-10</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos aqui */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Qual é o propósito do JUnit em um projeto Java?",
+                answers: ["A) Gerenciar transações de banco de dados.", "B) Realizar testes unitários.", "C) Criar interfaces gráficas.", "D) Implementar lógica de negócios."],
+                correct: 1,
+                image: "C:\Users\Elainia\Downloads\viniedu.jpg" // Adicione o caminho da imagem
+            },
+            // Outras perguntas...
+        ];
+
+        let currentQuestion = 0;
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.image ? `<img src="${questionData.image}" alt="Imagem da pergunta" width="150" height="150">` : ""}
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                alert("Questionário concluído!");
+            }
+        }
+
+        showQuestion();
+    </script>
+</body>
+</html>

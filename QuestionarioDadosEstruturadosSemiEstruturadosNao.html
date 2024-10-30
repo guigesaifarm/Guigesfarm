@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário OWASP TOP-10</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;">Questionario OWASP TOP-10</h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: "Dados estruturados, semi-estruturados e não estruturados são comuns em sistemas de armazenamento e análise de dados. Qual das opções abaixo descreve corretamente um exemplo de dados não estruturados?  ",
+                answers: ["A) Uma tabela de um banco de dados relacional.  ", "B) Um arquivo CSV com colunas fixas.  ", "C) Um vídeo armazenado em um sistema de arquivos.  ", "D) Uma planilha Excel com fórmulas e dados tabulares.  "," E) Um relatório financeiro em formato XML."],
+                correct: 2
+            },
+            {
+                question: " Qual das alternativas a seguir não é uma característica de dados estruturados?",
+                answers: ["A) São organizados em um formato pré-definido, como tabelas com linhas e colunas.  ", "B) Podem ser facilmente armazenados em bancos de dados relacionais.  ", "C) Podem ser processados com linguagens como SQL.  ", "D) Não possuem uma organização definida e clara, exigindo processamento especializado.  ","E) Possuem um esquema de dados claro e rígido." ],
+                correct: 3
+            },
+            {
+                question: "Dados semi-estruturados referem-se a:   ",
+                answers: [" A) Dados que são completamente organizados em tabelas com colunas e linhas fixas.", "B) Dados que não possuem nenhuma estrutura aparente. ", "C) Dados que possuem uma estrutura flexível e podem ser armazenados em formatos como XMLou JSON. ", "D) Dados que só podem ser armazenados em bancos de dados relacionais. ", "E) Dados em que todas as colunas possuem o mesmo tipo de informação. "],
+                correct: 2
+            },
+            {
+                question: "No contexto de armazenamento de dados, dados estruturados são caracterizados por:  ",
+                answers: ["A) Serem armazenados em um formato rígido com uma estrutura fixa, como tabelas de um banco de dados relacional. ", "B) Estarem armazenados em formatos como vídeo, imagens ou arquivos de texto livre. ", "C) Exigirem sempre tecnologias de Big Data para serem processados. ", "D) Não possuírem um esquema claro e serem difíceis de consultar com SQL. ", " E) Serem processados exclusivamente por ferramentas NoSQL."],
+                correct: 0
+            }, 
+             {
+                question: "Qual das alternativas abaixo contém apenas exemplos de dados não estruturados?  ",
+                answers: ["A) Planilhas Excel, vídeos e fotos. ", "B) Dados de sensores IoT, logs de sistema e arquivos JSON. ", "C) Vídeos, e-mails em texto simples e áudios. ", "D) Tabelas SQL, XML e arquivos CSV. ", "E) Gráficos de redes sociais e bancos de dados relacionais. "],
+                correct: 2
+            }, 
+            {
+                question: "Ao comparar dados estruturados e não estruturados, uma das principais diferenças é:  ",
+                answers: ["A) Dados estruturados são mais fáceis de analisar, enquanto dados não estruturados exigem ferramentas especializadas para processamento e análise. ", "B) Dados não estruturados podem ser consultados diretamente com SQL, enquanto dadosestruturados exigem análise manual. ", "C) Dados estruturados são sempre mais volumosos que dados não estruturados. ", "D) Dados não estruturados são armazenados em bancos de dados relacionais, enquanto dados estruturados exigem ferramentas NoSQL. ", "E) Dados estruturados e não estruturados não podem coexistir no mesmo ambiente de armazenamento. "],
+                correct: 0
+            }, 
+           {
+                question: "Em relação aos dados não estruturados, qual das seguintes ferramentas é amplamente utilizada para seu armazenamento e análise?  ",
+                answers: ["A) PostgreSQL. ", "B) MongoDB. ", "C) MySQL. ", "D) Oracle Database. ", "E) Microsoft SQL Server. "],
+                correct: 1
+            }, 
+            {
+                question: "Qual das opções abaixo representa corretamente uma aplicação de dados semi-estruturados?  ",
+                answers: ["A) Dados tabulares sobre vendas armazenados em uma planilha Excel. ", "B) Um banco de dados relacional usado para armazenar registros de transações financeiras. ", "C) Um vídeo de treinamento armazenado em um sistema de arquivos distribuído. ", "D) Dados de sensores de temperatura armazenados em um banco de dados chave-valor. ", "E) Arquivos JSON armazenando informações de um catálogo de produtos com diferentes atributos. "],
+                correct: 4
+            }, 
+            {
+                question: "Qual dos seguintes desafios está associado ao gerenciamento de dados não estruturados?  ",
+                answers: [" A) Dificuldade em armazenar grandes volumes de dados.", "B) Incompatibilidade com sistemas de banco de dados relacionais tradicionais. ", "C) Facilidade em realizar consultas complexas usando SQL. ", "D) Necessidade de normalizar os dados antes de armazená-los. ", "E) Rigidez na estrutura dos dados, o que limita a flexibilidade. "],
+                correct: 1
+            },
+            {
+                question: "Um exemplo típico de uso de dados estruturados em uma organização seria:  ",
+                answers: ["A) Um banco de dados contendo registros de clientes com colunas para nome, endereço e telefone. ", "B) Um vídeo de treinamento armazenado no YouTube. ", "C) Uma sequência de tweets não categorizados. ", "D) Arquivos de log de servidores de uma aplicação web. ", "E) Um conjunto de fotos armazenadas em um servidor de arquivos. "],
+                correct: 0
+            }
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>

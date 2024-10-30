@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário JavaScript  </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário JavaScript </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " Qual é o principal uso do JavaScript? ",
+                answers: ["A) Estilizar páginas web.", "B) Criar bancos de dados. ", "C) Adicionar interatividade a páginas web.  ", "D) Servir como uma linguagem de consulta de dados. "," E) Gerar gráficos em tempo real. "],
+                correct: 2
+            },
+            {
+                question: " Qual das seguintes opções é uma forma correta de declarar uma variável em JavaScript? ",
+                answers: ["A) variable x; ", "B) var x;  ", "C) declare x;  ", "D) let x;"," E) B e D estão corretas. "],
+                correct: 4
+            },
+            {
+                question: " Qual é a diferença entre == e === em JavaScript? ",
+                answers: ["A) == compara valores e === compara tipos e valores. ", "B) == compara tipos e === compara apenas valores. ", "C) Não há diferença. ", "D) == é usado para atribuição e === para comparação.  "," E) == é mais rápido que === . "],
+                correct: 0
+            },
+            {
+                question: " O que faz a função parseInt() em JavaScript? ",
+                answers: ["A) Converte um número em uma string. ", "B) Arredonda um número.  ", "C) Converte um número decimal em um binário.  ", "D) Formata uma string.  "," E) Converte uma string em um número inteiro. "],
+                correct: 4
+            }, 
+            {
+                question: " Qual é a estrutura correta de um objeto JavaScript? ",
+                answers: ["A)var obj = (name: John, age: 30) ", "B) var obj = [name: John, age: 30] ", "C) var obj = {name: John, age: 30}  ", "D) var obj = _name: John, age: 30>  "," E) var obj = {name = John, age = 30}"],
+                correct: 2
+            }, 
+            {
+                question: " Qual é a forma correta de adicionar um evento de clique a um botão com o ID  meuBotao em JavaScript?  ",
+                answers: ["A)document.getElementById(meuBotao).addEventListener(click, funcao);  ", "B) document.getElementById(meuBotao).onclick = funcao;  ", "C) $(#meuBotao).on(click, funcao);   ", "D) Todas as alternativas estão corretas. "," E) Nenhuma das alternativas está correta. "],
+                correct: 3
+            },
+            {
+                question: " Qual é a saída do seguinte código JavaScript? javascript  _console.log(typeof null); ",
+                answers: ["A) null  ", "B) object  ", "C) undefined   ", "D) number  "," E) string "],
+                correct: 1
+            },
+            {
+                question: " Qual é o método usado para remover o último elemento de um array em JavaScript? ",
+                answers: ["A) removeLast() ", "B) pop() ", "C) shift() ", "D) deleteLast() "," E) slice() "],
+                correct: 1
+            },
+            {
+                question: "O que é um closure em JavaScript? ",
+                answers: ["A) Uma função que é retornada por outra função e mantém acesso às variáveis do escopo de sua função pai. ", "B) Uma função que não pode ser chamada fora de seu escopo.  ", "C) Uma estrutura de controle de fluxo.   ", "D) Um objeto que contém propriedades e métodos.   "," E) Uma função que é chamada quando uma página é carregada. "],
+                correct: 0
+            },
+            {
+                question: " O que faz o método map() em um array em JavaScript? ",
+                answers: ["A) Adiciona um novo elemento ao final do array.  ", "B) Filtra elementos de um array com base em uma condição.  ", "C) Ordena os elementos de um array.  ", "D) Cria um novo array com os resultados da aplicação de uma função a cada elemento do array original.  "," E) Filtra elementos de um array com base em uma condição."],
+                correct: 3
+            },
+            {
+                question: " Qual é o propósito da função setTimeout() em JavaScript? ",
+                answers: ["A) Reiniciar um temporizador.  ", "B) Atrasar a execução de uma função indefinidamente. ", "C)Criar um loop infinito.   ", "D)Parar a execução de um script por um determinado tempo.   "," E) Executar uma função após um determinado tempo "],
+                correct: 4
+            },
+            {
+                question: " O que é a event bubbling em JavaScript? ",
+                answers: ["A) Um processo onde eventos são propagados do elemento mais externo para o elemento mais interno.  ", "B) Um processo onde eventos são propagados do elemento mais interno para o elemento mais externo. ", "C) Um tipo de evento que ocorre em elementos de formulário.  ", "D) Um erro que ocorre durante a manipulação de eventos.  "," E) Um método para remover eventos."],
+                correct: 1
+            },
+            {
+                question: " O que é o hoisting em JavaScript? ",
+                answers: ["A) A capacidade de um objeto acessar métodos de sua classe pai. ", "B) O empilhamento de eventos. ", "C) A execução de uma função em um contexto diferente.  ", "D)O processo de atribuição de valores a variáveis.  "," E) A capacidade de uma função ser chamada antes de sua declaração."],
+                correct: 4
+            },
+            {
+                question: " Qual dos seguintes métodos é usado para transformar um objeto em uma string JSON? ",
+                answers: ["A) JSON.stringify() ", "B) JSON.parse()  ", "C) JSON.convert()  ", "D) JSON.toString()  "," E) JSON.objectify() "],
+                correct: 0
+            },
+            {
+                question: " Qual é a saída do seguinte código JavaScript?      javascript    _let a = [1, 2, 3]; let b = a; b[0] = 4; console.log(a[0]);",
+                answers: ["A)1  ", "B)2  ", "C) 3  ", "D) 4 "," E)undefined "],
+                correct: 3
+            },
+            {
+                question: " Qual é o resultado da expressão 5 +  '5' em JavaScript? ",
+                answers: ["A) 10  ", "B) '55'  ", "C) 55  ", "D) '10'  "," E) '5 + 5' "],
+                correct: 1
+            },
+            {
+                question: " O que é o DOM em JavaScript? ",
+                answers: ["A) Um tipo de banco de dados. ", "B) Uma biblioteca para manipulação de strings. ", "C) Uma API que representa a estrutura de um documento HTML ou XML.", "D) Um padrão de segurança. "," E) Uma ferramenta de desenvolvimento. "],
+                correct: 2
+            },
+            {
+                question: " Qual é a função do método reduce() em um array em JavaScript? ",
+                answers: ["A) Adiciona elementos a um array.  ", "B) Remove o último elemento de um array.  ", "C) Aplica uma função a um acumulador e a cada elemento do array para reduzir a uma única saída.  ", "D)  Retorna um novo array com elementos que passam em um teste.  "," E) Ordena os elementos de um array em ordem crescente ou decrescente."],
+                correct: 2
+            }
+
+
+
+            
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
