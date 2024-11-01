@@ -68,6 +68,8 @@
         <div id="question-container"></div>
         <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
         <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+        <button id="home-button" onclick="goToHome()">Voltar ao Início</button>
+
     </div>
 
     <script>
@@ -242,7 +244,9 @@
             document.getElementById("next-button").style.display = "inline-block";
             document.getElementById("restart-button").style.display = "none";
         }
-
+        function goToHome() {
+             window.location.href = 'index.html';
+        }
         shuffleQuestions();
         showQuestion();
     </script>
