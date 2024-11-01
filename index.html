@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
+    <title>DATAPREV QUESTOES</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #D35400;
             text-align: center;
-            padding: 50px;
+            padding: 80px;
         }
         .dropdown {
             position: relative;
             display: inline-block;
         }
         .dropdown-content {
-            display: none;
+            display: none; /* Oculta o conteúdo do dropdown por padrão */
             position: absolute;
-            background-color: white;
+            background-color: blue;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
         .dropdown-content a {
-            color: black;
+            color: #33FF57;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -32,24 +32,58 @@
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
+        /* Mostra o conteúdo do dropdown quando o mouse estiver sobre o botão */
         .dropdown:hover .dropdown-content {
-            display: block;
+            display: block; /* Mostra o conteúdo ao passar o mouse sobre o dropdown */
+        }
+        /* Estilos para os botões */
+        .btn {
+            font-size: 20px; /* Aumenta o tamanho da fonte */
+            padding: 10px 20px; /* Espaciamento interno do botão */
+            margin: 25px; /* Margem entre os botões */
+            border: none; /* Remove bordas padrão */
+            border-radius: 15px; /* Arredonda os cantos */
+            cursor: pointer; /* Muda o cursor ao passar o mouse */
+        }
+        .btn-page1 {
+            background-color: #FF5733; /* Cor do primeiro botão */
+            color: white; /* Cor do texto */
+        }
+        .btn-page2 {
+            background-color: #33FF57; /* Cor do segundo botão */
+            color: white; /* Cor do texto */
         }
     </style>
 </head>
 <body>
-    <h1>Bem-vindo ao meu site!</h1>
+    <h1>DATAPREV QUESTOES</h1>
+
     <div class="dropdown">
-        <button>Escolha uma página</button>
+        <button class="btn btn-page1">Botao 1</button>
         <div class="dropdown-content">
-            <a href="BancodeDados.html"> Banco de Dados</a>
+            <a href="pagina1.html">Página 1</a>
             <a href="pagina2.html">Página 2</a>
         </div>
     </div>
 
+    <div class="dropdown">
+        <button class="btn btn-page1">Botao 2</button>
+        <div class="dropdown-content">
+            <a href="pagina3.html">Página 3</a>
+            <a href="pagina4.html">Página 4</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-page1">Botao 3</button>
+        <div class="dropdown-content">
+            <a href="pagina5.html">Página 5</a>
+            <a href="pagina6.html">Página 6</a>
+        </div>
+    </div>
+
     <script>
-        // Aqui você pode adicionar mais lógica se necessário, mas neste caso,
-        // as páginas já estão linkadas diretamente nos <a> do dropdown.
+        // Lógica adicional pode ser adicionada aqui, se necessário.
     </script>
 </body>
 </html>
