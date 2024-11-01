@@ -1,212 +1,55 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionário  Arquitetura e Aplicações de Data Warehouse ETL e OLAP </title>
-    <link rel="stylesheet" href="style.css">
+    <title>Meu Site</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Comic Sans MS', cursive;
-            background-color: blue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        .container {
-            width: 70%;
-            padding: 10px;
-            background-color: #98fb98;
-            border-radius: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             text-align: center;
-            font-size: 16px;
+            padding: 50px;
         }
-
-        h1 {
-            margin-bottom: 20px;
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
-
-        #question-container {
-            margin-bottom: 20px;
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
         }
-
-        label {
-            font-size: 20px; /* Aumenta o tamanho das respostas */
-            margin: 1px 0; /* Espaçamento entre as respostas */
-            display: block; /* Coloca cada resposta em uma linha separada */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
         }
-
-        button {
-            padding: 15px 30px;
-            font-size: 24px;
-            cursor: pointer;
-            color: blue;
-            font-family: 'Papyrus', cursive;
-            border-radius: 16px;
-            margin-top: 20px;
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
-
 <body>
-    <div style="text-align: center;">
-        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
-       <h1 style="color: yellow;"> Questionário  Arquitetura e Aplicações de Data Warehouse ETL e OLAP </h1>
-    </div>
-<nav>
-        <ul>
-            <li><a href="BancodeDados.html">Banco de Dados</a></li>
-            <li><a href="pagina2.html">Página 2</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div id="question-container"></div>
-        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
-        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    <h1>Bem-vindo ao meu site!</h1>
+    <div class="dropdown">
+        <button>Escolha uma página</button>
+        <div class="dropdown-content">
+            <a href="BancodeDados.html"> Banco de Dados</a>
+            <a href="pagina2.html">Página 2</a>
+        </div>
     </div>
 
     <script>
-        const questions = [
-
-            {
-                question: " O que caracteriza um Data Warehouse? ",
-                answers: ["A)É um sistema de gerenciamento de banco de dados transacional. ", "B)É um repositório centralizado de dados para suporte à decisão, integrado e otimizado para consultas. ", "C) É um software utilizado apenas para armazenar dados temporariamente. ", "D) É uma ferramenta de visualização de dados.  "," E) É um sistema operacional para servidores.  "],
-                correct: 1
-            },
-            {
-                question: " A técnica de ETL (Extract, Transform, Load) é utilizada para: ",
-                answers: ["A)Integrar e preparar dados para o Data Warehouse.  ", "B) Executar transações em tempo real.  ", "C) Realizar backups de dados.  ", "D) Armazenar dados não estruturados. "," E) Monitorar a performance do servidor. "],
-                correct: 0
-            },
-            {
-                question: " O que significa OLAP (Online Analytical Processing)? ",
-                answers: ["A) Um método para processamento de transações financeiras. ", "B) Uma tecnologia que permite a análise multidimensional de dados em tempo real. ", "C) Um tipo de software de contabilidade. ", "D) Um protocolo de comunicação de rede. "," E) Uma linguagem de programação."],
-                correct: 1
-            },
-            {
-                question: " Qual das opções a seguir é uma vantagem do uso de Data Warehousing? ",
-                answers: ["A) Alta disponibilidade de dados em tempo real.", "B) Melhor desempenho em transações de alta velocidade. ", "C)Exclusão de dados históricos.  ", "D) Integração de dados de múltiplas fontes para análise. "," E) Processamento de dados não estruturados. "],
-                correct: 3
-            },
-            {
-                question: " Os cubos OLAP são utilizados para: ",
-                answers: ["A) Armazenar dados em um formato relacional. ", "B) Executar transações em sistemas operacionais. ", "C) Garantir a segurança dos dados em bancos de dados.  ", "D) Processar dados não estruturados.  "," E) Realizar operações de cálculo e análise em dados multidimensionais."],
-                correct: 4
-            },
-            {
-                question: " Qual das seguintes etapas não faz parte do processo de ETL?  ",
-                answers: ["A) Extração de dados.", "B) Transformação de dados.  ", "C) Armazenamento de dados. ", "D) Carga de dados. "," E) Limpeza de dados. "],
-                correct: 2
-            },
-            {
-                question: " O que é um Data Mart?  ",
-                answers: ["A) Um tipo de banco de dados relacional. ", "B) Um software de visualização de dados. ", "C)Um subconjunto de um Data Warehouse, focado em uma área específica de negócios. ", "D) Um sistema de gestão de projetos. "," E)Um protocolo de comunicação de rede. "],
-                correct: 2
-            },
-            {
-                question: " As consultas em um Data Warehouse são geralmente: ",
-                answers: ["A) Rápidas, pois são otimizadas para análise e relatórios. ", "B) Limitadas a operações de leitura apenas.  ", "C) Executadas em tempo real, com alta frequência.  ", "D) Exclusivas para dados financeiros. "," E) Realizadas apenas em ambientes não estruturados. "],
-                correct: 0
-            },
-            {
-                question: " A técnica de slicing and dicing em OLAP refere-se a: ",
-                answers: ["A) Dividir dados em camadas diferentes para análise detalhada. ", "B) Reduzir o volume de dados armazenados. ", "C) Exclusão de dados desnecessários.  ", "D) Armazenamento de dados em diferentes formatos. "," E) Aumento da segurança dos dados. "],
-                correct: 1
-            },
-            {
-                question: " Qual das afirmações sobre Data Warehousing e OLAP é verdadeira?  ",
-                answers: ["A) OLAP é um método de armazenamento de dados, enquanto Data Warehousing é um método deanálise. ", "B) Data Warehousing é uma abordagem exclusivamente para dados não estruturados. ", "C) OLAP permite a análise multidimensional de dados armazenados em um Data Warehouse. ", "D) Data Warehousing não suporta a análise em tempo real. "," E) OLAP é utilizado apenas para processamento transacional."],
-                correct: 2
-            }
-
-
-            // Adicione mais perguntas conforme necessário
-        ];
-
-        let currentQuestion = 0;
-        let userAnswers = [];
-
-        function shuffleQuestions() {
-            for (let i = questions.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [questions[i], questions[j]] = [questions[j], questions[i]];
-            }
-        }
-
-        function showQuestion() {
-            const questionContainer = document.getElementById("question-container");
-            const questionData = questions[currentQuestion];
-            questionContainer.innerHTML = `
-                <h2>${questionData.question}</h2>
-                ${questionData.answers.map((answer, index) => `
-                    <label>
-                        <input type="radio" name="answer" value="${index}">
-                        ${answer}
-                    </label><br>
-                `).join("")}
-            `;
-        }
-
-        function nextQuestion() {
-            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-            if (selectedAnswer) {
-                userAnswers.push(parseInt(selectedAnswer.value));
-                currentQuestion++;
-                if (currentQuestion < questions.length) {
-                    showQuestion();
-                } else {
-                    showResults();
-                }
-            } else {
-                alert("Por favor, selecione uma resposta.");
-            }
-        }
-
-        function showResults() {
-            let score = 0;
-            const questionContainer = document.getElementById("question-container");
-            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
-
-            questions.forEach((q, index) => {
-                const isCorrect = userAnswers[index] === q.correct;
-                if (isCorrect) score++;
-                resultHtml += `
-                    <tr>
-                        <td>${q.question}</td>
-                        <td>${q.answers[q.correct]}</td>
-                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
-                    </tr>
-                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
-                `;
-            });
-
-            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
-            questionContainer.innerHTML = resultHtml;
-            document.getElementById("next-button").style.display = "none";
-            document.getElementById("restart-button").style.display = "inline-block";
-        }
-
-        function restartQuiz() {
-            userAnswers = [];
-            currentQuestion = 0;
-            shuffleQuestions();
-            showQuestion();
-            document.getElementById("next-button").style.display = "inline-block";
-            document.getElementById("restart-button").style.display = "none";
-        }
-
-        shuffleQuestions();
-        showQuestion();
+        // Aqui você pode adicionar mais lógica se necessário, mas neste caso,
+        // as páginas já estão linkadas diretamente nos <a> do dropdown.
     </script>
 </body>
 </html>
