@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário  Ingestao de Dados ETL ELT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário Ingestao de Dados ETL ELT</h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " No contexto de integração de dados, o processo de ETL consiste em: ",
+                answers: ["A) Extração, Transformação e Logística. ", "B) Extração, Transformação e Carga. ", "C) Envio, Transferência e Leitura.", "D) Encapsulamento, Transporte e Logística. "," E) Extração, Transferência e Listagem."],
+                correct: 1
+            },
+            {
+                question: " No processo ELT (Extract, Load, Transform), diferentemente do processo ETL, a transformação dos dados ocorre: ",
+                answers: ["A) Antes da extração dos dados. ", "B) Durante o carregamento dos dados.  ", "C) Após o carregamento dos dados no sistema de destino. ", "D) Simultaneamente à extração dos dados. "," E) Somente no ambiente de origem."],
+                correct: 2
+            },
+            {
+                question: " Qual das seguintes afirmações descreve corretamente uma vantagem do processo ELT sobre o ETL? ",
+                answers: ["A)O ELT permite que a transformação dos dados ocorra em sistemas de origem com maior eficiência. ", "B) O ELT elimina completamente a necessidade de carga de dados. ", "C) O ELT é sempre mais barato, independentemente da infraestrutura de destino. ", "D) O ELT evita a criação de redundâncias nos dados armazenados.  "," E) O ELT é mais rápido porque a transformação ocorre no sistema de destino, que geralmente é mais potente. "],
+                correct: 4
+            },
+            {
+                question: " Qual das seguintes ferramentas é amplamente utilizada para realizar processos de ETL em ambientes de data warehousing? ",
+                answers: ["A) Apache Kafka.", "B) Microsoft Power BI.  ", "C) Apache Spark.  ", "D) Talend. "," E) Google Analytics. "],
+                correct: 3
+            },
+            {
+                question: " O processo de ETL tipicamente envolve três etapas principais. A primeira etapa, extração, refere-se a: ",
+                answers: ["A) Transferir dados do banco de dados de destino para o banco de dados de origem. ", "B) Eliminar os dados duplicados no sistema de destino.", "C) Capturar os dados de uma ou mais fontes, estruturadas ou não estruturadas. ", "D) Realizar a transformação dos dados em tempo real.  "," E) Criar visualizações a partir dos dados extraídos. "],
+                correct: 2
+            },
+            {
+                question: " No contexto de integração de dados, o uso de processos de ETL é fundamental para: ",
+                answers: ["A) Preparar os dados para análise, consolidando-os em um repositório como um Data Warehouse. ", "B) Executar consultas em tempo real diretamente nas fontes de dados.  ", "C) Melhorar a segurança dos dados na rede corporativa. ", "D) Reduzir a latência de transmissão de dados em sistemas de IoT. "," E) Armazenar grandes volumes de dados em ambientes não estruturados."],
+                correct: 0
+            },
+            {
+                question: " Em um processo de ETL, a etapa de transformação inclui: ",
+                answers: ["A) Capturar dados de várias fontes. ", "B)A rmazenar os dados no banco de dados de destino. ", "C)Validar o esquema do banco de dados relacional de destino.  ", "D)Realizar conversões, agregações e limpezas nos dados para garantir sua consistência e qualidade.  "," E)Criar visualizações gráficas dos dados transformados.  "],
+                correct: 3
+            },
+            {
+                question: " Qual das seguintes opções não é uma característica comum das ferramentas de ETL?  ",
+                answers: ["A) Capacidade de extrair dados de várias fontes, incluindo bancos de dados, arquivos e APIs. ", "B)Ferramentas de transformação para limpeza e formatação de dados antes da carga.  ", "C) Interface gráfica para definir fluxos de trabalho de integração de dados. ", "D) Otimização automática das consultas SQL para melhorar a performance do sistema de origem. "," E)Suporte a processos de carga incremental e em tempo real. "],
+                correct: 3
+            },
+            {
+                question: " No processo de ETL, a fase de carga refere-se a: ",
+                answers: ["A)Transferir dados transformados para o sistema de destino, como um Data Warehouse. ", "B) Armazenar os dados temporariamente em um sistema intermediário. ", "C) Realizar cálculos analíticos em tempo real. ", "D) Extrair dados de múltiplas fontes para processamento. "," E) Validar os dados no sistema de origem."],
+                correct: 0
+            },
+            {
+                question: " Qual é uma das principais vantagens de usar ETL em vez de ELT em certos cenários de integração de dados? ",
+                answers: ["A) O ETL permite o processamento mais rápido dos dados. ", "B) O ETL realiza a transformação dos dados antes de carregá-los, o que pode evitar sobrecarga no sistema de destino. ", "C) O ETL requer menos infraestrutura de hardware no sistema de origem. ", "D) O ETL garante maior segurança dos dados durante o processamento. "," E) O ETL é a única abordagem que suporta dados não estruturados."],
+                correct: 1
+            }
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>

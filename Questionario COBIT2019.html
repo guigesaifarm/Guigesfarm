@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário  COBIT 2019</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário  COBIT 2019 </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " Qual é o principal objetivo do COBIT 2019? ",
+                answers: ["A) Minimizar os custos de TI. ", "B) Fornecer um framework para governança e gerenciamento de TI.", "C) Criar novos produtos de software.  ", "D) Aumentar a complexidade da gestão de TI.  "," E) Focar exclusivamente na segurança da informação. "],
+                correct: 1
+            },
+            {
+                question: " O que significa a sigla COBIT? ",
+                answers: ["A) Control Objectives for Business Investment and Technology.", "B) Common Operations for Business Information Technology. ", "C) Control Objectives for Building Information Technology.  ", "D) Control Objectives for Business Information Technology. "," E) Control Objectives for Best Information Technology."],
+                correct: 3
+            },
+            {
+                question: " No COBIT 2019, as dimensões da governança são: ",
+                answers: ["A) Segurança, produtividade e qualidade. ", "B) Cultura, processos, e tecnologia. ", "C) Pessoas, processos e informações. ", "D) Pessoas, tecnologia e governança. "," E) Tecnologia, governança e estratégia."],
+                correct: 2
+            },   
+            {
+                question: " As metas de governança no COBIT 2019 são agrupadas em quantas categorias? ",
+                answers: ["A) 2. ", "B) 4.  ", "C) 5. ", "D) 6. "," E) 8. "],
+                correct: 1
+            },
+            {
+                question: " Qual das seguintes afirmações é verdadeira sobre os principais componentes do COBIT 2019? ",
+                answers: ["A) Os componentes incluem princípios, políticas e estruturas organizacionais. ", "B) Não há necessidade de considerar as partes interessadas.  ", "C) Apenas os processos são considerados componentes   ", "D) O foco está exclusivamente na tecnologia.   "," E) A governança não é uma preocupação do COBIT."],
+                correct: 0
+            },
+            {
+                question: " No COBIT 2019, qual é a finalidade da Avaliação de Práticas? ",
+                answers: ["A) Apenas identificar falhas nos processos de TI. ", "B) Aumentar a complexidade dos serviços de TI.  ", "C) Permitir que as organizações entendam a eficácia de suas práticas e processos de governança.  ", "D) Criar novos processos sem considerar as necessidades do negócio.  "," E) Ignorar a avaliação contínua dos serviços."],
+                correct: 2
+            },
+            {
+                question: " O que são objetivos de governança no COBIT 2019? ",
+                answers: ["A) Metas específicas para melhorar a infraestrutura de TI. ", "B) Diretrizes para gerenciamento de projetos. ", "C) Apenas indicadores de desempenho.  ", "D) Planos de contingência para incidentes de TI.  "," E) Resultados desejados que as organizações buscam alcançar em relação à governança de TI. "],
+                correct: 4
+            },
+            {
+                question: " Qual é a importância da comunicação na governança de TI segundo o COBIT 2019? ",
+                answers: ["A) Facilita a criação de documentos extensivos. ", "B) Garante que apenas a alta administração esteja informada.  ", "C) Serve apenas para notificar incidentes.  ", "D) É essencial para garantir o alinhamento entre a estratégia de negócios e os serviços de TI.  "," E) Não tem relevância na governança de TI."],
+                correct: 3
+            },
+            {
+                question: " O que representa a cultura organizacional no contexto do COBIT 2019? ",
+                answers: ["A) A estrutura de tecnologia da informação. ", "B) O conjunto de valores e comportamentos que afetam a forma como os colaboradores trabalham e tomam decisões.  ", "C) O número de funcionários na organização.  ", "D) Apenas a hierarquia da empresa.  "," E) O volume de transações financeiras."],
+                correct: 1
+            },
+            {
+                question: " No COBIT 2019, a estrutura organizacional deve ser: ",
+                answers: ["A)Fixa e não sujeita a mudanças.  ", "B) Exclusiva para a área de TI.  ", "C) Limitada a um único departamento.  ", "D) Não relacionada à governança.  "," E) Flexível e adaptável para atender às necessidades de governança e gerenciamento. "],
+                correct: 4
+            }
+
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>

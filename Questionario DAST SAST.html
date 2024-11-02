@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário DAST e SAST</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;">Questionário DAST e SAST </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " A análise estática de código (SAST) é utilizada principalmente para: ",
+                answers: ["A) Executar o código em um ambiente de produção. ", "B) Identificar vulnerabilidades sem executar o programa.   ", "C) Monitorar a execução do software em tempo real.   ", "D) Avaliar o desempenho da aplicação em ambientes de teste.  "," E) Realizar testes de carga em sistemas. "],
+                correct: 1
+            },
+            {
+                question: " A análise dinâmica de código (DAST) é caracterizada por: ",
+                answers: ["A) Executar o código em um ambiente de teste para identificar vulnerabilidades.  ", "B) Revisar o código-fonte em busca de padrões inseguros.", "C) Não requerer um ambiente de execução. ", " D) Ser feita apenas após a finalização do desenvolvimento. ", "E) Focar exclusivamente em documentação de segurança. "],
+                correct: 0
+            },
+            {
+                question: " Qual das opções a seguir é uma vantagem da análise estática de código (SAST)? ",
+                answers: ["A) Permite identificar vulnerabilidades em tempo real durante a execução. ", "B) Exige menos recursos computacionais do que a análise dinâmica.  ", "C) Fornece resultados mais precisos do que a análise dinâmica.", " D) É mais eficaz em ambientes de produção. ", "E) Pode ser realizada antes mesmo da aplicação estar em execução. "],
+                correct: 4
+            },
+
+           {
+                question: " Qual é uma desvantagem comum da análise dinâmica de código (DAST)? ",
+                answers: ["A) Não consegue detectar problemas em bibliotecas externas. ", "B) É realizada antes do desenvolvimento do código. ", "C) É mais rápida do que a análise estática. ", " D) Pode não encontrar vulnerabilidades que não se manifestam em tempo de execução.", "E) Não requer um ambiente de teste. "],
+                correct: 3
+            },
+            {
+                question: " Qual ferramenta é frequentemente usada para análise estática de código (SAST)? ",
+                answers: ["A) Burp Suite ", "B) Veracode ", "C) OWASP ZAP", " D) Nessus", "E) Wireshark "],
+                correct: 1
+            },
+            {
+                question: " Um exemplo de uma ferramenta de análise dinâmica de código (DAST) é: ",
+                answers: ["A) SonarQube ", "B) Checkmarx", "C) Fortify", " D) Burp Suite", "E) JSHint"],
+                correct: 3
+            },
+            {
+                question: " No contexto de segurança, a combinação de SAST e DAST é benéfica porque: ",
+                answers: ["A)Permite testes de desempenho mais eficientes.  ", "B)É a única forma de garantir a segurança de um sistema. ", "C)Garante que todas as vulnerabilidades sejam detectadas em qualquer fase do desenvolvimento. ", " D) Não requer a validação de requisitos. ", "E) Diminui o custo de manutenção. "],
+                correct: 2
+            },
+            {
+                question: " A análise estática (SAST) é mais eficaz em: ",
+                answers: ["A)Sistemas operacionais.  ", "B) Códigos em fase de desenvolvimento. ", "C) Ambientes de teste com dados reais.", " D) Redes de computadores.", "E) Aplicações já em produção. "],
+                correct: 1
+            },
+            {
+                question: " Qual é um objetivo principal da análise dinâmica de código (DAST)? ",
+                answers: ["A) Detectar falhas de segurança em tempo de execução. ", "B)  Avaliar a arquitetura de software.", "C) Identificar vulnerabilidades de codificação. ", " D) Analisar o estilo de codificação. ", "E) Fornecer feedback sobre a documentação do código.  "],
+                correct: 0
+            },
+            {
+                question: " Ao usar análise estática (SAST), qual das seguintes abordagens é recomendada?  ",
+                answers: ["A) Executar testes somente em produção. ", "B) Validar o código-fonte regularmente durante o desenvolvimento.", "C) Ignorar problemas de codificação durante a revisão de código. ", " D) Realizar testes de carga antes da análise de segurança.", "E) Não documentar vulnerabilidades identificadas. "],
+                correct: 1
+            },
+
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
