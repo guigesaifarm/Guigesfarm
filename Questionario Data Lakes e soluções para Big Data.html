@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Questionário Data Lakes e soluções para Big Data </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário Data Lakes e soluções para Big Data  </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " Em um ambiente de Big Data, um Data Lake é utilizado para: ",
+                answers: ["A) Armazenar exclusivamente dados estruturados de maneira organizada. ", "B) Realizar processamento transacional em tempo real.  ", "C) Armazenar grandes volumes de dados brutos, estruturados e não estruturados, de diversas fontes.  ", "D) Garantir a integridade dos dados através de transações ACID.  "," E) Realizar consultas SQL complexas com alto desempenho.  "],
+                correct: 2
+            },
+            {
+                question: " No contexto de soluções para Big Data, o termo 3Vs refere-se a: ",
+                answers: ["A) Volume, Validação e Verificação.  ", "B) Volume, Velocidade e Variedade.  ", "C) Validade, Variabilidade e Velocidade.  ", "D) Variabilidade, Veracidade e Valor. "," E) Volume, Validade e Veracidade. "],
+                correct: 1
+            },
+            {
+                question: " Uma das vantagens do uso de Data Lakes em projetos de Big Data é: ",
+                answers: ["A) Garantir consultas SQL de alta performance. ", "B) Armazenar dados apenas após seu processamento e validação. ", "C) Oferecer suporte completo às transações ACID. ", "D) Oferecer armazenamento escalável e flexível para dados em estado bruto.  "," E)Substituir completamente os bancos de dados relacionais.  "],
+                correct: 3
+            },
+            {
+                question: " A respeito dos componentes de uma solução de Big Data, o Hadoop é: ",
+                answers: ["A) Um ecossistema de software open-source que suporta processamento distribuído de grandes volumes de dados. ", "B)Um sistema de banco de dados relacional distribuído.  ", "C) Uma ferramenta para visualização de dados.   ", "D) Um serviço em nuvem para análise de dados estruturados. "," E) Uma linguagem de programação voltada à análise de dados.  "],
+                correct: 0
+            }, 
+            {
+                question: " Em um Data Lake, o processamento de dados brutos pode ser realizado utilizando tecnologias como: ",
+                answers: ["A) Apache Kafka e MySQL.", "B) Apache Spark e Hadoop. ", "C) Redis e PostgreSQL. ", "D) SQL Server e SQLite. "," E) MariaDB e MongoDB."],
+                correct: 1
+            }, 
+            {
+                question: " Qual das características abaixo não é típica de um Data Lake?    ",
+                answers: ["A)Suporte ao armazenamento de dados estruturados, semi-estruturados e não estruturados.  ", "B) Alta escalabilidade para lidar com grandes volumes de dados.  ", "C) Capacidade de armazenar dados brutos, sem necessidade de transformação.  ", "D) Flexibilidade para diferentes tipos de análises e ferramentas de processamento. "," E) Armazenamento em uma estrutura rígida e predefinida para consultas rápidas. "],
+                correct: 4
+            },
+            {
+                question: " No contexto de Big Data, a arquitetura Lambda é usada para: ",
+                answers: ["A) Processamento em lote apenas.  ", "B) Processamento em tempo real apenas.  ", "C) Garantir transações ACID em tempo real.   ", "D) Combinar processamento em tempo real e em lote, para atender a diferentes necessidades de latência e análise. "," E) Armazenar dados estruturados e não estruturados em um Data Warehouse. "],
+                correct: 3
+            },
+            { 
+                question: " Em uma solução de Big Data, o termo ETL refere-se ao processo de: ",
+                answers: ["A) Extração, Transferência e Logística.  ", "B) Extração, Transformação e Carga.  ", "C) Expansão, Teste e Logística.", "D) Encapsulamento, Transferência e Leitura.  "," E) Extração, Transferência e Leitura.  "],
+                correct: 1
+            },
+            {
+                question: " Na arquitetura Hadoop, o componente responsável pelo armazenamento distribuído de dados é: ",
+                answers: ["A)YARN.", "B) Hive.", "C) HDFS.", "D) Spark."," E) MapReduce."],
+                correct: 2
+            },
+            {
+                question: " Um Data Lake se distingue de um Data Warehouse porque: ",
+                answers: ["A) Data Lakes armazenam apenas dados estruturados, enquanto Data Warehouses armazenam dados não estruturados. ", "B) Data Lakes armazenam dados brutos em grandes volumes e de diversos formatos, enquanto Data Warehouses são otimizados para consultas em dados estruturados e processados.  ", "C) Data Lakes são mais caros que Data Warehouses, pois requerem maior capacidade de processamento.  ", "D) Data Lakes armazenam apenas dados estruturados, enquanto Data Warehouses armazenam dados não estruturados.  "," E) Data Lakes armazenam dados brutos em grandes volumes e de diversos formatos, enquanto Data Warehouses são otimizados para consultas em dados estruturados e processados. "],
+                correct: 4
+            }
+
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
