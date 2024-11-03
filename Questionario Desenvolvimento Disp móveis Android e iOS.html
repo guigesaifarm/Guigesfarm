@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Questionario Desenvolvimento Disp móveis Android e iOS </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionario Desenvolvimento Disp móveis Android e iOS </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " Qual é a linguagem de programação principal utilizada para o desenvolvimento de aplicativos Android? ",
+                answers: ["A) Swift ", "B) Kotlin ", "C) JavaScript", "D) Ruby "," E) Objective-C "],
+                correct: 1
+            },
+            {
+                question: " Qual é a principal linguagem de programação utilizada para o desenvolvimento de aplicativos iOS? ",
+                answers: ["A) Kotlin", "B) Java ", "C) Swift ", "D) C# "," E)PHP"],
+                correct: 2
+            },
+            {
+                question: " O que é uma IDE (Integrated Development Environment) e qual delas é usada para o desenvolvimento de aplicativos Android? ",
+                answers: ["A) Um ambiente de desenvolvimento; Android Studio. ", "B) Um framework; Xcode. ", "C) Um sistema operacional; IntelliJ IDEA. ", "D) Um tipo de linguagem; Visual Studio. "," E) Uma biblioteca; Flutter."],
+                correct: 0
+            },
+            {
+                question: " No contexto do desenvolvimento para dispositivos móveis, o que é Low-Code? ",
+                answers: ["A) Uma ferramenta para gerenciamento de projetos.  ", "B) Uma metodologia para testar aplicativos.   ", "C) Um tipo de linguagem de programação.  ", "D) Um método que requer extensiva codificação.  "," E) Uma abordagem que permite o desenvolvimento de aplicativos com pouca codificação. "],
+                correct: 4
+            }, 
+            {
+                question: " Qual é a principal vantagem de utilizar plataformas No-Code? ",
+                answers: ["A) Requer conhecimento avançado em programação. ", "B) Necessita de licenças caras. ", "C) Permite que usuários sem experiência em codificação criem aplicativos. ", "D) É menos flexível que o desenvolvimento tradicional. "," E) Foca apenas em desenvolvimento para web."],
+                correct: 2
+            }, 
+            {
+                question: " Qual framework permite o desenvolvimento de aplicativos móveis para iOS e Android a partir de uma única base de código?   ",
+                answers: ["A) Angular  ", "B) Ruby on Rails   ", "C) .NET  ", "D) Xamarin  "," E) Django  "],
+                correct: 3
+            },
+            {
+                question: " O que é Flutter? ",
+                answers: ["A) Um framework para desenvolvimento de aplicativos web.  ", "B) Uma linguagem de programação.  ", "C) Um sistema operacional.    ", "D) Um SDK para desenvolvimento de aplicativos móveis com interface nativa.  "," E) Um banco de dados.  "],
+                correct: 3
+            },
+            {
+                question: " No desenvolvimento de aplicativos iOS, o que é Xcode? ",
+                answers: ["A) Um sistema operacional. ", "B)Uma linguagem de programação. ", "C) A IDE oficial para desenvolvimento de aplicativos iOS. ", "D) Um framework para web. "," E) Um banco de dados.  "],
+                correct: 2
+            },
+            {
+                question: " Qual é a função principal da API Android Manifest? ",
+                answers: ["A) Declarar componentes do aplicativo e suas permissões. ", "B) Gerenciar a conexão de rede. ", "C) Definir a interface do usuário. ", "D) Controlar a segurança do aplicativo."," E) Otimizar o desempenho."],
+                correct: 0
+            },
+            {
+                question: " O que significa a sigla SDK? ",
+                answers: ["A) Software Design Knowledge ", "B) Security Development Kit ", "C) Standard Data Kit ", "D) System Design Kit "," E) Software Development Kit"],
+                correct: 4
+            },
+            {
+                question: " Qual é o propósito do Firebase em desenvolvimento de aplicativos móveis? ",
+                answers: ["A) Oferecer uma plataforma de teste.  ", "B) Prover ferramentas para backend, como banco de dados em tempo real e autenticação. ", "C) Criar interfaces gráficas. ", "D) Gerenciar dispositivos móveis."," E) Desenvolver jogos. "],
+                correct: 1
+            },
+            {
+                question: " O que é um component em um aplicativo móvel? ",
+                answers: ["A) Um tipo de banco de dados. ", "B) Um sistema operacional. ", "C) Uma linguagem de programação. ", "D) Um elemento que compõe a interface do usuário ou lógica de um aplicativo."," E) Um método de teste."],
+                correct: 3
+            },
+            {
+                question: " Em desenvolvimento móvel, o que é um emulador?  ",
+                answers: ["A)Um dispositivo físico para teste.  ", "B) Um software que simula um dispositivo móvel para testar aplicativos.  ", "C) Um framework de desenvolvimento.   ", "D) Um tipo de banco de dados.  "," E) Um serviço de nuvem. "],
+                correct: 1
+            },
+            {
+                question: " Qual é a principal função da linguagem de marcação XML no desenvolvimento de aplicativos Android? ",
+                answers: ["A) Armazenar dados de usuário. ", "B) Definir regras de negócio.  ", "C) Criar interfaces de usuário e configurar componentes.", "D) Gerenciar transações."," E) Realizar testes automatizados."],
+                correct: 2
+            },
+            {
+                question: " O que caracteriza um app híbrido? ",
+                answers: ["A) Desenvolvido apenas para iOS. ", "B) Desenvolvido apenas para Android. ", "C) Requer código nativo para cada plataforma. ", "D) Utiliza tecnologias web e é empacotado como um aplicativo nativo. "," E) É um aplicativo somente para desktop. "],
+                correct: 3
+            },
+            {
+                question: " Qual é o principal propósito de usar API em aplicativos móveis?  ",
+                answers: ["A) Aumentar a segurança do aplicativo. ", "B) Melhorar a interface do usuário. ", "C) Conectar o aplicativo a serviços externos e compartilhar dados. ", "D)Melhorar o desempenho do dispositivo. "," E) Controlar a conexão com o banco de dados."],
+                correct: 2
+            },
+            {
+                question: " Em um aplicativo iOS, o que é uma View Controller? ",
+                answers: ["A) Um banco de dados para armazenar dados do usuário.   ", "B) Um objeto que gerencia a interação com o usuário e a lógica da interface. ", "C) Uma biblioteca de componentes visuais. ", "D) Um tipo de serviço web."," E) Um método de autenticação."],
+                correct: 1
+            }
+
+
+
+          
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
