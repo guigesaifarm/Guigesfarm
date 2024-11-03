@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Questionário  NoSQL e linguagens de banco de dados </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário  NoSQL e linguagens de banco de dados  </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " O modelo de banco de dados relacional é amplamente utilizado, porém, nos últimos anos, os bancos de dados NoSQL ganharam relevância. Qual das alternativas abaixo não representa uma característica comum dos bancos de dados NoSQL? ",
+                answers: ["A) Suporte a esquemas flexíveis.", "B) Capacidade de escalar horizontalmente.  ", "C) Adequação para Big Data e análise em tempo real.   ", "D) Armazenamento de dados altamente estruturados. "," E) Modelagem baseada em chaves e valores, documentos, colunas ou grafos.  "],
+                correct: 3
+            },
+            {
+                question: " Nos bancos de dados NoSQL, o Redis é um exemplo de um banco de dados do tipo: ",
+                answers: ["A) Orientado a documentos. ", "B) Colunar. ", "C) Multimodelo. ", "D) Orientado a grafos.  "," E) Chave-valor. "],
+                correct: 4
+            },
+            {
+                question: " Em um banco de dados orientado a documentos, como o MongoDB, os dados são armazenados em: ",
+                answers: ["A) Tabelas ", " B) Linhas ", "C) Colunas  ", "D) Documentos  "," E)Grafos  "],
+                correct: 3
+            },
+            {
+                question: " Qual das afirmações a seguir está correta sobre bancos de dados NoSQL? ",
+                answers: ["A) Bancos NoSQL utilizam exclusivamente o modelo relacional de dados. ", "B) A consistência é garantida de forma rígida em todos os tipos de bancos de dados NoSQL.", "C) Os bancos de dados NoSQL oferecem maior flexibilidade na modelagem dos dados em comparação com os bancos relacionais. ", "D) Em bancos NoSQL, as transações são sempre executadas de forma isolada e atômica."," E)NoSQL é sinônimo de ausência de suporte a SQL.  "],
+                correct: 2
+            }, 
+            {
+                question: " Qual das alternativas abaixo não é um tipo de banco de dados NoSQL? ",
+                answers: ["A) Relacional", "B) Orientado a colunas ", "C) Orientado a grafos ", "D) Chave-valor "," E) Documental "],
+                correct: 0
+            }, 
+            {
+                question: " Em um banco de dados NoSQL do tipo orientado a grafos, qual dos conceitos abaixo descreve corretamente os componentes fundamentais de armazenamento?   ",
+                answers: ["A) Tabelas e Colunas ", "B) Nós e Arestas ", "C) Documentos e Campos ", "D) Chaves e Valores ","E) Linhas e Colunas "],
+                correct: 1
+            },
+            {
+                question: " O banco de dados Cassandra é um exemplo de qual tipo de banco de dados NoSQL? ",
+                answers: ["A) Chave-valor ", "B) Orientado a documentos ", "C) Relacional  ", "D) Multimodelo "," E) Colunar  "],
+                correct: 4
+            },
+            {
+                question: " No modelo CAP theorem, aplicado a bancos de dados distribuídos, qual das seguintes combinações de propriedades não pode ser garantida simultaneamente?",
+                answers: ["A) Consistência, Disponibilidade e Partição. ", "B) Consistência, Escalabilidade e Disponibilidade. ", "C) Consistência, Desempenho e Tolerância à Falha. ", "D) Partição, Disponibilidade e Desempenho. "," E) Consistência, Desempenho e Escalabilidade. "],
+                correct: 0
+            },
+            {
+                question: "Em qual dos seguintes cenários seria mais apropriado utilizar um banco de dados NoSQL em vez de um banco relacional? ",
+                answers: ["A) Aplicação com forte necessidade de consistência transacional.  ", "B) Sistema bancário onde a integridade dos dados é crítica. ", "C) Aplicação de redes sociais, onde o volume de dados é grande e os esquemas são flexíveis. ", "D) Aplicação com pequenas tabelas altamente relacionadas. "," E) Um sistema de contabilidade que requer consultas SQL complexas."],
+                correct: 2
+            },
+            {
+                question: "Em bancos de dados NoSQL, o modelo de consistência chamado eventual consistency significa que:  ",
+                answers: ["A) Todos os nós do sistema têm sempre os mesmos dados. ", "B)Após um tempo, os dados se tornam consistentes entre todos os nós, mesmo que não imediatamente após a gravação. ", "C) A consistência dos dados é garantida imediatamente após a escrita. ", "D) As operações de leitura são mais lentas, mas garantem consistência imediata. "," E) Apenas um nó mantém uma cópia dos dados para garantir a consistência. "],
+                correct: 1
+            }
+
+
+          
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
