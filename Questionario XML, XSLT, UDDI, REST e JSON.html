@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Questionário XML, XSLT, UDDI, REST e JSON</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário XML, XSLT, UDDI, REST e JSON  </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " O que significa XML? ",
+                answers: ["A) Extensible Markup Language ", "B) Extra Markup Language ", "C) Extended Multilayer Language ", "D) Exponential Markup Language "," E) External Markup Language "],
+                correct: 0
+            },
+            {
+                question: " Qual é a principal finalidade do XML?  ",
+                answers: ["A) Armazenar dados de forma estruturada. ", "B) Criar páginas web dinâmicas.", "C) Executar scripts em servidores. ", "D) Gerenciar banco de dados relacionais.  "," E) Realizar cálculos matemáticos complexos. "],
+                correct: 0
+            },
+            {
+                question: " Qual é a função do XSLT? ",
+                answers: ["A) Processar dados em XML. ", "B)Validar a estrutura de documentos XML. ", "C) Transformar documentos XML em outros formatos, como HTML.", "D) Armazenar dados em XML."," E) Criar gráficos a partir de dados XML."],
+                correct: 2
+            },
+            {
+                question: " O que significa UDDI?  ",
+                answers: ["A) Universal Data Discovery Interface  ", "B) Uniform Data Description Interface ", "C) Universal Domain Definition Interface ", "D) Unified Data Discovery Information "," E) Universal Description, Discovery, and Integration "],
+                correct: 4
+            }, 
+            {
+                question: " Qual é o propósito do UDDI?  ",
+                answers: ["A) Proteger dados pessoais em transações online. ", "B) Armazenar grandes volumes de dados.  ", "C) Criar interfaces de usuário para aplicativos web.   ", "D) Fornecer um diretório de serviços web para localizar e acessar serviços. "," E) Implementar a segurança em serviços web. "],
+                correct: 3
+            }, 
+            {
+                question: " Qual das seguintes afirmações é verdadeira sobre o REST?   ",
+                answers: ["A) É um protocolo de segurança para serviços web.  ", "B) É um estilo arquitetural para desenvolvimento de serviços web.   ", "C) É uma linguagem de programação para desenvolvimento de aplicativos. ", "D) É uma tecnologia de banco de dados.  "," E) É um tipo de documento XML. "],
+                correct: 1
+            },
+            {
+                question: " Qual é a principal característica do formato JSON? ",
+                answers: ["A) Usa marcação XML para definir dados.  ", "B) É um protocolo de comunicação.   ", "C) É uma linguagem de consulta de dados.   ", "D) É um sistema de gerenciamento de banco de dados.  "," E) É um formato de texto leve e fácil de ler, utilizado para troca de dados. "],
+                correct: 4
+            },
+            {
+                question: " Qual é a estrutura básica de um documento XML?",
+                answers: ["A) Vários documentos separados.", "B) Apenas texto sem estrutura.", "C) Um único elemento raiz contendo outros elementos. ", "D) Um arquivo de imagem.  "," E) Uma tabela de banco de dados.  "],
+                correct: 2
+            },
+            {
+                question: " O que o XSLT permite fazer além da transformação de XML? ",
+                answers: ["A) Realizar validações de segurança. ", "B) Executar cálculos matemáticos. ", "C) Gerar relatórios em tempo real. ", "D) Definir estilos e formatação de documentos. "," E) Criar interfaces de usuário. "],
+                correct: 3
+            },
+            {
+                question: " Qual é o método HTTP usado para criar um novo recurso em REST? ",
+                answers: ["A) GET ", "B) PUT ", "C) POST  ", "D)DELETE  "," E)PATCH "],
+                correct: 2
+            },
+            {
+                question: " Em JSON, como um objeto é representado? ",
+                answers: ["A) Com uma lista de valores separados por vírgula. ", "B) Com colchetes. ", "C) Com um texto livre.  ", "D) Com chaves, contendo pares chave-valor."," E) Com parênteses."],
+                correct: 3
+            },
+            {
+                question: " Qual é a função principal do JSON em serviços web? ",
+                answers: ["A) Armazenar dados em um banco de dados relacional. ", "B) Trocar dados entre um cliente e um servidor de forma leve e rápida. ", "C) Criar páginas web dinâmicas. ", "D) Implementar segurança em serviços web. "," E) Processar imagens."],
+                correct: 1
+            },
+            {
+                question: " Qual é a sintaxe correta para definir um array em JSON?  ",
+                answers: ["A) [1, 2, 3] ", "B) {1, 2, 3} ", "C) (1, 2, 3)  ", "D) <1, 2, 3> "," E) /1, 2, 3/"],
+                correct: 0
+            },
+            {
+                question: " Qual dos seguintes métodos HTTP é usado para recuperar dados em REST? ",
+                answers: ["A) PUT ", "B) POST ", "C) DELETE ", "D) PATCH "," E) GET "],
+                correct: 4
+            },
+            {
+                question: "O que significa a sigla REST? ",
+                answers: ["A) Representational Event State Transfer ", "B) Representational State Transfer ", "C) Real State Transfer  ", "D) Resource Event State Transfer "," E) Resource State Transfer "],
+                correct: 1
+            },
+            {
+                question: "O que é um documento XML bem formado?  ",
+                answers: ["A) Um documento que contém apenas texto. ", "B)Um documento que foi validado por um esquema. ", "C)Um documento que não contém erros de digitação. ", "D) Um documento que possui uma estrutura hierárquica e atende às regras de sintaxe do XML. "," E) Um documento que tem uma formatação específica. "],
+                correct: 3
+            },
+            {
+                question: " Qual é o papel do UDDI na arquitetura orientada a serviços? ",
+                answers: ["A) Armazenar dados de usuários. ", "B) Implementar a segurança em serviços web. ", "C) Fornecer um repositório para descrever serviços web e como encontrá-los. ", "D) Executar processos de negócio. "," E) Criar interfaces de usuário. "],
+                correct: 2
+            },
+            {
+                question: " Qual dos seguintes formatos é mais leve e geralmente usado em APIs web? ",
+                answers: ["A) XML ", "B) HTML ", "C) CSV  ", "D) JSON "," E) TXT"],
+                correct: 3
+            },
+            {
+                question: " O que caracteriza um endpoint em uma API REST?  ",
+                answers: ["A) Um ponto de acesso a um servidor de banco de dados. ", "B) Um tipo de método HTTP.", "C) Um arquivo de configuração. ", "D) Um protocolo de segurança. "," E)Uma URL que representa um recurso na web. "],
+                correct: 4
+            },
+            {
+                question: " Qual é a função do atributo xmlns em um documento XML? ",
+                answers: ["A) Definir o espaço de nomes (namespace) do documento. ", "B) Especificar o formato do documento. ", "C) Indicar a codificação de caracteres. ", "D) Determinar a versão do XML."," E) Indicar a data de criação do documento. "],
+                correct: 0
+            }
+    
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
