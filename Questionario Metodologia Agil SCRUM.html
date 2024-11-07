@@ -1,0 +1,236 @@
+﻿﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário  Metodologia Agil SCRUM </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário Metodologia Agil SCRUM </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: "  No framework Scrum, qual é o papel da Equipe de Desenvolvimento? ",
+                answers: ["A) Planejar a entrega do produto e definir as prioridades de cada sprint.  ", "B) Facilitar as cerimônias do Scrum e garantir que as práticas ágeis sejam seguidas.  ", "C) Desenvolver o produto e entregar incrementos funcionais ao final de cada sprint. ", "D) Definir as métricas e as estimativas de tempo para cada sprint. "],
+                correct: 2
+            },
+            {
+                question: " Qual é o principal objetivo de uma Sprint no Scrum?  ",
+                answers: ["A) Garantir que todos os membros da equipe participem igualmente. ", "B) Avaliar o desempenho da equipe de desenvolvimento. ", "C) Entregar um incremento de produto potencialmente utilizável no final de um ciclo de trabalho.  ", "D) Elaborar a documentação detalhada sobre o produto final. "],
+                correct: 2
+            },
+            {
+                question: " O que é o Backlog do Produto no Scrum? ",
+                answers: ["A) Um conjunto de requisitos priorizados que o Product Owner (PO) deseja que o time de desenvolvimento implemente. ", "B) Uma lista de todas as tarefas realizadas pelo time durante a sprint.", "C) O planejamento detalhado de cada funcionalidade que será desenvolvida.", "D) O conjunto de requisitos de design e arquitetura do produto. "],
+                correct: 0
+            },
+            {
+                question: " Quem é responsável por definir as prioridades no Backlog do Produto?",
+                answers: ["A) O Scrum Master ", "B) A equipe de desenvolvimento ", "C) O time de testes ", "D) O Product Owner "],
+                correct: 3
+            },
+            {
+                question: " O que é um Incremento no contexto do Scrum? ",
+                answers: ["A) O conjunto de tarefas completadas ao final de cada reunião de planejamento. ", "B) O resultado de cada Sprint, que deve ser um aumento funcional e utilizável do produto. ", "C) A quantidade de trabalho que a equipe de desenvolvimento consegue realizar em um mês. ", "D) O produto final após a conclusão do projeto. "],
+                correct: 1  
+            },
+            {
+                question: " Qual das alternativas abaixo descreve corretamente a função do Scrum Master?",
+                answers: ["A) Definir os requisitos do produto e gerir o Backlog do Produto. ", "B) Desenvolver o produto junto com a equipe de desenvolvimento. ", "C)  Facilitar as cerimônias do Scrum e garantir que a equipe siga os processos e práticas ágeis. ", "D) Estabelecer os prazos para entrega das funcionalidades."],
+                correct: 2
+            },
+            {
+                question: " Qual das cerimônias do Scrum tem como objetivo revisar o progresso feito e ajustar o planejamento de trabalho para a próxima Sprint? ",
+                answers: ["A) Sprint Planning ", "B) Daily Scrum ", "C) Sprint Retrospective ", "D)  Sprint Review "],
+                correct: 3
+            },
+            {
+                question: " O que é discutido durante a Sprint Retrospective?",
+                answers: ["A) O desempenho da equipe e melhorias para o próximo ciclo de trabalho. ", "B) A definição do próximo incremento a ser entregue.  ", "C) O progresso de todas as equipes de trabalho envolvidas no projeto.", "D) A priorização dos itens do Backlog do Produto."],
+                correct: 0
+            },
+            {
+                question: " No Scrum, qual é a função principal do Product Owner?",
+                answers: ["A) Gerenciar a equipe de desenvolvimento e garantir que o trabalho seja feito corretamente.", "B) Definir e priorizar os itens do Backlog do Produto para maximizar o valor entregue pelo time de desenvolvimento. ", "C) Monitorar o progresso do time e eliminar impedimentos. ", "D) Elaborar as estimativas de tempo para cada funcionalidade. "],
+                correct: 1
+            },
+            {
+                question: " Em uma reunião Daily Scrum, qual é o objetivo principal da equipe de desenvolvimento? ",
+                answers: ["A) Discutir o progresso do projeto e tomar decisões sobre as próximas funcionalidades a serem implementadas. ", "B) Compartilhar as lições aprendidas e discutir como melhorar a colaboração no time. ", "C) Relatar o progresso, compartilhar bloqueios e ajustar o planejamento diário.  ", "D) Revisar o Backlog do Produto e redefinir prioridades."],
+                correct: 2
+            },
+            {
+                question: " O que é o Sprint Planning no Scrum?",
+                answers: ["A) Uma reunião para planejar as atividades da equipe e definir os itens que serão trabalhados na próxima Sprint. ", "B) Uma reunião para revisar o trabalho realizado na sprint anterior. ", "C) Uma reunião para ajustar o produto de acordo com feedbacks dos stakeholders.", "D) Uma reunião para discutir os problemas encontrados no produto após a entrega."],
+                correct: 0
+            },
+            {
+                question: " Qual é a duração máxima de uma Sprint no Scrum?",
+                answers: ["A)  2 semanas ", "B) 4 semanas ", "C) 6 semanas ", "D) 1 mês "],
+                correct: 3
+            },
+            {
+                question: " Em Scrum, qual é a principal característica de um Backlog de Sprint? ",
+                answers: ["A) Contém todos os itens do Backlog do Produto priorizados pelo Product Owner. ", "B)  Contém as funcionalidades que a equipe de desenvolvimento irá entregar durante a Sprint. ", "C) É uma lista de atividades diárias a serem realizadas durante a sprint.  ", "D) Reflete apenas o trabalho da equipe de testes."],
+                correct: 1
+            },
+            {
+                question: " Em Scrum, como a equipe de desenvolvimento estima o esforço necessário para concluir os itens do Backlog do Produto?",
+                answers: ["A) Através de uma análise detalhada dos custos financeiros.", "B) Através da estimativa de tempo baseada em horas. ", "C) Através de pontos de história, que refletem a complexidade e o esforço relativo das tarefas.  ", "D) Através de uma análise de risco e impacto."],
+                correct: 2
+            },
+            {
+                question: " O que acontece se um item do Backlog do Produto não for concluído dentro de uma Sprint?",
+                answers: ["A) Ele é removido do Backlog do Produto. ", "B) Ele é adicionado à próxima Sprint, conforme a prioridade definida pelo Product Owner.", "C) Ele é alocado para outro time de desenvolvimento.", "D)Ele é reavaliado e ajustado, mas não pode ser implementado em futuras Sprints. "],
+                correct: 1
+            }
+
+
+
+
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
