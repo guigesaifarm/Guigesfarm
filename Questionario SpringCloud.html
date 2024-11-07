@@ -1,0 +1,207 @@
+﻿﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário  Spring Cloud</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário Spring Cloud</h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " O Spring Cloud oferece diversas ferramentas para o desenvolvimento de microserviços. Qual dessas ferramentas permite a comunicação entre microserviços utilizando mensagens assíncronas? ",
+                answers: ["A) Spring Cloud Config ", "B) Spring Cloud Gateway ", "C) Spring Cloud Stream ", "D) Spring Cloud Bus "],
+                correct: 2
+            },
+            {
+                question: " Em uma arquitetura de microserviços com Spring Cloud Config, qual é a principal finalidade do servidor de configuração centralizado? ",
+                answers: ["A) Realizar a persistência de dados em um banco de dados distribuído. ", "B) Centralizar a configuração das aplicações, permitindo que múltiplos microserviços consumam suas configurações a partir de um único ponto. ", "C) Roteamento de requisições entre microserviços. ", "D) Gerenciar o ciclo de vida de containers Docker. "],
+                correct: 1
+            },
+            {
+                question: " O Spring Cloud Netflix fornece diversos componentes para construção de sistemas distribuídos. Qual componente do Spring Cloud Netflix é utilizado para balanceamento de carga entre instâncias de microserviços?",
+                answers: ["A) Zuul ", "B) Eureka  ", "C) Hystrix", "D) Ribbon" ],
+                correct: 3
+            },
+            {
+                question: "  No contexto do Spring Cloud Eureka, qual é a função principal do Service Discovery?",
+                answers: ["A) Permitir que microserviços encontrem uns aos outros através de um registro centralizado de instâncias e suas localizações. ", "B) Fornecer um sistema de log centralizado para monitoramento dos microserviços. ", "C) Gerenciar as configurações compartilhadas entre os microserviços. ", "D) Implementar a comunicação síncrona entre serviços usando HTTP. "],
+                correct: 0 
+            },
+            {
+                question: " Qual é a finalidade do Spring Cloud Gateway em uma arquitetura de microserviços? ",
+                answers: ["A)Fornecer um sistema de cache compartilhado entre os microserviços. ", "B) Implementar o balanceamento de carga entre instâncias de microserviços. ", "C)  Servir como uma API Gateway, roteando as requisições para os microserviços apropriados e fornecendo funcionalidades como roteamento, filtros e segurança.  ", "D) Gerenciar o estado de todas as instâncias dos microserviços. "],
+                correct: 2
+            },
+            {
+                question: " O Spring Cloud Circuit Breaker é utilizado para evitar falhas em cascata em sistemas distribuídos. Qual das alternativas abaixo descreve corretamente o seu funcionamento? ",
+                answers: ["A)  Ele monitora a saúde de todos os microserviços e reinicia automaticamente os que falharem. ", "B) Ele interrompe as requisições para um serviço que está com problemas, permitindo que o sistema continue funcionando com outros serviços. ", "C) Ele criptografa as requisições entre microserviços para evitar ataques de segurança.  ", "D) Ele distribui as requisições entre os microserviços com base em um algoritmo de balanceamento de carga. "],
+                correct: 1
+            },
+            {
+                question: " Em uma arquitetura baseada em Spring Cloud, qual componente é usado para implementar tolerância a falhas e controle de circuitos?",
+                answers: ["A) Eureka", "B) Ribbon ", "C)Config Server ", "D) Hystrix "],
+                correct: 3
+            },
+            {
+                question: " O Spring Cloud Bus é utilizado para propagar eventos e mudanças de configuração entre os microserviços. Como ele pode ser configurado? ",
+                answers: ["A) Através do uso de um tópico Kafka ou RabbitMQ para disseminação de eventos e configurações. ", "B) Usando um banco de dados compartilhado para propagar eventos. ", "C) Usando apenas WebSockets para comunicação entre os microserviços. ", "D) Por meio de requisições HTTP para cada serviço sempre que ocorrer uma mudança."],
+                correct: 0
+            },
+            {
+                question: " No Spring Cloud, qual é a função principal do Spring Cloud Sleuth? ",
+                answers: ["A) Realizar balanceamento de carga entre os microserviços.", "B) Gerenciar o ciclo de vida de containers Docker em microserviços. ", "C) Implementar rastreamento distribuído, coletando informações sobre a execução de requisições e propagando o contexto de rastreamento entre os microserviços.  ", "D)  Configurar as propriedades do Spring Cloud Config. "],
+                correct: 2
+            },
+            {
+                question: " Qual é a principal funcionalidade do Spring Cloud Stream? ",
+                answers: ["A) Facilitar a comunicação síncrona entre microserviços. ", "B) Implementar sistemas de mensageria assíncrona para a troca de eventos entre microserviços, utilizando bindings para sistemas de mensageria como Kafka ou RabbitMQ. ", "C) Gerenciar a configuração centralizada das aplicações.", "D) Roteamento dinâmico de requisições HTTP."],
+                correct: 1
+            }
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
