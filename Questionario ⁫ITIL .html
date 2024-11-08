@@ -1,0 +1,231 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário Gerenciamento Serviços ITIL </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário Gerenciamento Serviços ITIL </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " O que significa a sigla ITIL?",
+                answers: ["A) Information Technology Infrastructure Library ", "B) Information Technology Internet Library ", "C) Information Tools for Internet Logistics ", "D) International Technology Infrastructure Library "],
+                correct: 0
+            },
+            {
+                question: " Qual é o objetivo principal do ITIL? ",
+                answers: ["A) Definir procedimentos de segurança da informação.  ", "B) Gerenciar a infraestrutura de redes de TI. ", "C) Fornecer um conjunto de práticas para melhorar a entrega de serviços de TI.  ", "D) Desenvolver novos aplicativos para empresas. "],
+                correct: 2
+            },
+            {
+                question: " Qual é a principal vantagem da adoção do ITIL por uma organização?",
+                answers: ["A) Redução de custos operacionais. ", "B) Melhoria na qualidade e na consistência dos serviços de TI. ", "C) Eliminação da necessidade de profissionais de TI. ", "D) Aumento da quantidade de processos e serviços oferecidos. "],
+                correct: 1
+            },
+            {
+                question: " Qual é a abordagem do ITIL em relação à gestão de serviços? ",
+                answers: ["A) Foco na entrega de serviços rápidos. ", "B) Foco em processos e melhores práticas para gerenciar serviços ao longo de todo o seu ciclo de vida. ", "C) Foco na eliminação de processos de TI desnecessários. ", "D) Foco na automação completa de todos os processos. "],
+                correct: 1
+            },
+            {
+                question: " Qual das alternativas abaixo NÃO faz parte do ciclo de vida do serviço segundo o ITIL?  ",
+                answers: ["A) Estratégia de Serviço ", "B) Design de Serviço ", "C) Operação de Serviço ", "D) Desenvolvimento de Serviço "],
+                correct: 3
+            },
+            {
+                question: " Em qual fase do ciclo de vida do serviço o gerenciamento de mudanças é mais relevante? ",
+                answers: ["A) Estratégia de Serviço ", "B) Design de Serviço ", "C) Transição de Serviço ", "D) Operação de Serviço "],
+                correct: 2
+            },
+            {
+                question: " No ITIL, o que é considerado um _serviço_? ",
+                answers: ["A) Apenas sistemas de TI. ", "B) Um produto ou recurso oferecido por uma organização para seus usuários. ", "C) Uma infraestrutura tecnológica.", "D) Apenas os processos internos de TI. "],
+                correct: 1
+            },
+            {
+                question: " Qual processo do ITIL tem como objetivo garantir que os serviços sejam entregues com qualidade e de acordo com os requisitos acordados? ",
+                answers: ["A) Gerenciamento de Problemas ", "B) Gerenciamento de Incidentes ", "C) Gerenciamento de Nível de Serviço  ", "D) Gerenciamento de Mudanças "],
+                correct: 2
+            },
+            {
+                question: " Qual é a principal função do Gerenciamento de Incidentes no ITIL? ",
+                answers: ["A) Restaurar o serviço normal o mais rápido possível após uma interrupção. ", "B) Garantir que os problemas sejam identificados e solucionados rapidamente. ", "C) Reduzir os custos operacionais.  ", "D) Identificar mudanças necessárias no serviço. "],
+                correct: 0
+            },
+            {
+                question: " No ITIL, qual é o objetivo do Gerenciamento de Problemas? ",
+                answers: ["A) Resolver todos os incidentes rapidamente. ", "B) Identificar a causa raiz dos incidentes e minimizar a probabilidade de ocorrência futura.  ", "C) Propor novos serviços aos clientes.", "D) Garantir que os níveis de serviço sejam atendidos. "],
+                correct: 1
+            },
+            {
+                question: " Qual dos seguintes processos faz parte do estágio de Transição de Serviço? ",
+                answers: ["A) Gerenciamento de Configuração ", "B) Gerenciamento de Nível de Serviço ", "C) Gerenciamento de Incidentes ", "D) Gerenciamento de Mudanças  "],
+                correct: 3
+            },
+            {
+                question: " O que significa a prática de _Melhoria Contínua de Serviço_ no ITIL? ",
+                answers: ["A) Garantir a execução sem falhas de todos os serviços. ", "B) Focar na introdução de novos serviços ao longo do tempo. ", "C) Monitorar e melhorar continuamente os serviços de TI e os processos relacionados. ", "D) Identificar todas as falhas de hardware e software."],
+                correct: 2
+            },
+            {
+                question: " Em ITIL, qual o conceito de _Service Portfolio Management_? ",
+                answers: ["A) Gerenciamento de todos os serviços internos da TI.", "B) Gerenciamento do conjunto de serviços oferecidos aos clientes. ", "C) Gerenciamento da infraestrutura de TI. ", "D) Gerenciamento de incidentes e problemas. "],
+                correct: 1
+            },
+            {
+                question: " No ITIL, o que é uma _Configuration Management Database (CMDB)_? ",
+                answers: ["A) Banco de dados centralizado que armazena informações sobre todos os itens de configuração (CI) e suas relações. ", "B) Banco de dados usado para armazenar todas as informações relacionadas a usuários finais. ", "C) Banco de dados para gerenciar incidentes e problemas.", "D) Banco de dados para gerenciar os contratos de nível de serviço."],
+                correct: 0
+            },
+            {
+                question: " Qual é o papel do Gerenciamento de Capacidade no ITIL? ",
+                answers: ["A) Controlar o orçamento de TI.  ", "B) Garantir que os serviços de TI sejam fornecidos dentro das necessidades de desempenho e capacidade. ", "C) Garantir que todos os serviços de TI sejam automatizados.  ", "D) Gerenciar a quantidade de funcionários necessários para os serviços de TI. "],
+                correct: 1
+            }
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
