@@ -1,0 +1,248 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário Problemas Estruturais das Frases </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%;
+            padding: 10px;
+            background-color: #98fb98;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #question-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px; /* Aumenta o tamanho das respostas */
+            margin: 1px 0; /* Espaçamento entre as respostas */
+            display: block; /* Coloca cada resposta em uma linha separada */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue;
+            font-family: 'Papyrus', cursive;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="C:\Users\Elainia\Downloads\viniedu.jpg" alt="Logo do site" width="150" height="150">
+       <h1 style="color: yellow;"> Questionário Problemas Estruturais das Frases </h1>
+    </div>
+
+    <div class="container">
+        <div id="question-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Questão</button>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Refazer Questionário</button>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                question: " Assinale a alternativa em que o verbo não concorda corretamente com o sujeito. ",
+                answers: ["A) As crianças brincam na rua. ", "B) A menina leu o livro ontem.  ", "C) Os professores ensina nas escolas.  ", "D) As casas são grandes e bonitas."],
+                correct: 2
+            },
+            {
+                question: " Assinale a alternativa em que há um erro de concordância nominal. ",
+                answers: ["A) Os alunos estudam para as provas difíceis. ", "B) Ela tem uma casa bonita. ", "C) As escolas públicas oferecem muitos benefícios aos estudantes. ", "D) A camisa está suja de tinta. "],
+                correct: 3
+            },
+            {
+                question: " Assinale a alternativa que apresenta ambiguidade. ",
+                answers: ["A) O estudante viu a professora no corredor.  ", "B) O médico que atendeu a paciente foi ótimo.  ", "C) Eu vi o João com a câmera. ", "D) Eles estavam felizes com a notícia. "],
+                correct: 2
+            },
+            {
+                question: " Assinale a alternativa em que há pleonasmo. ",
+                answers: ["A) Ela entrou para dentro da casa. ", "B) Eu vou sair agora. ", "C) Ele fala muito bem inglês. ", "D) Eles estavam muito felizes. "],
+                correct: 0
+            },
+            {
+                question: " Assinale a alternativa em que a frase está fragmentada. ",
+                answers: ["A) Ela gosta de estudar muito. ", "B)  Quando ela chegou.", "C) Ele saiu correndo. ", "D) Eu tenho uma dúvida sobre isso. "],
+                correct: 1
+            },
+            {
+                question: " Assinale a alternativa que apresenta cacofonia. ",
+                answers: ["A) Ela comprou uma casa verde ", "B) Ele está na escola agora. ", "C) A menina estudou para a prova de matemática. ", "D) O peixe estava morto, deitado no fundo do lago. "],
+                correct: 3
+            },
+            {
+                question: " Assinale a alternativa que apresenta erro no uso da preposição.  ",
+                answers: ["A) Ela vai para a escola de manhã. ", "B) Ele chegou a tempo para o evento. ", "C) Ele saiu da escola e foi na casa do amigo. ", "D) O cachorro está dentro da casa. "],
+                correct: 2
+            },
+            {
+                question: " Assinale a alternativa que apresenta erro de pronome.  ",
+                answers: ["A) Ele se desculpou pela atitude. ", "B) Ela se foi para casa. ", "C) Eles se encontraram no parque. ", "D) Os alunos se dedicam aos estudos. "],
+                correct: 1
+            },
+            {
+                question: " Assinale a alternativa que apresenta erro de regência verbal. ",
+                answers: ["A) Ele assiste televisão todos os dias.  ", "B) Ela gosta de nadar. ", "C) Eles se lembraram da reunião. ", "D) Eu fui ao mercado. "],
+                correct: 0
+            },
+            {
+                question: " Assinale a alternativa em que há um erro de colocação pronominal. ",
+                answers: ["A) Ele me pediu para ir ao médico. ", "B) Ela se afastou do trabalho por um tempo. ", "C) O professor explicou a matéria para nós. ", "D) Ela explicava tudo para ele. "],
+                correct: 3
+            },
+            {
+                question: " Assinale a alternativa com erro de uso de verbo. ",
+                answers: ["A) Ela conhece todos os alunos.  ", "B) Ele necessitou dos documentos para viajar. ", "C) Eles resolveram o problema rapidamente. ", "D) Nós devemos ir ao cinema amanhã.  "],
+                correct: 1
+            },
+            {
+                question: " Assinale a alternativa com erro de comparação.  ",
+                answers: ["A) Ele é mais inteligente do que eu. ", "B) A casa é maior que a minha.", "C) Ele corre mais que eu. ", "D) Ela corre tão rápido quanto ele."],
+                correct: 2
+            },
+            {
+                question: " Assinale a alternativa em que há erro de anacoluto.  ",
+                answers: ["A) Se eu estudar, passarei no concurso. ", "B) Como ela gosta de ler, sempre está com um livro. ", "C) Ele, se estivesse aqui, nos ajudaria. ", "D) Apesar de estar cansado, ele foi trabalhar. "],
+                correct: 2
+            },
+            {
+                question: " Assinale a alternativa que apresenta erro de concordância pronominal. ",
+                answers: ["A) Ela se tornou uma pessoa melhor.", "B) Eles se sentem responsáveis pelo erro. ", "C) Eles se desentenderam durante a reunião. ", "D) Eles se esqueceram de trazer os documentos."],
+                correct: 0
+            },
+            {
+                question: " Assinale a alternativa com erro de regência nominal. ",
+                answers: ["A) Ele tem medo de altura. ", "B) Ela tem esperança de que tudo dê certo. ", "C) Eu tenho interesse por aprender mais. ", "D) Eles têm gosto por estudar."],
+                correct: 3
+            },
+            {
+                question: " Assinale a alternativa em que o uso do advérbio é inadequado. ",
+                answers: ["A) Ela fez o trabalho rapidamente. ", "B) Eles vão ao cinema frequentemente. ", "C) Ela foi feliz ontem. ", "D) Ele falou calmamente. "],
+                correct: 2
+            },
+            {
+                question: " Assinale a alternativa em que ocorre erro de redundância. ",
+                answers: ["A) Eu vi com meus próprios olhos.  ", "B) Ela fala muito bem espanhol.  ", "C) Eu estou indo embora agora. ", "D) Ele fez o trabalho sozinho.  "],
+                correct: 0
+            },
+            {
+                question: " Assinale a alternativa que apresenta erro de ortografia.  ",
+                answers: ["A) O livro está na estante. ", "B) Eu estive lá a pouco. ", "C) Ele foi ao médico ontem. ", "D) Eles são ótimos amigos. "],
+                correct: 1
+            }
+
+
+
+            // Adicione mais perguntas conforme necessário
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionData = questions[currentQuestion];
+            questionContainer.innerHTML = `
+                <h2>${questionData.question}</h2>
+                ${questionData.answers.map((answer, index) => `
+                    <label>
+                        <input type="radio" name="answer" value="${index}">
+                        ${answer}
+                    </label><br>
+                `).join("")}
+            `;
+        }
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                userAnswers.push(parseInt(selectedAnswer.value));
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert("Por favor, selecione uma resposta.");
+            }
+        }
+
+        function showResults() {
+            let score = 0;
+            const questionContainer = document.getElementById("question-container");
+            let resultHtml = "<h2>Resultado Final</h2><table><tr><th>Questão</th><th>Resposta Correta</th><th>Sua Resposta</th></tr>";
+
+            questions.forEach((q, index) => {
+                const isCorrect = userAnswers[index] === q.correct;
+                if (isCorrect) score++;
+                resultHtml += `
+                    <tr>
+                        <td>${q.question}</td>
+                        <td>${q.answers[q.correct]}</td>
+                        <td>${q.answers[userAnswers[index]] || "Não respondida"}</td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr> <!-- Linha separadora entre respostas -->
+                `;
+            });
+
+            resultHtml += `</table><p>Total de acertos: ${score}/${questions.length}</p>`;
+            questionContainer.innerHTML = resultHtml;
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("restart-button").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            userAnswers = [];
+            currentQuestion = 0;
+            shuffleQuestions();
+            showQuestion();
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("restart-button").style.display = "none";
+        }
+
+        shuffleQuestions();
+        showQuestion();
+    </script>
+</body>
+</html>
