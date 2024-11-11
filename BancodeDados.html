@@ -121,21 +121,49 @@
                 correct: 1
             },
             {
-                question: "  ",
-                answers: ["A)  ", "B) ", "C) ", " D)", "E)  "],
+                question: " FGV - 2024 - Técnico de Nível Superior (TJ MS)/Analista de Sistemas Computacionais/Analista de Banco de Dados      João está encarregado de projetar um banco de dados PostgreSQL para gerenciar informações de cursos universitários, segundo o modelo lógico simplificado:     Para assegurar a unicidade dos dados, João deverá garantir que cada _Aluno_   possa realizar a _Matricula_ em uma _Disciplina_ apenas uma vez.    Para tanto, ele deverá evitar a duplicidade de matrículas e criar a restrição de  integridade: ",
+                answers: ["A) chave única em Matricula para o atributo (IDMatricula) ", "B)  chave primária em Matricula para o atributo (IDMatricula)", "C) chave única em Matricula para os atributos (IDAluno, IDDisciplina) ", " D) chave estrangeira em Matricula para os atributos (IDAluno, IDDisciplina)", "E) chave primária em Matrícula para os atributos (IDMatricula, IDAluno,  IDDisciplina) "],
+                correct: 2
+            },
+            {
+                question: " FGV - 2023 - Analista (DPE RS)/Apoio Especializado (TI)/Banco de Dados A primeira forma normal, utilizada no processo de normalização de um banco de dados relacional, estabelece que: ",
+                answers: ["A) não haja linhas duplicadas numa tabela;  ", "B) não haja colunas idênticas numa tabela; ", "C) em nenhuma das linhas de uma tabela haja valores múltiplos armazenados na mesma coluna;  ", " D) em qualquer tabela deve haver uma coluna que possa ser declarada como chave primária;", "E) não haja transitividade de dependências funcionais entre as colunas. "],
+                correct: 2
+            },
+            {
+                question: " FGV - 2024 - Auditor Tributário Municipal (Pref SJC)/Gestão Tributária  Com relação à linguagem SQL e seus operadores, avalie se as afirmativas a seguir são verdadeiras (V) ou falsas (F).  ( ) O operador LIKE é usado em uma cláusula WHERE para procurar um  padrão especificado em uma coluna. Existem dois curingas frequentemente usados em conjunto com este operador; o sinal de % representa zero, um ou vários caracteres, já o sinal de - representa um único caractere.     -    ( ) O operador IN permite especificar vários valores em uma cláusula WHERE. Ele é uma abreviação para múltiplas condições OR e AND sequenciais. Ao usar a palavra-chave NOT na frente do operador IN, haverá o retorno todos os registros que não são nenhum dos valores de uma lista.     -    ( ) A palavra-chave RIGHT JOIN retorna todos os registros da tabela à direita  em uma junção e os registros correspondentes da tabela à esquerda em uma junção. O resultado é zero registro do lado esquerdo, se não houver  correspondência.      -      As afirmativas são, respectivamente,",
+                answers: ["A) F – V – V. ", "B) F – F – V.  ", "C) V – V – F. ", " D) V – F – V. ", "E) F – F – F.  "],
+                correct: 0
+            },
+            {
+                question: " FGV - 2024 - Analista Judiciário (TJ AP)/Apoio Especializado/Tecnologia da Informação Banco de Dados A tabela “Tbl_Financeiro” armazena milhares de registros de transações financeiras. Para lidar com consultas que envolvam agregações e cálculos complexos, o administrador de banco de dados poderá adotar a seguinte estratégia de otimização de consultas: ",
+                answers: ["A) aplicar “commits” aninhados;  ", "B) utilizar índices bitmap para colunas que envolvam dados calculados;  ", "C) reduzir a redundância dos dados aplicando técnicas de normalização;  ", " D) implementar particionamento horizontal para dividir a tabela em segmentos menores; ", "E) armazenar previamente os resultados de consultas frequentes utilizando visões materializadas. "],
+                correct: 4
+            },
+            {
+                question: " FGV - 2024 - Analista Judiciário (TJ AP)/Apoio Especializado/Tecnologia da Informação Banco de Dados Observe a estrutura da tabela “Cliente” abaixo: CREATE TABLE cliente ( cliente_ID NUMBER(12) PRIMARY KEY, cidade VARCHAR2(50) NOT NULL, limite_credito NUMBER(13,2) DEFAULT 0 ); Com o objetivo de gerar um relatório que mostre o limite de crédito médio para clientes em “Sao Paulo” e “Belo Horizonte”, a consulta a ser executada é:  ",
+                answers: ["A) A) SELECT cidade, AVG(NVL(limite_credito,0)) FROM cliente WHERE cidade IN ('SAO PAULO','BELO HORIZONTE');  ", "B) SELECT cidade, AVG(limite_credito) FROM cliente WHERE cidade IN ('SAO PAULO','BELO HORIZONTE') GROUP BY cidade;  ", "C) SELECT cidade, AVG(limite_credito) FROM cliente WHERE cidade IN ('SAO PAULO','BELO HORIZONTE') GROUP BY cliente_ID;    ", " D)  SELECT cidade, AVG(limite_credito) FROM cliente WHERE cidade IN ('SAO PAULO','BELO HORIZONTE') GROUP BY cidade, limite_credito;", "E) SELECT cidade, AVG(limite_credito) FROM cliente WHERE cidade IN ('SAO PAULO','BELO HORIZONTE') GROUP BY limite_credito, cidade;  "],
                 correct: 1
             },
             {
-                question: "  ",
-                answers: ["A)  ", "B) ", "C) ", " D)", "E)  "],
-                correct: 1
+                question: " FGV - 2024 - Analista Legislativo (CM Fortaleza)/Analista de Informática Em um banco de dados relacional, considere a tabela a seguir, que possui informações sobre diferentes tipos de produtos, incluindo eletrônicos, roupas, eletrodomésticos, entre outros:      -    Produto (ID, Nome, Tipo, Preço, Fabricante)    -   Assinale a alternativa que corresponde à consulta que retornará o nome e o preço dos produtos que possuem a palavra _Smart_ em seu tipo, somente do fabricante _Banana Inc._ e preço abaixo de R$2000,00. ",
+                answers: ["A) SELECT Nome FROM Produto  WHERE Fabricante = 'Banana Inc.' AND Nome = 'Smart' AND Preço < 2000;  ", "B)  SELECT Nome, Preço FROM Produto WHERE Tipo = 'Smart' AND Fabricante = 'Banana Inc.' AND Preço < 2000;  ", "C) SELECT Nome, Preço FROM Produto WHERE Tipo LIKE '%Smart%' AND Fabricante = 'Banana Inc.'  AND Preço < 2000; ", " D) SELECT Fabricante, Preço FROM Produto WHERE Fabricante = 'Banana Inc.' AND Tipo = 'Smart' AND Preço < 2000;", "E) SELECT Tipo, Preço FROM Produto WHERE Tipo LIKE '%Smart%' AND Fabricante = 'Banana Inc.' AND Preço > 2000; "],
+                correct: 2
             },
+            {
+                question: " FGV - 2024 - Auditor Tributário Municipal (Pref SJC)/Gestão Tributária Com relação ao Big Data e suas tecnologias, assinale V para a afirmativa verdadeira e F para a falsa.     -    ( ) Existem diversas tecnologias para processamento e análise de Big Data, mas a maioria possui algumas características comuns. Ou seja, adotam técnicas de escalonamento e processamento paralelo; utilizam dados não relacionais, e aplicam análises avançadas e visualização de dados.   -     relacionais, e aplicam análises avançadas e visualização de dados. ( ) Existem três tecnologias de Big Data que se destacam: MapReduce,  Hadoop e NoSQL. O Hadoop é uma técnica popularizada pelo Google que distribui o processamento de dados em grandes arquivos de dados multiestruturados em um grande cluster que pode ser alcançado dividindo o  processamento em pequenas unidades de trabalho que podem ser     -    ( ) O MapReduce é um modelo de programação e uma implementação associada para processar e gerar grandes conjuntos de dados. Os programas escritos neste estilo funcional são automaticamente paralelizados e executados em um grande cluster de máquinas de alto desempenho. O modelo que programadores sem qualquer experiência com sistemas paralelos e distribuídos utilizem facilmente os recursos.     -       As afirmativas são, respectivamente,",
+                answers: ["A) F – V – F. ", "B) F – F – V. ", "C) F – V – V. ", " D) V – F – V.", "E) V – V – F.  "],
+                correct: 3
+            },
+            {
+                question: " FGV - 2024 - Analista em Gestão Municipal (Pref SJC)/Tecnologia da Informação O Big Data é um conceito recente, sendo normalmente definido por um conjunto de termos, definidos como 5 “V”s. Relacione os termos a seguir com suas respectivas representações.     -    1. Volume.  2. Variedade.  3. Veracidade.   4. Velocidade.     -    ( ) É um termo cunhado pela IBM que está sendo usado como o quarto “V” para descrever Big Data. Refere-se à conformidade com os fatos: precisão, qualidade ou confiabilidade dos dados. Ferramentas e técnicas são frequentemente usadas para lidar com Big Data, transformando os dados em insights de qualidade e confiáveis.    -     ( ) Significa a celeridade com que os dados estão sendo produzidos e com que presteza os dados devem ser processados (ou seja, capturados, armazenados e analisados) para atender a necessidade ou demanda. Talvez seja a característica mais negligenciada do Big Data.   -    ( ) É a característica mais comum do Big Data. Muitos fatores contribuíram ao aumento exponencial na quantidade de dados, como dados baseados em transações armazenados ao longo dos anos, os dados das mídias sociais, aumentando a quantidade de dados de sensores, dados RFID e GPS gerados automaticamente e assim por diante.    -   ( ) Atualmente os dados hoje possuem diversos e tipos e formatos, desde bancos de dados relacionais aos XML e dados capturados por sensores, vídeo, áudio. Segundo estimativas, 80 a 85 por cento de todos os dados das organizações estão em algum tipo de formato não estruturado ou semiestruturado.   - A relação correta, na ordem dada, é",
+                answers: ["A) 4 – 2 – 3 – 1.  ", "B) 3 – 1 – 4 – 2.  ", "C) 4 – 3 – 2 – 1. ", " D) 3 – 4 – 1 – 2. ", "E)  2 – 3 – 1 – 4."],
+                correct: 2
+            }
 
-           {
-                question: "  ",
-                answers: ["A)  ", "B) ", "C) ", " D)", "E)  "],
-                correct: 1
-            },
+
+
+
 
 
 
