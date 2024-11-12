@@ -1,0 +1,726 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.7.2 (Windows)"/>
+	<meta name="created" content="2024-11-12T13:03:58.404000000"/>
+	<meta name="changed" content="2024-11-12T13:26:36.704000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h4.cjk { font-family: "NSimSun"; font-size: 12pt; font-weight: bold }
+		h4.ctl { font-family: "Arial"; font-size: 12pt; font-weight: bold }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		strong { font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+		code.western { font-family: "Liberation Mono", monospace }
+		code.cjk { font-family: "NSimSun", monospace }
+		code.ctl { font-family: "Liberation Mono", monospace }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p>Aqui
+est&atilde;o 10 quest&otilde;es sobre <strong>Arquitetura de
+Software</strong>, <strong>Interoperabilidade de Sistemas</strong> e
+<strong>Arquitetura Orientada a Servi&ccedil;os (SOA)</strong> no
+estilo da <strong>banca FGV</strong>, com explica&ccedil;&otilde;es
+detalhadas para cada uma delas.</p>
+<hr/>
+
+<h3 class="western"><strong>1. (FGV - 2022)</strong></h3>
+<p>Em uma <strong>Arquitetura Orientada a Servi&ccedil;os (SOA)</strong>,
+qual dos seguintes componentes &eacute; respons&aacute;vel por expor
+os servi&ccedil;os para os consumidores de forma padronizada?</p>
+<p>a) Service Bus<br/>
+b) Service Registry<br/>
+c) Service
+Consumer<br/>
+d) Service Provider</p>
+<p><strong>Resposta: b) Service Registry</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>Service
+Registry</strong> &eacute; um componente fundamental em uma
+arquitetura SOA. Ele atua como um reposit&oacute;rio onde os servi&ccedil;os
+s&atilde;o registrados, e os consumidores podem procurar e se
+conectar a eles de maneira padronizada. O <strong>Service Bus</strong>
+&eacute; usado para o roteamento e integra&ccedil;&atilde;o de
+mensagens entre os servi&ccedil;os, enquanto o <strong>Service
+Consumer</strong> &eacute; o cliente que utiliza os servi&ccedil;os,
+e o <strong>Service Provider</strong> &eacute; o servi&ccedil;o que
+oferece funcionalidades.</p>
+<hr/>
+
+<h3 class="western"><strong>2. (FGV - 2021)</strong></h3>
+<p>Qual &eacute; o principal benef&iacute;cio da <strong>interoperabilidade
+de sistemas</strong> em uma arquitetura de software?</p>
+<p>a) Redu&ccedil;&atilde;o de custos com hardware<br/>
+b) Facilidade
+de integra&ccedil;&atilde;o entre sistemas heterog&ecirc;neos<br/>
+c)
+Maior performance de processamento<br/>
+d) Aumento da complexidade do
+sistema</p>
+<p><strong>Resposta: b) Facilidade de integra&ccedil;&atilde;o entre
+sistemas heterog&ecirc;neos</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A
+<strong>interoperabilidade de sistemas</strong> permite que sistemas
+diferentes, que podem ser baseados em tecnologias diversas, se
+comuniquem e integrem de forma eficiente. Isso &eacute; especialmente
+importante em arquiteturas de software complexas e em empresas que
+utilizam diversos sistemas. A <strong>interoperabilidade</strong>
+visa resolver a comunica&ccedil;&atilde;o entre plataformas
+heterog&ecirc;neas, facilitando a integra&ccedil;&atilde;o.</p>
+<hr/>
+
+<h3 class="western"><strong>3. (FGV - 2020)</strong></h3>
+<p>Em uma <strong>Arquitetura Orientada a Servi&ccedil;os (SOA)</strong>,
+qual padr&atilde;o &eacute; mais utilizado para garantir a
+comunica&ccedil;&atilde;o entre sistemas de diferentes plataformas?</p>
+<p>a) HTTP<br/>
+b) SOAP<br/>
+c) REST<br/>
+d) SMTP</p>
+<p><strong>Resposta: b) SOAP</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>SOAP</strong>
+(Simple Object Access Protocol) &eacute; um protocolo de comunica&ccedil;&atilde;o
+amplamente utilizado em <strong>SOA</strong> para garantir a
+interoperabilidade entre diferentes sistemas. Ele &eacute; um
+protocolo baseado em XML e permite a troca de informa&ccedil;&otilde;es
+de maneira padronizada e segura entre sistemas heterog&ecirc;neos. O
+<strong>REST</strong> tamb&eacute;m &eacute; utilizado em servi&ccedil;os,
+mas ele &eacute; mais simples e menos formal em compara&ccedil;&atilde;o
+com o <strong>SOAP</strong>.</p>
+<hr/>
+
+<h3 class="western"><strong>4. (FGV - 2019)</strong></h3>
+<p>Em uma arquitetura de software, qual &eacute; a principal vantagem
+do uso de uma <strong>Arquitetura Orientada a Servi&ccedil;os (SOA)</strong>?</p>
+<p>a) Facilita a escalabilidade horizontal de sistemas<br/>
+b)
+Aumenta a depend&ecirc;ncia entre os m&oacute;dulos do sistema<br/>
+c)
+Permite a reutiliza&ccedil;&atilde;o de servi&ccedil;os e
+funcionalidades de forma modular<br/>
+d) Reduz a necessidade de
+integra&ccedil;&atilde;o entre sistemas legados</p>
+<p><strong>Resposta: c) Permite a reutiliza&ccedil;&atilde;o de
+servi&ccedil;os e funcionalidades de forma modular</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Uma <strong>SOA</strong>
+permite que os sistemas sejam divididos em servi&ccedil;os
+independentes que podem ser reutilizados em diferentes partes da
+aplica&ccedil;&atilde;o ou at&eacute; em diferentes sistemas. Essa
+modularidade facilita a integra&ccedil;&atilde;o e manuten&ccedil;&atilde;o
+do sistema, al&eacute;m de permitir uma melhor escalabilidade e
+flexibilidade. A reutiliza&ccedil;&atilde;o de servi&ccedil;os &eacute;
+uma das grandes vantagens dessa arquitetura.</p>
+<hr/>
+
+<h3 class="western"><strong>5. (FGV - 2022)</strong></h3>
+<p>Qual das alternativas abaixo descreve corretamente o conceito de
+<strong>Interoperabilidade</strong> no contexto de sistemas
+distribu&iacute;dos?</p>
+<p>a) A capacidade de um sistema funcionar com m&uacute;ltiplas
+vers&otilde;es de sistemas operacionais.<br/>
+b) A capacidade de um
+sistema de acessar dados de outro sistema sem nenhuma depend&ecirc;ncia
+de plataforma.<br/>
+c) A capacidade de um sistema operar
+independentemente de uma rede de comunica&ccedil;&atilde;o.<br/>
+d) A
+capacidade de um sistema ter m&uacute;ltiplos tipos de banco de dados
+integrados.</p>
+<p><strong>Resposta: b) A capacidade de um sistema de acessar dados
+de outro sistema sem nenhuma depend&ecirc;ncia de plataforma.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A
+<strong>interoperabilidade</strong> se refere &agrave; capacidade de
+diferentes sistemas ou componentes de software, frequentemente
+baseados em tecnologias ou plataformas distintas, comunicarem-se e
+trabalharem juntos sem problemas. Isso pode incluir a troca de dados
+e a execu&ccedil;&atilde;o de processos entre sistemas sem que seja
+necess&aacute;rio que todos os sistemas compartilhem a mesma
+infraestrutura ou plataforma.</p>
+<hr/>
+
+<h3 class="western"><strong>6. (FGV - 2021)</strong></h3>
+<p>Na arquitetura de software orientada a servi&ccedil;os (SOA), qual
+&eacute; o papel de um <strong>Service Orchestrator</strong>?</p>
+<p>a) Ele monitora a sa&uacute;de do sistema.<br/>
+b) Ele controla a
+execu&ccedil;&atilde;o dos servi&ccedil;os em sequ&ecirc;ncia ou
+paralelamente, conforme a l&oacute;gica de neg&oacute;cios.<br/>
+c)
+Ele garante a seguran&ccedil;a dos dados transmitidos.<br/>
+d) Ele
+armazena os logs de execu&ccedil;&atilde;o dos servi&ccedil;os.</p>
+<p><strong>Resposta: b) Ele controla a execu&ccedil;&atilde;o dos
+servi&ccedil;os em sequ&ecirc;ncia ou paralelamente, conforme a
+l&oacute;gica de neg&oacute;cios.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>Service
+Orchestrator</strong> &eacute; respons&aacute;vel por orquestrar a
+execu&ccedil;&atilde;o dos servi&ccedil;os de acordo com a l&oacute;gica
+de neg&oacute;cios definida. Ele garante que os servi&ccedil;os sejam
+chamados na ordem certa e com os dados corretos. Ele pode coordenar a
+execu&ccedil;&atilde;o de m&uacute;ltiplos servi&ccedil;os em
+sequ&ecirc;ncia ou em paralelo, conforme necess&aacute;rio pela
+aplica&ccedil;&atilde;o.</p>
+<hr/>
+
+<h3 class="western"><strong>7. (FGV - 2020)</strong></h3>
+<p>Qual das alternativas abaixo descreve corretamente a defini&ccedil;&atilde;o
+de <strong>Arquitetura Orientada a Servi&ccedil;os (SOA)</strong>?</p>
+<p>a) Arquitetura que visa a cria&ccedil;&atilde;o de um banco de
+dados centralizado para todas as aplica&ccedil;&otilde;es.<br/>
+b)
+Arquitetura que organiza os componentes de software em m&oacute;dulos
+independentes que se comunicam atrav&eacute;s de interfaces bem
+definidas.<br/>
+c) Arquitetura que depende de um &uacute;nico
+servidor para fornecer todos os servi&ccedil;os a um grande n&uacute;mero
+de clientes.<br/>
+d) Arquitetura que usa exclusivamente servi&ccedil;os
+web para comunica&ccedil;&atilde;o entre sistemas.</p>
+<p><strong>Resposta: b) Arquitetura que organiza os componentes de
+software em m&oacute;dulos independentes que se comunicam atrav&eacute;s
+de interfaces bem definidas.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>SOA</strong>
+&eacute; uma arquitetura de software que organiza os componentes de
+software em <strong>servi&ccedil;os independentes</strong> que se
+comunicam por meio de interfaces bem definidas, geralmente usando
+protocolos como <strong>SOAP</strong> ou <strong>REST</strong>. Essa
+modularidade facilita a integra&ccedil;&atilde;o, escalabilidade e
+reutiliza&ccedil;&atilde;o de componentes.</p>
+<hr/>
+
+<h3 class="western"><strong>8. (FGV - 2019)</strong></h3>
+<p>O que caracteriza um <strong>servi&ccedil;o</strong> dentro de uma
+<strong>arquitetura orientada a servi&ccedil;os (SOA)</strong>?</p>
+<p>a) Um servi&ccedil;o &eacute; uma aplica&ccedil;&atilde;o aut&ocirc;noma
+que pode ser executada independentemente de outros sistemas.<br/>
+b)
+Um servi&ccedil;o &eacute; um componente de software que oferece
+funcionalidades espec&iacute;ficas e &eacute; acess&iacute;vel por
+meio de interfaces bem definidas.<br/>
+c) Um servi&ccedil;o &eacute;
+um m&oacute;dulo que cont&eacute;m apenas dados e informa&ccedil;&otilde;es,
+sem l&oacute;gica de processamento.<br/>
+d) Um servi&ccedil;o &eacute;
+um conjunto de regras de neg&oacute;cios que podem ser aplicadas
+diretamente aos dados sem a necessidade de um servidor.</p>
+<p><strong>Resposta: b) Um servi&ccedil;o &eacute; um componente de
+software que oferece funcionalidades espec&iacute;ficas e &eacute;
+acess&iacute;vel por meio de interfaces bem definidas.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Em uma <strong>SOA</strong>,
+um <strong>servi&ccedil;o</strong> &eacute; um componente de software
+que executa funcionalidades espec&iacute;ficas e que &eacute;
+<strong>acess&iacute;vel</strong> por outros servi&ccedil;os ou
+sistemas por meio de <strong>interfaces bem definidas</strong>. Essas
+interfaces permitem que os servi&ccedil;os se comuniquem e interajam
+de forma independente.</p>
+<hr/>
+
+<h3 class="western"><strong>9. (FGV - 2021)</strong></h3>
+<p>Qual das alternativas a seguir &eacute; um exemplo de <strong>integra&ccedil;&atilde;o
+de sistemas</strong> baseada em <strong>arquitetura orientada a
+servi&ccedil;os (SOA)</strong>?</p>
+<p>a) Uma aplica&ccedil;&atilde;o de cliente que acessa um banco de
+dados local sem comunica&ccedil;&atilde;o com outros sistemas.<br/>
+b)
+Um sistema de gest&atilde;o de recursos humanos que se conecta a um
+sistema de folha de pagamento atrav&eacute;s de uma API REST.<br/>
+c)
+Um servidor de e-mail que envia mensagens sem conex&atilde;o com a
+internet.<br/>
+d) Um sistema de controle de estoque que armazena
+todos os dados internamente, sem comunica&ccedil;&atilde;o com outros
+sistemas.</p>
+<p><strong>Resposta: b) Um sistema de gest&atilde;o de recursos
+humanos que se conecta a um sistema de folha de pagamento atrav&eacute;s
+de uma API REST.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>integra&ccedil;&atilde;o
+de sistemas</strong> em uma <strong>SOA</strong> geralmente envolve a
+comunica&ccedil;&atilde;o entre sistemas independentes por meio de
+interfaces, como <strong>APIs REST</strong> ou <strong>servi&ccedil;os
+SOAP</strong>. O exemplo que descreve essa integra&ccedil;&atilde;o &eacute;
+o sistema de <strong>gest&atilde;o de recursos humanos</strong> que
+se conecta a um <strong>sistema de folha de pagamento</strong> via
+API, o que &eacute; uma forma t&iacute;pica de comunica&ccedil;&atilde;o
+em uma arquitetura orientada a servi&ccedil;os.</p>
+<hr/>
+
+<h3 class="western"><strong>10. (FGV - 2022)</strong></h3>
+<p>Em rela&ccedil;&atilde;o &agrave; <strong>interoperabilidade entre
+sistemas</strong>, qual das op&ccedil;&otilde;es a seguir &eacute; um
+desafio comum enfrentado na implementa&ccedil;&atilde;o de solu&ccedil;&otilde;es?</p>
+<p>a) A falta de protocolos padronizados para a comunica&ccedil;&atilde;o.<br/>
+b)
+A sobrecarga de seguran&ccedil;a na comunica&ccedil;&atilde;o de
+dados.<br/>
+c) A unifica&ccedil;&atilde;o de tecnologias usadas pelos
+sistemas.<br/>
+d) A cria&ccedil;&atilde;o de bancos de dados
+compartilhados.</p>
+<p><strong>Resposta: a) A falta de protocolos padronizados para a
+comunica&ccedil;&atilde;o.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>falta de
+protocolos padronizados</strong> &eacute; um dos principais desafios
+em sistemas distribu&iacute;dos e na <strong>interoperabilidade</strong>.
+Quando diferentes sistemas usam diferentes protocolos, formatos de
+dados ou tecnologias, fica mais dif&iacute;cil garantir que eles se
+comuniquem corretamente e de maneira eficiente. O uso de padr&otilde;es
+como <strong>SOAP</strong>, <strong>REST</strong> e <strong>XML</strong>
+ajuda a superar esse desafio.</p>
+<p><br/>
+<br/>
+
+</p>
+<h3 class="western"><strong>1. (FGV - 2022)</strong></h3>
+<p>Em uma arquitetura orientada a servi&ccedil;os (SOA), a principal
+vantagem de utilizar <strong>servi&ccedil;os reutiliz&aacute;veis</strong>
+&eacute;:</p>
+<p>a) A redu&ccedil;&atilde;o de custos com hardware.<br/>
+b) A
+facilidade de integra&ccedil;&atilde;o entre sistemas
+heterog&ecirc;neos.<br/>
+c) A elimina&ccedil;&atilde;o da necessidade
+de governan&ccedil;a de TI.<br/>
+d) A redu&ccedil;&atilde;o de
+depend&ecirc;ncia de tecnologias propriet&aacute;rias.</p>
+<p><strong>Resposta: b) A facilidade de integra&ccedil;&atilde;o
+entre sistemas heterog&ecirc;neos.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Em SOA, os
+servi&ccedil;os s&atilde;o projetados para serem <strong>independentes</strong>
+da plataforma, o que permite <strong>integra&ccedil;&atilde;o f&aacute;cil</strong>
+entre sistemas heterog&ecirc;neos. Isso significa que diferentes
+sistemas, com diferentes tecnologias e plataformas, podem se
+comunicar entre si de maneira eficiente, facilitando a
+interoperabilidade. A reutiliza&ccedil;&atilde;o de servi&ccedil;os
+n&atilde;o &eacute; o principal foco em rela&ccedil;&atilde;o &agrave;
+integra&ccedil;&atilde;o, mas sim permitir que sistemas distintos
+compartilhem funcionalidades.</p>
+<hr/>
+
+<h3 class="western"><strong>2. (FGV - 2021)</strong></h3>
+<p>A interoperabilidade entre sistemas pode ser facilitada por:</p>
+<p>a) A utiliza&ccedil;&atilde;o de diferentes protocolos de
+comunica&ccedil;&atilde;o.<br/>
+b) O uso de bancos de dados &uacute;nicos
+entre sistemas.<br/>
+c) A centraliza&ccedil;&atilde;o de todas as
+aplica&ccedil;&otilde;es em um &uacute;nico servidor.<br/>
+d) A
+padroniza&ccedil;&atilde;o de interfaces e formatos de dados.</p>
+<p><strong>Resposta: d) A padroniza&ccedil;&atilde;o de interfaces e
+formatos de dados.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A
+<strong>interoperabilidade</strong> entre sistemas &eacute;
+facilitada quando h&aacute; uma <strong>padroniza&ccedil;&atilde;o de
+interfaces</strong> (como REST, SOAP) e <strong>formatos de dados</strong>
+(como XML, JSON), garantindo que sistemas diversos consigam se
+comunicar de maneira compreens&iacute;vel e eficaz, independentemente
+das tecnologias subjacentes. Essa padroniza&ccedil;&atilde;o minimiza
+problemas de incompatibilidade entre diferentes sistemas e
+plataformas.</p>
+<hr/>
+
+<h3 class="western"><strong>3. (FGV - 2020)</strong></h3>
+<p>Na arquitetura orientada a servi&ccedil;os (SOA), qual das op&ccedil;&otilde;es
+abaixo &eacute; considerada uma caracter&iacute;stica <strong>fundamental</strong>
+de um servi&ccedil;o?</p>
+<p>a) O servi&ccedil;o deve ser espec&iacute;fico para uma plataforma
+de desenvolvimento.<br/>
+b) O servi&ccedil;o deve ser independente de
+aplica&ccedil;&atilde;o e de tecnologia.<br/>
+c) O servi&ccedil;o
+deve ser implementado apenas no back-end da arquitetura.<br/>
+d) O
+servi&ccedil;o deve ser acess&iacute;vel apenas por sistemas
+internos.</p>
+<p><strong>Resposta: b) O servi&ccedil;o deve ser independente de
+aplica&ccedil;&atilde;o e de tecnologia.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A principal
+caracter&iacute;stica de um servi&ccedil;o em <strong>SOA</strong> &eacute;
+sua <strong>independ&ecirc;ncia</strong> em rela&ccedil;&atilde;o a
+<strong>aplica&ccedil;&otilde;es</strong> e <strong>tecnologias</strong>
+espec&iacute;ficas. Isso significa que os servi&ccedil;os podem ser
+consumidos por diferentes sistemas e plataformas, utilizando padr&otilde;es
+de comunica&ccedil;&atilde;o bem definidos, como XML, JSON, REST ou
+SOAP. A ideia &eacute; criar servi&ccedil;os <strong>reutiliz&aacute;veis</strong>
+e <strong>desacoplados</strong>, facilitando a escalabilidade e
+manuten&ccedil;&atilde;o do sistema como um todo.</p>
+<hr/>
+
+<h3 class="western"><strong>4. (FGV - 2020)</strong></h3>
+<p>Sobre a <strong>interoperabilidade de sistemas</strong>, pode-se
+afirmar que:</p>
+<p>a) Ela &eacute; alcan&ccedil;ada apenas quando os sistemas est&atilde;o
+na mesma infraestrutura.<br/>
+b) Exige a utiliza&ccedil;&atilde;o de
+uma &uacute;nica linguagem de programa&ccedil;&atilde;o para todos os
+sistemas envolvidos.<br/>
+c) Depende da capacidade de diferentes
+sistemas se comunicarem entre si, independentemente de suas
+plataformas e tecnologias.<br/>
+d) &Eacute; uma quest&atilde;o
+exclusiva de seguran&ccedil;a e controle de acesso.</p>
+<p><strong>Resposta: c) Depende da capacidade de diferentes sistemas
+se comunicarem entre si, independentemente de suas plataformas e
+tecnologias.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+<strong>Interoperabilidade</strong>
+envolve a capacidade de sistemas distintos se comunicarem entre si,
+<strong>independente da plataforma ou tecnologia</strong> que
+utilizam. Isso &eacute; feito atrav&eacute;s do uso de padr&otilde;es
+de comunica&ccedil;&atilde;o, como APIs, web services e formatos de
+dados como XML e JSON. N&atilde;o &eacute; necess&aacute;rio que os
+sistemas estejam na mesma infraestrutura ou utilizem a mesma
+linguagem de programa&ccedil;&atilde;o.</p>
+<hr/>
+
+<h3 class="western"><strong>5. (FGV - 2019)</strong></h3>
+<p>Em uma arquitetura de software, a utiliza&ccedil;&atilde;o de
+<strong>microservices</strong> como uma abordagem de desenvolvimento
+pode ser caracterizada por:</p>
+<p>a) Aplica&ccedil;&otilde;es monol&iacute;ticas, onde todos os
+m&oacute;dulos est&atilde;o interligados e dependentes entre si.<br/>
+b)
+A cria&ccedil;&atilde;o de pequenos servi&ccedil;os independentes que
+comunicam entre si, com interfaces bem definidas.<br/>
+c) A
+centraliza&ccedil;&atilde;o de todas as funcionalidades em um &uacute;nico
+sistema.<br/>
+d) A utiliza&ccedil;&atilde;o de uma &uacute;nica base
+de dados para todas as funcionalidades da aplica&ccedil;&atilde;o.</p>
+<p><strong>Resposta: b) A cria&ccedil;&atilde;o de pequenos servi&ccedil;os
+independentes que comunicam entre si, com interfaces bem definidas.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+<strong>Microservices</strong>
+s&atilde;o uma abordagem arquitetural onde a aplica&ccedil;&atilde;o
+&eacute; dividida em pequenos servi&ccedil;os <strong>independentes</strong>,
+cada um com uma responsabilidade bem definida e uma interface clara
+para se comunicar com outros servi&ccedil;os. Isso facilita a
+escalabilidade e a manuten&ccedil;&atilde;o, pois cada servi&ccedil;o
+pode ser desenvolvido, testado e implantado de forma independente.</p>
+<hr/>
+
+<h3 class="western"><strong>6. (FGV - 2022)</strong></h3>
+<p>A arquitetura orientada a servi&ccedil;os (SOA) &eacute;
+frequentemente associada ao uso de:</p>
+<p>a) Camadas de apresenta&ccedil;&atilde;o unificadas.<br/>
+b)
+Servi&ccedil;os web baseados em padr&otilde;es abertos, como SOAP e
+REST.<br/>
+c) Estruturas de banco de dados centralizadas.<br/>
+d)
+Sistemas de controle de vers&atilde;o para c&oacute;digo-fonte.</p>
+<p><strong>Resposta: b) Servi&ccedil;os web baseados em padr&otilde;es
+abertos, como SOAP e REST.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+SOA &eacute;
+baseada em <strong>servi&ccedil;os web</strong> que utilizam padr&otilde;es
+abertos de comunica&ccedil;&atilde;o, como <strong>SOAP</strong>
+(Simple Object Access Protocol) e <strong>REST</strong>
+(Representational State Transfer), que permitem a integra&ccedil;&atilde;o
+de sistemas diferentes atrav&eacute;s de protocolos comuns e formatos
+de dados (XML, JSON, etc.).</p>
+<hr/>
+
+<h3 class="western"><strong>7. (FGV - 2021)</strong></h3>
+<p>Qual das alternativas a seguir descreve corretamente o conceito de
+<strong>interoperabilidade</strong> em sistemas?</p>
+<p>a) A capacidade de um sistema rodar em diferentes dispositivos.<br/>
+b)
+A capacidade de um sistema comunicar-se com outro, independente da
+plataforma ou tecnologia.<br/>
+c) A capacidade de compartilhar dados
+entre sistemas do mesmo fornecedor.<br/>
+d) A utiliza&ccedil;&atilde;o
+de uma interface gr&aacute;fica unificada entre todos os sistemas.</p>
+<p><strong>Resposta: b) A capacidade de um sistema comunicar-se com
+outro, independente da plataforma ou tecnologia.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+<strong>Interoperabilidade</strong>
+&eacute; a capacidade de diferentes sistemas se <strong>comunicarem e
+interagirem</strong>, independentemente das plataformas ou
+tecnologias que est&atilde;o utilizando. Isso &eacute; alcan&ccedil;ado
+por meio de protocolos e padr&otilde;es comuns, como servi&ccedil;os
+web, APIs e formatos de dados comuns (XML, JSON), permitindo que
+sistemas heterog&ecirc;neos funcionem juntos.</p>
+<hr/>
+
+<h3 class="western"><strong>8. (FGV - 2020)</strong></h3>
+<p>Na arquitetura de sistemas baseada em <strong>microservices</strong>,
+um dos principais desafios &eacute;:</p>
+<p>a) A necessidade de centralizar o banco de dados em um &uacute;nico
+servidor.<br/>
+b) A comunica&ccedil;&atilde;o entre microservices,
+que pode ser complexa devido ao alto n&uacute;mero de chamadas entre
+eles.<br/>
+c) O uso de apenas uma linguagem de programa&ccedil;&atilde;o
+para todos os microservices.<br/>
+d) A unifica&ccedil;&atilde;o dos
+interfaces de usu&aacute;rio dos diversos microservices.</p>
+<p><strong>Resposta: b) A comunica&ccedil;&atilde;o entre
+microservices, que pode ser complexa devido ao alto n&uacute;mero de
+chamadas entre eles.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Um dos maiores
+desafios ao adotar uma arquitetura de <strong>microservices</strong>
+&eacute; a <strong>comunica&ccedil;&atilde;o entre os diversos
+servi&ccedil;os</strong>. Como os microservices s&atilde;o
+independentes, eles se comunicam frequentemente por meio de <strong>APIs</strong>
+ou <strong>mensageria</strong>, o que pode gerar complexidade,
+especialmente em sistemas grandes com muitos servi&ccedil;os que
+precisam interagir entre si.</p>
+<hr/>
+
+<h3 class="western"><strong>9. (FGV - 2021)</strong></h3>
+<p>A principal vantagem de uma <strong>arquitetura orientada a
+servi&ccedil;os (SOA)</strong> &eacute;:</p>
+<p>a) A cria&ccedil;&atilde;o de um &uacute;nico ponto de falha no
+sistema.<br/>
+b) A centraliza&ccedil;&atilde;o de todas as
+funcionalidades da empresa em um &uacute;nico sistema.<br/>
+c) A
+flexibilidade e reutiliza&ccedil;&atilde;o de servi&ccedil;os em
+diferentes contextos.<br/>
+d) A simplifica&ccedil;&atilde;o do
+desenvolvimento ao reduzir o n&uacute;mero de componentes.</p>
+<p><strong>Resposta: c) A flexibilidade e reutiliza&ccedil;&atilde;o
+de servi&ccedil;os em diferentes contextos.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>SOA</strong>
+permite criar <strong>servi&ccedil;os independentes e reutiliz&aacute;veis</strong>,
+que podem ser <strong>consumidos por diferentes sistemas</strong> em
+contextos diversos, aumentando a <strong>flexibilidade</strong> e a
+<strong>escalabilidade</strong> do sistema. Isso facilita a
+integra&ccedil;&atilde;o de sistemas antigos com novos, al&eacute;m
+de permitir a reutiliza&ccedil;&atilde;o de funcionalidades em
+diferentes partes do sistema.</p>
+<hr/>
+
+<h3 class="western"><strong>10. (FGV - 2022)</strong></h3>
+<p>A <strong>arquitetura orientada a servi&ccedil;os (SOA)</strong> &eacute;
+especialmente &uacute;til para empresas que:</p>
+<p>a) Trabalham com grandes volumes de dados, mas n&atilde;o
+necessitam de integra&ccedil;&atilde;o com sistemas externos.<br/>
+b)
+Precisam integrar sistemas legados com novas aplica&ccedil;&otilde;es
+e sistemas heterog&ecirc;neos.<br/>
+c) Focam apenas no
+desenvolvimento de aplicativos m&oacute;veis e web.<br/>
+d) Utilizam
+exclusivamente uma &uacute;nica plataforma de desenvolvimento e banco
+de dados.</p>
+<p><strong>Resposta: b) Precisam integrar sistemas legados com novas
+aplica&ccedil;&otilde;es e sistemas heterog&ecirc;neos.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+SOA &eacute;
+especialmente &uacute;til para empresas que precisam <strong>integrar
+sistemas legados</strong> com novos aplicativos ou com <strong>sistemas
+heterog&ecirc;neos</strong> (de diferentes plataformas e
+tecnologias), pois permite criar servi&ccedil;os <strong>independentes</strong>
+que podem se comunicar atrav&eacute;s de <strong>protocolos e padr&otilde;es
+comuns</strong>. Isso facilita a <strong>integra&ccedil;&atilde;o</strong>
+sem a necessidade de reescrever ou substituir sistemas existentes.</p>
+<p><br/>
+<br/>
+
+</p>
+<p>O <strong>SOAP (Simple Object Access Protocol)</strong> &eacute;
+um protocolo de comunica&ccedil;&atilde;o que permite a troca de
+mensagens entre sistemas atrav&eacute;s da rede, usando o <strong>XML</strong>
+como formato de mensagem. Ele &eacute; amplamente utilizado em
+sistemas baseados em <strong>Arquitetura Orientada a Servi&ccedil;os
+(SOA)</strong> para permitir que diferentes sistemas, muitas vezes
+com plataformas diferentes, possam se comunicar de forma padronizada.</p>
+<p>O <strong>SOAP</strong> &eacute; um protocolo independente de
+plataforma, o que significa que ele pode ser utilizado em sistemas
+diferentes (Windows, Linux, etc.) e com diferentes linguagens de
+programa&ccedil;&atilde;o (Java, .NET, Python, etc.). As mensagens
+SOAP s&atilde;o enviadas via protocolos de rede como <strong>HTTP</strong>
+ou <strong>SMTP</strong> e seguem uma estrutura muito bem definida.</p>
+<p>Abaixo, apresento um exemplo simples de um <strong>algoritmo SOAP</strong>
+e um <strong>c&oacute;digo</strong> para <strong>invocar</strong> e
+<strong>processar</strong> uma <strong>requisi&ccedil;&atilde;o SOAP</strong>.
+Vou fornecer um exemplo b&aacute;sico usando a linguagem <strong>Java</strong>
+com a biblioteca <strong>JAX-WS</strong> (Java API for XML Web
+Services), que facilita a cria&ccedil;&atilde;o de servi&ccedil;os
+SOAP.</p>
+<h3 class="western"><strong>Exemplo 1: Servi&ccedil;o Web SOAP
+(Servidor)</strong></h3>
+<p>Aqui est&aacute; um exemplo simples de um <strong>servidor SOAP</strong>
+que oferece um servi&ccedil;o para somar dois n&uacute;meros.</p>
+<h4 class="western">C&oacute;digo do Servidor SOAP em Java:</h4>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">import javax.jws.WebService;</code>
+<code class="western">import javax.jws.WebMethod;</code>
+
+<code class="western">// Definindo o servi&ccedil;o SOAP</code>
+<code class="western">@WebService</code>
+<code class="western">public class CalculatorService {</code>
+<code class="western">    </code>
+<code class="western">    </code><code class="western">// M&eacute;todo que ser&aacute; exposto como um servi&ccedil;o SOAP</code>
+<code class="western">    </code><code class="western">@WebMethod</code>
+<code class="western">    </code><code class="western">public int add(int a, int b) {</code>
+<code class="western">        </code><code class="western">return a + b;</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">    </code>
+<code class="western">    </code><code class="western">// M&eacute;todo para iniciar o servi&ccedil;o</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) {</code>
+<code class="western">        </code><code class="western">try {</code>
+<code class="western">            </code><code class="western">// Publica o servi&ccedil;o na URL</code>
+<code class="western">            </code><code class="western">javax.xml.ws.Endpoint.publish(&quot;http://localhost:8080/calculator&quot;, new CalculatorService());</code>
+<code class="western">            </code><code class="western">System.out.println(&quot;Servi&ccedil;o SOAP publicado em http://localhost:8080/calculator&quot;);</code>
+<code class="western">        </code><code class="western">} catch (Exception e) {</code>
+<code class="western">            </code><code class="western">e.printStackTrace();</code>
+<code class="western">        </code><code class="western">}</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><h4 class="western">
+Explica&ccedil;&atilde;o:</h4>
+<ol>
+	<li><p style="margin-bottom: 0cm"><strong>@WebService</strong>: Esta
+	anota&ccedil;&atilde;o define a classe <code class="western">CalculatorService</code>
+	como um <strong>servi&ccedil;o SOAP</strong>.</p>
+	<li><p style="margin-bottom: 0cm"><strong>@WebMethod</strong>: A
+	anota&ccedil;&atilde;o &eacute; usada para marcar o m&eacute;todo
+	<code class="western">add()</code> como um <strong>m&eacute;todo
+	exposto via SOAP</strong>. Esse m&eacute;todo vai somar dois n&uacute;meros
+	e retornar o resultado.</p>
+	<li><p><strong>Endpoint.publish()</strong>: A chamada
+	<code class="western">Endpoint.publish()</code> publica o servi&ccedil;o
+	SOAP em uma URL (neste caso, <code class="western">http://localhost:8080/calculator</code>).</p>
+</ol>
+<h3 class="western"><strong>Exemplo 2: Cliente SOAP (Cliente que
+consome o servi&ccedil;o)</strong></h3>
+<p>Agora, vamos criar um <strong>cliente SOAP</strong> que consome o
+servi&ccedil;o que acabamos de definir.</p>
+<h4 class="western">C&oacute;digo do Cliente SOAP em Java:</h4>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">import javax.xml.namespace.QName;</code>
+<code class="western">import javax.xml.ws.Service;</code>
+<code class="western">import java.net.URL;</code>
+
+<code class="western">public class CalculatorClient {</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) {</code>
+<code class="western">        </code><code class="western">try {</code>
+<code class="western">            </code><code class="western">// URL do WSDL (Service Definition)</code>
+<code class="western">            </code><code class="western">URL url = new URL(&quot;http://localhost:8080/calculator?wsdl&quot;);</code>
+<code class="western">            </code>
+<code class="western">            </code><code class="western">// QName que define o namespace e o nome do servi&ccedil;o</code>
+<code class="western">            </code><code class="western">QName qname = new QName(&quot;http://localhost:8080/&quot;, &quot;CalculatorService&quot;);</code>
+<code class="western">            </code>
+<code class="western">            </code><code class="western">// Cria&ccedil;&atilde;o do servi&ccedil;o SOAP</code>
+<code class="western">            </code><code class="western">Service service = Service.create(url, qname);</code>
+<code class="western">            </code>
+<code class="western">            </code><code class="western">// Acessando o m&eacute;todo do servi&ccedil;o</code>
+<code class="western">            </code><code class="western">CalculatorService calculator = service.getPort(CalculatorService.class);</code>
+<code class="western">            </code>
+<code class="western">            </code><code class="western">// Chamando o m&eacute;todo 'add' do servi&ccedil;o SOAP</code>
+<code class="western">            </code><code class="western">int result = calculator.add(5, 3);</code>
+<code class="western">            </code><code class="western">System.out.println(&quot;Resultado da soma: &quot; + result);  // Sa&iacute;da esperada: 8</code>
+<code class="western">        </code><code class="western">} catch (Exception e) {</code>
+<code class="western">            </code><code class="western">e.printStackTrace();</code>
+<code class="western">        </code><code class="western">}</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+</pre><h4 class="western">
+Explica&ccedil;&atilde;o:</h4>
+<ol>
+	<li><p style="margin-bottom: 0cm"><strong>URL do WSDL</strong>: O
+	cliente SOAP precisa do endere&ccedil;o do <strong>WSDL (Web Service
+	Description Language)</strong>, que &eacute; um documento XML que
+	descreve como interagir com o servi&ccedil;o SOAP. O WSDL est&aacute;
+	dispon&iacute;vel na URL do servi&ccedil;o
+	(<code class="western">http://localhost:8080/calculator?wsdl</code>).</p>
+	<li><p style="margin-bottom: 0cm"><strong>QName</strong>: O <code class="western">QName</code>
+	especifica o <strong>namespace</strong> e o nome do servi&ccedil;o
+	que o cliente SOAP precisa acessar.</p>
+	<li><p style="margin-bottom: 0cm"><strong>Service.create()</strong>:
+	Este m&eacute;todo cria o servi&ccedil;o a partir da URL do WSDL e
+	do <code class="western">QName</code>.</p>
+	<li><p style="margin-bottom: 0cm"><strong>getPort()</strong>: O
+	<code class="western">getPort()</code> retorna a interface do
+	servi&ccedil;o que define os m&eacute;todos dispon&iacute;veis. No
+	nosso caso, ele mapeia a interface <code class="western">CalculatorService</code>
+	que exp&otilde;e o m&eacute;todo <code class="western">add()</code>.</p>
+	<li><p><strong>Chamada ao m&eacute;todo</strong>: O cliente ent&atilde;o
+	chama o m&eacute;todo <code class="western">add()</code> e imprime o
+	resultado.</p>
+</ol>
+<h3 class="western"><strong>Exemplo de Mensagem SOAP (XML)</strong></h3>
+<p>Quando o cliente faz a requisi&ccedil;&atilde;o ao servi&ccedil;o,
+a mensagem SOAP enviada poderia ser algo assim (mensagem XML):</p>
+<pre class="western">xml
+Copiar c&oacute;digo
+<code class="western">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</code>
+<code class="western">                  </code><code class="western">xmlns:web=&quot;http://localhost:8080/&quot;&gt;</code>
+<code class="western">   </code><code class="western">&lt;soapenv:Header/&gt;</code>
+<code class="western">   </code><code class="western">&lt;soapenv:Body&gt;</code>
+<code class="western">      </code><code class="western">&lt;web:add&gt;</code>
+<code class="western">         </code><code class="western">&lt;a&gt;5&lt;/a&gt;</code>
+<code class="western">         </code><code class="western">&lt;b&gt;3&lt;/b&gt;</code>
+<code class="western">      </code><code class="western">&lt;/web:add&gt;</code>
+<code class="western">   </code><code class="western">&lt;/soapenv:Body&gt;</code>
+<code class="western">&lt;/soapenv:Envelope&gt;</code></pre><p>
+A resposta SOAP seria algo assim:</p>
+<pre class="western">xml
+Copiar c&oacute;digo
+<code class="western">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</code>
+<code class="western">                  </code><code class="western">xmlns:web=&quot;http://localhost:8080/&quot;&gt;</code>
+<code class="western">   </code><code class="western">&lt;soapenv:Header/&gt;</code>
+<code class="western">   </code><code class="western">&lt;soapenv:Body&gt;</code>
+<code class="western">      </code><code class="western">&lt;web:addResponse&gt;</code>
+<code class="western">         </code><code class="western">&lt;return&gt;8&lt;/return&gt;</code>
+<code class="western">      </code><code class="western">&lt;/web:addResponse&gt;</code>
+<code class="western">   </code><code class="western">&lt;/soapenv:Body&gt;</code>
+<code class="western">&lt;/soapenv:Envelope&gt;</code></pre><h3 class="western">
+<strong>Conclus&atilde;o</strong></h3>
+<p>Neste exemplo, o c&oacute;digo Java foi usado para criar um
+<strong>servi&ccedil;o web SOAP</strong> simples e um <strong>cliente
+SOAP</strong> que consome o servi&ccedil;o.</p>
+<ul>
+	<li><p style="margin-bottom: 0cm">O servidor SOAP exp&otilde;e um
+	servi&ccedil;o de soma de dois n&uacute;meros, enquanto o cliente
+	SOAP envia a requisi&ccedil;&atilde;o e recebe a resposta.</p>
+	<li><p>As mensagens SOAP trocadas entre o cliente e o servidor s&atilde;o
+	no formato <strong>XML</strong>, que &eacute; o formato padr&atilde;o
+	de comunica&ccedil;&atilde;o do SOAP.</p>
+</ul>
+<p>A principal vantagem do <strong>SOAP</strong> &eacute; que ele &eacute;
+um <strong>protocolo robusto e padronizado</strong>, ideal para
+integra&ccedil;&atilde;o de sistemas complexos, especialmente em
+ambientes corporativos, onde &eacute; necess&aacute;rio garantir a
+interoperabilidade entre sistemas heterog&ecirc;neos.</p>
+<p>Se voc&ecirc; precisar de mais detalhes sobre como configurar o
+ambiente de desenvolvimento para trabalhar com servi&ccedil;os SOAP
+em Java ou outra linguagem, posso fornecer mais informa&ccedil;&otilde;es.</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>
