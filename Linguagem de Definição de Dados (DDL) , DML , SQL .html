@@ -1,0 +1,663 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.7.2 (Windows)"/>
+	<meta name="created" content="2024-11-14T16:14:04.678000000"/>
+	<meta name="changed" content="2024-11-14T16:15:28.158000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h4.cjk { font-family: "NSimSun"; font-size: 12pt; font-weight: bold }
+		h4.ctl { font-family: "Arial"; font-size: 12pt; font-weight: bold }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		td p { orphans: 0; widows: 0; background: transparent }
+		th p { font-weight: bold; text-align: center; orphans: 0; widows: 0; background: transparent }
+		h5 { margin-top: 0.21cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h5.western { font-family: "Liberation Serif", serif; font-size: 10pt; font-weight: bold }
+		h5.cjk { font-family: "NSimSun"; font-size: 10pt; font-weight: bold }
+		h5.ctl { font-family: "Arial"; font-size: 10pt; font-weight: bold }
+		h6 { margin-top: 0.11cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h6.western { font-family: "Liberation Serif", serif; font-size: 7pt; font-weight: bold }
+		h6.cjk { font-family: "NSimSun"; font-size: 7pt; font-weight: bold }
+		h6.ctl { font-family: "Arial"; font-size: 7pt; font-weight: bold }
+		strong { font-weight: bold }
+		code.western { font-family: "Liberation Mono", monospace }
+		code.cjk { font-family: "NSimSun", monospace }
+		code.ctl { font-family: "Liberation Mono", monospace }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><h3 class="western">
+<strong>Linguagens de Consulta e Manipula&ccedil;&atilde;o de Dados
+no SQL</strong></h3>
+<p>O SQL (Structured Query Language) &eacute; a linguagem padr&atilde;o
+para intera&ccedil;&atilde;o com bancos de dados relacionais. Ele &eacute;
+dividido em v&aacute;rias sub-linguagens, cada uma com um prop&oacute;sito
+espec&iacute;fico. As principais s&atilde;o:</p>
+<ol>
+	<li><p style="margin-bottom: 0cm"><strong>Linguagem de Defini&ccedil;&atilde;o
+	de Dados (DDL)</strong></p>
+	<li><p style="margin-bottom: 0cm"><strong>Linguagem de Manipula&ccedil;&atilde;o
+	de Dados (DML)</strong></p>
+	<li><p><strong>Linguagem de Consulta Estruturada (SQL)</strong></p>
+</ol>
+<h3 class="western">1. <strong>Linguagem de Defini&ccedil;&atilde;o
+de Dados (DDL)</strong></h3>
+<p>A <strong>DDL</strong> &eacute; respons&aacute;vel por definir e
+modificar a estrutura de um banco de dados. Ela &eacute; usada para
+criar, alterar e excluir objetos de banco de dados, como <strong>tabelas</strong>,
+<strong>&iacute;ndices</strong>, <strong>vis&otilde;es</strong> e
+<strong>esquemas</strong>.</p>
+<h4 class="western"><strong>Principais comandos DDL:</strong></h4>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>CREATE</strong>: Cria
+	objetos como tabelas, &iacute;ndices, views.</p>
+	<li><p style="margin-bottom: 0cm"><strong>ALTER</strong>: Modifica a
+	estrutura de objetos existentes.</p>
+	<li><p style="margin-bottom: 0cm"><strong>DROP</strong>: Exclui
+	objetos existentes.</p>
+	<li><p><strong>TRUNCATE</strong>: Remove todos os dados de uma
+	tabela sem remover a estrutura da tabela.</p>
+</ul>
+<h4 class="western"><strong>Exemplo pr&aacute;tico:</strong></h4>
+<ol>
+	<li><p><strong>Criando uma tabela</strong><br/>
+O comando <strong>CREATE
+	TABLE</strong> &eacute; usado para criar uma nova tabela no banco de
+	dados.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">CREATE TABLE Clientes (</code>
+<code class="western">    </code><code class="western">id_cliente INT PRIMARY KEY,</code>
+<code class="western">    </code><code class="western">nome VARCHAR(100),</code>
+<code class="western">    </code><code class="western">email VARCHAR(100),</code>
+<code class="western">    </code><code class="western">data_nascimento DATE</code>
+<code class="western">);</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Cria uma tabela chamada
+	<strong>Clientes</strong> com quatro colunas: <code class="western">id_cliente</code>,
+	<code class="western">nome</code>, <code class="western">email</code>
+	e <code class="western">data_nascimento</code>.</p>
+	<li><p><strong>Alterando uma tabela</strong> O comando <strong>ALTER
+	TABLE</strong> &eacute; usado para modificar a estrutura de uma
+	tabela existente.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">ALTER TABLE Clientes ADD telefone VARCHAR(15);</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Adiciona uma nova coluna
+	chamada <strong>telefone</strong> &agrave; tabela <strong>Clientes</strong>.</p>
+	<li><p><strong>Excluindo uma tabela</strong> O comando <strong>DROP
+	TABLE</strong> &eacute; usado para excluir uma tabela e seus dados.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">DROP TABLE Clientes;</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Exclui a tabela <strong>Clientes</strong>
+	do banco de dados.</p>
+</ol>
+<hr/>
+
+<h3 class="western">2. <strong>Linguagem de Manipula&ccedil;&atilde;o
+de Dados (DML)</strong></h3>
+<p>A <strong>DML</strong> &eacute; respons&aacute;vel por manipular
+os dados dentro das tabelas de um banco de dados. Ela permite
+inserir, atualizar, excluir e consultar os dados armazenados.</p>
+<h4 class="western"><strong>Principais comandos DML:</strong></h4>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>INSERT</strong>: Insere
+	dados em uma tabela.</p>
+	<li><p style="margin-bottom: 0cm"><strong>UPDATE</strong>: Atualiza
+	dados existentes em uma tabela.</p>
+	<li><p style="margin-bottom: 0cm"><strong>DELETE</strong>: Exclui
+	dados de uma tabela.</p>
+	<li><p><strong>SELECT</strong>: Recupera dados de uma tabela.</p>
+</ul>
+<h4 class="western"><strong>Exemplo pr&aacute;tico:</strong></h4>
+<ol>
+	<li><p><strong>Inserindo dados</strong> O comando <strong>INSERT
+	INTO</strong> &eacute; usado para inserir dados em uma tabela.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">INSERT INTO Clientes (id_cliente, nome, email, data_nascimento)</code>
+<code class="western">VALUES (1, 'Jo&atilde;o Silva', 'joao@exemplo.com', '1985-06-15');</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Insere um novo registro
+	na tabela <strong>Clientes</strong> com valores para as colunas
+	<code class="western">id_cliente</code>, <code class="western">nome</code>,
+	<code class="western">email</code> e <code class="western">data_nascimento</code>.</p>
+	<li><p><strong>Atualizando dados</strong> O comando <strong>UPDATE</strong>
+	&eacute; usado para atualizar registros existentes em uma tabela.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">UPDATE Clientes</code>
+<code class="western">SET email = 'joao.silva@novoemail.com'</code>
+<code class="western">WHERE id_cliente = 1;</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Atualiza o campo <strong>email</strong>
+	da tabela <strong>Clientes</strong> para um novo valor, onde o
+	<strong>id_cliente</strong> &eacute; 1.</p>
+	<li><p><strong>Excluindo dados</strong> O comando <strong>DELETE</strong>
+	&eacute; usado para excluir registros de uma tabela.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">DELETE FROM Clientes</code>
+<code class="western">WHERE id_cliente = 1;</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Exclui o registro da
+	tabela <strong>Clientes</strong> onde o <strong>id_cliente</strong>
+	&eacute; igual a 1.</p>
+	<li><p><strong>Consultando dados</strong> O comando <strong>SELECT</strong>
+	&eacute; usado para recuperar dados de uma tabela.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">SELECT nome, email</code>
+<code class="western">FROM Clientes</code>
+<code class="western">WHERE data_nascimento &lt; '1990-01-01';</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Recupera os <strong>nomes</strong>
+	e <strong>emails</strong> de todos os clientes cuja <strong>data_nascimento</strong>
+	seja anterior a 1&ordm; de janeiro de 1990.</p>
+</ol>
+<hr/>
+
+<h3 class="western">3. <strong>Linguagem de Consulta Estruturada
+(SQL)</strong></h3>
+<p>A <strong>SQL</strong> &eacute; uma linguagem de consulta usada
+para recuperar e manipular dados em bancos de dados relacionais.
+Embora &quot;SQL&quot; seja frequentemente usado para se referir a
+todas as opera&ccedil;&otilde;es de consulta e manipula&ccedil;&atilde;o
+de dados, o termo <strong>Linguagem de Consulta Estruturada</strong>
+&eacute; usado especificamente para consultas de leitura e an&aacute;lise
+dos dados.</p>
+<h4 class="western"><strong>Principais comandos de SQL:</strong></h4>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>SELECT</strong>: Usado
+	para consultar e selecionar dados de uma tabela.</p>
+	<li><p style="margin-bottom: 0cm"><strong>JOIN</strong>: Usado para
+	combinar registros de duas ou mais tabelas.</p>
+	<li><p style="margin-bottom: 0cm"><strong>GROUP BY</strong>: Usado
+	para agrupar registros com base em um crit&eacute;rio espec&iacute;fico.</p>
+	<li><p><strong>ORDER BY</strong>: Usado para ordenar os resultados
+	de uma consulta.</p>
+</ul>
+<h4 class="western"><strong>Exemplo pr&aacute;tico:</strong></h4>
+<ol>
+	<li><p><strong>Consultando todos os dados de uma tabela</strong></p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">SELECT * FROM Clientes;</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Recupera todos os dados
+	da tabela <strong>Clientes</strong>. O asterisco (<code class="western">*</code>)
+	indica que todas as colunas devem ser retornadas.</p>
+	<li><p><strong>Consultando com filtros</strong></p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">SELECT nome, email</code>
+<code class="western">FROM Clientes</code>
+<code class="western">WHERE nome LIKE 'Jo&atilde;o%';</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Recupera os <strong>nomes</strong>
+	e <strong>emails</strong> de todos os clientes cujo nome come&ccedil;a
+	com &quot;Jo&atilde;o&quot;.</p>
+	<li><p><strong>Usando JOIN para combinar tabelas</strong> Suponha
+	que voc&ecirc; tenha uma segunda tabela chamada <strong>Pedidos</strong>.
+	Voc&ecirc; pode usar <strong>JOIN</strong> para combinar dados de
+	ambas as tabelas.</p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">SELECT c.nome, p.id_pedido, p.valor</code>
+<code class="western">FROM Clientes c</code>
+<code class="western">JOIN Pedidos p ON c.id_cliente = p.id_cliente;</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Recupera os <strong>nomes</strong>
+	dos clientes, juntamente com o <strong>id_pedido</strong> e <strong>valor</strong>
+	dos pedidos, fazendo uma jun&ccedil;&atilde;o entre as tabelas
+	<strong>Clientes</strong> e <strong>Pedidos</strong> com base na
+	coluna <code class="western">id_cliente</code>.</p>
+	<li><p><strong>Agrupando e somando dados</strong></p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">SELECT nome, COUNT(*) AS total_pedidos</code>
+<code class="western">FROM Clientes</code>
+<code class="western">JOIN Pedidos ON Clientes.id_cliente = Pedidos.id_cliente</code>
+<code class="western">GROUP BY nome;</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Recupera o <strong>nome</strong>
+	de cada cliente e o n&uacute;mero total de pedidos feitos por cada
+	um, agrupados pelo nome do cliente.</p>
+	<li><p><strong>Ordenando os resultados</strong></p>
+	<pre class="western">sql
+Copiar c&oacute;digo
+<code class="western">SELECT nome, data_nascimento</code>
+<code class="western">FROM Clientes</code>
+<code class="western">ORDER BY data_nascimento DESC;</code></pre><p>
+	<strong>Explica&ccedil;&atilde;o:</strong> Recupera o <strong>nome</strong>
+	e <strong>data de nascimento</strong> de todos os clientes e ordena
+	os resultados pela <strong>data de nascimento</strong> em ordem
+	decrescente.</p>
+</ol>
+<hr/>
+
+<h3 class="western"><strong>Resumo das Diferen&ccedil;as entre DDL,
+DML e SQL</strong></h3>
+<table cellpadding="2" cellspacing="2">
+	<thead>
+		<tr>
+			<th style="border: none; padding: 0cm"><p><strong>Comando</strong></p>
+			</th>
+			<th style="border: none; padding: 0cm"><p><strong>Objetivo</strong></p>
+			</th>
+			<th style="border: none; padding: 0cm"><p><strong>Exemplo</strong></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="border: none; padding: 0cm"><p><strong>DDL (Data
+				Definition Language)</strong></p>
+			</td>
+			<td style="border: none; padding: 0cm"><p>Define a estrutura de
+				dados (tabelas, &iacute;ndices, etc.)</p>
+			</td>
+			<td style="border: none; padding: 0cm"><p><code class="western">CREATE
+				TABLE</code>, <code class="western">ALTER TABLE</code>, <code class="western">DROP
+				TABLE</code></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: none; padding: 0cm"><p><strong>DML (Data
+				Manipulation Language)</strong></p>
+			</td>
+			<td style="border: none; padding: 0cm"><p>Manipula dados dentro
+				das tabelas (inserir, atualizar, excluir)</p>
+			</td>
+			<td style="border: none; padding: 0cm"><p><code class="western">INSERT
+				INTO</code>, <code class="western">UPDATE</code>, <code class="western">DELETE</code></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: none; padding: 0cm"><p><strong>SQL (Structured
+				Query Language)</strong></p>
+			</td>
+			<td style="border: none; padding: 0cm"><p>Consulta dados para
+				an&aacute;lise e relat&oacute;rio (recuperar dados)</p>
+			</td>
+			<td style="border: none; padding: 0cm"><p><code class="western">SELECT</code>,
+				<code class="western">JOIN</code>, <code class="western">GROUP
+				BY</code>, <code class="western">ORDER BY</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<hr/>
+
+<h3 class="western"><strong>Conclus&atilde;o</strong></h3>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>DDL</strong> &eacute;
+	usada para definir e modificar a estrutura do banco de dados.</p>
+	<li><p style="margin-bottom: 0cm"><strong>DML</strong> permite a
+	manipula&ccedil;&atilde;o dos dados, incluindo inser&ccedil;&atilde;o,
+	atualiza&ccedil;&atilde;o e exclus&atilde;o.</p>
+	<li><p><strong>SQL</strong> &eacute; a linguagem de consulta usada
+	para buscar, combinar e analisar dados, sendo um subconjunto da DML.</p>
+</ul>
+<p>Essas linguagens s&atilde;o fundamentais para o gerenciamento e
+manipula&ccedil;&atilde;o de dados em bancos de dados relacionais, e
+o conhecimento de suas funcionalidades &eacute; essencial para quem
+trabalha com an&aacute;lise de dados ou desenvolvimento de sistemas
+de informa&ccedil;&atilde;o.</p>
+<p>4o mini</p>
+<h5 class="western">Voc&ecirc; disse:</h5>
+<p>20 quest&otilde;es multiplas escolhas , banca FGV &uacute;tlimos
+concursos p&uacute;blicos m respostas explicadas : Linguagem de
+consulta estruturada (SQL). 8 Linguagem de defini&ccedil;&atilde;o de
+dados (DDL). 9 Linguagem de manipula&ccedil;&atilde;o de dados (DML).</p>
+<h6 class="western">O ChatGPT disse:</h6>
+<p>ChatGPT</p>
+<p>Aqui est&atilde;o <strong>20 quest&otilde;es de m&uacute;ltipla
+escolha</strong>, estilo <strong>banca FGV</strong>, com base nos
+t&oacute;picos <strong>Linguagem de Consulta Estruturada (SQL)</strong>,
+<strong>Linguagem de Defini&ccedil;&atilde;o de Dados (DDL)</strong>
+e <strong>Linguagem de Manipula&ccedil;&atilde;o de Dados (DML)</strong>.
+As respostas tamb&eacute;m incluem explica&ccedil;&otilde;es
+detalhadas.</p>
+<hr/>
+
+<h3 class="western"><strong>1. O comando SQL utilizado para criar uma
+tabela em um banco de dados &eacute;:</strong></h3>
+<p>A) <code class="western">INSERT INTO</code><br/>
+B) <code class="western">CREATE
+TABLE</code><br/>
+C) <code class="western">ALTER TABLE</code><br/>
+D)
+<code class="western">SELECT INTO</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>CREATE TABLE</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>CREATE
+TABLE</strong> &eacute; utilizado para criar novas tabelas em um
+banco de dados.</p>
+<hr/>
+
+<h3 class="western"><strong>2. O comando SQL utilizado para adicionar
+uma nova coluna em uma tabela existente &eacute;:</strong></h3>
+<p>A) <code class="western">ADD COLUMN</code><br/>
+B) <code class="western">ALTER
+TABLE</code><br/>
+C) <code class="western">MODIFY COLUMN</code><br/>
+D)
+<code class="western">INSERT COLUMN</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>ALTER TABLE</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>ALTER
+TABLE</strong> &eacute; utilizado para modificar a estrutura de uma
+tabela existente, incluindo a adi&ccedil;&atilde;o de novas colunas.</p>
+<hr/>
+
+<h3 class="western"><strong>3. Qual dos seguintes comandos DDL &eacute;
+utilizado para excluir uma tabela do banco de dados?</strong></h3>
+<p>A) <code class="western">DELETE TABLE</code><br/>
+B) <code class="western">DROP
+TABLE</code><br/>
+C) <code class="western">REMOVE TABLE</code><br/>
+D)
+<code class="western">DROP DATABASE</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>DROP TABLE</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>DROP
+TABLE</strong> &eacute; usado para excluir uma tabela e todos os
+dados nela contidos do banco de dados.</p>
+<hr/>
+
+<h3 class="western"><strong>4. O comando SQL utilizado para excluir
+um registro espec&iacute;fico de uma tabela &eacute;:</strong></h3>
+<p>A) <code class="western">REMOVE</code><br/>
+B) <code class="western">DELETE</code><br/>
+C)
+<code class="western">DROP</code><br/>
+D) <code class="western">TRUNCATE</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>DELETE</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>DELETE</strong>
+&eacute; utilizado para excluir um ou mais registros de uma tabela. O
+<strong>TRUNCATE</strong> tamb&eacute;m exclui dados, mas sem
+registrar a exclus&atilde;o linha a linha, sendo mais eficiente.</p>
+<hr/>
+
+<h3 class="western"><strong>5. Qual comando SQL &eacute; utilizado
+para modificar dados j&aacute; existentes em uma tabela?</strong></h3>
+<p>A) <code class="western">UPDATE</code><br/>
+B) <code class="western">INSERT</code><br/>
+C)
+<code class="western">SELECT</code><br/>
+D) <code class="western">ALTER</code></p>
+<p><strong>Resposta correta:</strong> A) <strong>UPDATE</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>UPDATE</strong>
+&eacute; utilizado para modificar dados existentes em uma tabela. Ele
+permite alterar valores nas colunas de uma tabela com base em uma
+condi&ccedil;&atilde;o.</p>
+<hr/>
+
+<h3 class="western"><strong>6. O comando SQL para adicionar novos
+dados em uma tabela &eacute;:</strong></h3>
+<p>A) <code class="western">INSERT INTO</code><br/>
+B) <code class="western">UPDATE</code><br/>
+C)
+<code class="western">ALTER</code><br/>
+D) <code class="western">SELECT
+INTO</code></p>
+<p><strong>Resposta correta:</strong> A) <strong>INSERT INTO</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>INSERT
+INTO</strong> &eacute; utilizado para adicionar novos registros
+(linhas) em uma tabela existente.</p>
+<hr/>
+
+<h3 class="western"><strong>7. Para excluir todos os registros de uma
+tabela sem excluir a pr&oacute;pria tabela, deve-se usar o comando:</strong></h3>
+<p>A) <code class="western">DELETE</code><br/>
+B) <code class="western">TRUNCATE</code><br/>
+C)
+<code class="western">REMOVE</code><br/>
+D) <code class="western">DROP</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>TRUNCATE</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>TRUNCATE</strong>
+remove todos os registros de uma tabela, mas mant&eacute;m a
+estrutura da tabela. Ele &eacute; mais r&aacute;pido do que o <strong>DELETE</strong>,
+pois n&atilde;o registra a exclus&atilde;o de cada linha.</p>
+<hr/>
+
+<h3 class="western"><strong>8. O que o comando SQL SELECT faz?</strong></h3>
+<p>A) Modifica dados existentes.<br/>
+B) Cria novos registros.<br/>
+C)
+Recupera dados do banco de dados.<br/>
+D) Exclui registros de uma
+tabela.</p>
+<p><strong>Resposta correta:</strong> C) <strong>Recupera dados do
+banco de dados.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>SELECT</strong>
+&eacute; utilizado para recuperar dados de uma ou mais tabelas do
+banco de dados.</p>
+<hr/>
+
+<h3 class="western"><strong>9. Quando utilizamos o comando SQL JOIN,
+estamos:</strong></h3>
+<p>A) Alterando a estrutura das tabelas.<br/>
+B) Combinando dados de
+duas ou mais tabelas.<br/>
+C) Excluindo registros de v&aacute;rias
+tabelas.<br/>
+D) Criando uma nova tabela a partir de dados
+existentes.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Combinando dados de
+duas ou mais tabelas.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>JOIN</strong>
+&eacute; utilizado para combinar dados de duas ou mais tabelas com
+base em uma condi&ccedil;&atilde;o de relacionamento entre elas
+(geralmente por chave prim&aacute;ria e estrangeira).</p>
+<hr/>
+
+<h3 class="western"><strong>10. O comando GROUP BY em uma consulta
+SQL serve para:</strong></h3>
+<p>A) Agrupar registros baseados em uma coluna e realizar
+agrega&ccedil;&otilde;es.<br/>
+B) Ordenar os resultados de uma
+consulta.<br/>
+C) Filtrar os resultados de uma consulta.<br/>
+D)
+Realizar jun&ccedil;&otilde;es entre tabelas.</p>
+<p><strong>Resposta correta:</strong> A) <strong>Agrupar registros
+baseados em uma coluna e realizar agrega&ccedil;&otilde;es.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>GROUP
+BY</strong> &eacute; usado para agrupar os registros por uma ou mais
+colunas, permitindo realizar fun&ccedil;&otilde;es de agrega&ccedil;&atilde;o,
+como <strong>SUM</strong>, <strong>COUNT</strong>, <strong>AVG</strong>,
+etc.</p>
+<hr/>
+
+<h3 class="western"><strong>11. Qual comando SQL &eacute; usado para
+ordenar os resultados de uma consulta?</strong></h3>
+<p>A) <code class="western">GROUP BY</code><br/>
+B) <code class="western">ORDER
+BY</code><br/>
+C) <code class="western">FILTER</code><br/>
+D) <code class="western">SORT
+BY</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>ORDER BY</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>ORDER
+BY</strong> &eacute; utilizado para ordenar os resultados de uma
+consulta SQL com base em uma ou mais colunas.</p>
+<hr/>
+
+<h3 class="western"><strong>12. O que o comando SQL SELECT DISTINCT
+faz?</strong></h3>
+<p>A) Seleciona apenas valores distintos, sem duplica&ccedil;&atilde;o,
+para uma coluna.<br/>
+B) Ordena os dados de forma descendente.<br/>
+C)
+Agrupa os dados em uma &uacute;nica linha.<br/>
+D) Modifica os dados
+de uma tabela.</p>
+<p><strong>Resposta correta:</strong> A) <strong>Seleciona apenas
+valores distintos, sem duplica&ccedil;&atilde;o, para uma coluna.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>SELECT
+DISTINCT</strong> &eacute; utilizado para eliminar valores duplicados
+e retornar apenas valores &uacute;nicos em uma coluna ou conjunto de
+colunas.</p>
+<hr/>
+
+<h3 class="western"><strong>13. O comando SQL ALTER TABLE &eacute;
+utilizado para:</strong></h3>
+<p>A) Inserir dados em uma tabela.<br/>
+B) Modificar a estrutura de
+uma tabela existente.<br/>
+C) Excluir dados de uma tabela.<br/>
+D)
+Excluir a tabela do banco de dados.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Modificar a
+estrutura de uma tabela existente.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>ALTER
+TABLE</strong> &eacute; utilizado para modificar a estrutura de uma
+tabela existente, como adicionar, excluir ou modificar colunas.</p>
+<hr/>
+
+<h3 class="western"><strong>14. Quando um comando SQL cont&eacute;m
+um WHERE, ele &eacute; utilizado para:</strong></h3>
+<p>A) Ordenar os dados.<br/>
+B) Filtrar os dados com base em uma
+condi&ccedil;&atilde;o.<br/>
+C) Agrupar os dados.<br/>
+D) Criar novas
+tabelas.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Filtrar os dados com
+base em uma condi&ccedil;&atilde;o.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A cl&aacute;usula
+<strong>WHERE</strong> &eacute; usada para especificar a condi&ccedil;&atilde;o
+de filtragem de registros em uma consulta SQL, ou seja, ela define
+quais registros ser&atilde;o inclu&iacute;dos na resposta.</p>
+<hr/>
+
+<h3 class="western"><strong>15. O comando SQL HAVING &eacute; usado
+para:</strong></h3>
+<p>A) Filtrar os resultados de uma consulta antes de realizar a
+agrega&ccedil;&atilde;o.<br/>
+B) Filtrar os resultados de uma
+consulta ap&oacute;s a agrega&ccedil;&atilde;o.<br/>
+C) Criar jun&ccedil;&otilde;es
+entre tabelas.<br/>
+D) Ordenar os resultados da consulta.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Filtrar os
+resultados de uma consulta ap&oacute;s a agrega&ccedil;&atilde;o.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>HAVING</strong>
+&eacute; utilizado para aplicar condi&ccedil;&otilde;es de filtro
+ap&oacute;s a agrega&ccedil;&atilde;o dos dados (diferente de <strong>WHERE</strong>,
+que filtra antes da agrega&ccedil;&atilde;o).</p>
+<hr/>
+
+<h3 class="western"><strong>16. Qual comando SQL &eacute; utilizado
+para renomear uma tabela?</strong></h3>
+<p>A) <code class="western">RENAME TABLE</code><br/>
+B) <code class="western">ALTER
+TABLE RENAME</code><br/>
+C) <code class="western">MODIFY TABLE</code><br/>
+D)
+<code class="western">CHANGE TABLE</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>ALTER TABLE RENAME</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>ALTER
+TABLE</strong> pode ser utilizado para renomear uma tabela,
+dependendo do sistema de gerenciamento de banco de dados (exemplo:
+<code class="western">ALTER TABLE old_name RENAME TO new_name</code>).</p>
+<hr/>
+
+<h3 class="western"><strong>17. O comando UPDATE pode ser combinado
+com o WHERE para:</strong></h3>
+<p>A) Atualizar todos os registros de uma tabela.<br/>
+B) Atualizar
+registros de acordo com uma condi&ccedil;&atilde;o especificada.<br/>
+C)
+Deletar registros da tabela.<br/>
+D) Ordenar os registros.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Atualizar registros
+de acordo com uma condi&ccedil;&atilde;o especificada.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>UPDATE</strong>
+altera dados em uma tabela. Com a cl&aacute;usula <strong>WHERE</strong>,
+podemos especificar quais registros devem ser atualizados com base em
+uma condi&ccedil;&atilde;o.</p>
+<hr/>
+
+<h3 class="western"><strong>18. Em uma consulta SQL, qual a fun&ccedil;&atilde;o
+do comando INNER JOIN?</strong></h3>
+<p>A) Combina dados de duas tabelas, incluindo todos os registros de
+ambas as tabelas.<br/>
+B) Combina dados de duas tabelas, incluindo
+apenas os registros que possuem correspond&ecirc;ncia nas duas
+tabelas.<br/>
+C) Combina dados de duas tabelas, mas exclui registros
+duplicados.<br/>
+D) Exclui dados de duas tabelas ao mesmo tempo.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Combina dados de
+duas tabelas, incluindo apenas os registros que possuem
+correspond&ecirc;ncia nas duas tabelas.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O <strong>INNER
+JOIN</strong> retorna apenas os registros que t&ecirc;m
+correspond&ecirc;ncia em ambas as tabelas envolvidas na jun&ccedil;&atilde;o.</p>
+<hr/>
+
+<h3 class="western"><strong>19. O comando SELECT com a cl&aacute;usula
+LIMIT serve para:</strong></h3>
+<p>A) Limitar a quantidade de colunas retornadas na consulta.<br/>
+B)
+Limitar a quantidade de registros retornados na consulta.<br/>
+C)
+Ordenar os registros da consulta.<br/>
+D) Filtrar os registros
+retornados.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Limitar a quantidade
+de registros retornados na consulta.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A cl&aacute;usula
+<strong>LIMIT</strong> limita o n&uacute;mero de registros retornados
+em uma consulta SQL.</p>
+<hr/>
+
+<h3 class="western"><strong>20. O comando SELECT COUNT(*) &eacute;
+utilizado para:</strong></h3>
+<p>A) Contar o n&uacute;mero de colunas em uma tabela.<br/>
+B) Contar
+o n&uacute;mero de linhas em uma tabela.<br/>
+C) Contar o n&uacute;mero
+de registros que atendem a uma condi&ccedil;&atilde;o.<br/>
+D) Contar
+o n&uacute;mero de tabelas em um banco de dados.</p>
+<p><strong>Resposta correta:</strong> C) <strong>Contar o n&uacute;mero
+de registros que atendem a uma condi&ccedil;&atilde;o.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O comando <strong>COUNT(*)</strong>
+&eacute; usado para contar o n&uacute;mero total de registros que
+atendem a uma condi&ccedil;&atilde;o espec&iacute;fica em uma
+consulta.</p>
+<hr/>
+
+<p>Essas quest&otilde;es foram elaboradas para refletir o estilo da
+banca FGV, abordando os principais conceitos de <strong>SQL</strong>,
+<strong>DDL</strong> e <strong>DML</strong>, com foco na defini&ccedil;&atilde;o
+e manipula&ccedil;&atilde;o de dados em bancos de dados relacionais.</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>
