@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.7.2 (Windows)"/>
+	<meta name="created" content="2024-11-14T15:10:51.261000000"/>
+	<meta name="changed" content="2024-11-14T15:35:57.907000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h4.cjk { font-family: "NSimSun"; font-size: 12pt; font-weight: bold }
+		h4.ctl { font-family: "Arial"; font-size: 12pt; font-weight: bold }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		strong { font-weight: bold }
+		code.western { font-family: "Liberation Mono", monospace }
+		code.cjk { font-family: "NSimSun", monospace }
+		code.ctl { font-family: "Liberation Mono", monospace }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><h3 class="western">
+<strong>Protocolos de Seguran&ccedil;a: SSL/TLS - Resumo e Exemplo
+Pr&aacute;tico</strong></h3>
+<h4 class="western"><strong>O que s&atilde;o SSL e TLS?</strong></h4>
+<p><strong>SSL</strong> (Secure Sockets Layer) e <strong>TLS</strong>
+(Transport Layer Security) s&atilde;o protocolos de seguran&ccedil;a
+usados para estabelecer conex&otilde;es seguras entre um cliente
+(geralmente um navegador) e um servidor (como um site). Eles garantem
+que os dados transmitidos entre o cliente e o servidor sejam
+<strong>criptografados</strong>, <strong>autenticados</strong> e
+<strong>integrados</strong>, protegendo as informa&ccedil;&otilde;es
+contra intercepta&ccedil;&otilde;es e altera&ccedil;&otilde;es.</p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>SSL</strong> &eacute; o
+	protocolo mais antigo, mas foi substitu&iacute;do por <strong>TLS</strong>
+	devido a vulnerabilidades de seguran&ccedil;a.</p>
+	<li><p><strong>TLS</strong> &eacute; o protocolo atualmente
+	recomendado e mais amplamente utilizado. Ele &eacute; uma vers&atilde;o
+	mais segura e moderna do SSL.</p>
+</ul>
+<h3 class="western"><strong>Objetivos principais do SSL/TLS:</strong></h3>
+<ol>
+	<li><p style="margin-bottom: 0cm"><strong>Criptografia</strong>:
+	Protege a confidencialidade dos dados, garantindo que ningu&eacute;m
+	possa ler os dados enquanto est&atilde;o sendo transmitidos.</p>
+	<li><p style="margin-bottom: 0cm"><strong>Autentica&ccedil;&atilde;o</strong>:
+	Garante que o cliente est&aacute; se comunicando com o servidor
+	correto e n&atilde;o com um impostor (MITM - Man-In-The-Middle).</p>
+	<li><p><strong>Integridade</strong>: Garante que os dados n&atilde;o
+	sejam alterados durante a transmiss&atilde;o.</p>
+</ol>
+<h3 class="western"><strong>Como funciona o SSL/TLS?</strong></h3>
+<p>O processo de comunica&ccedil;&atilde;o segura entre o cliente e o
+servidor atrav&eacute;s de SSL/TLS &eacute; dividido em v&aacute;rias
+etapas:</p>
+<ol>
+	<li><p><strong>Handshake (Negocia&ccedil;&atilde;o):</strong><br/>
+O
+	cliente e o servidor come&ccedil;am trocando mensagens para
+	concordar sobre os m&eacute;todos de criptografia a serem usados e
+	verificar a identidade do servidor (e opcionalmente do cliente).</p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">O <strong>cliente</strong>
+		solicita a conex&atilde;o segura.</p>
+		<li><p style="margin-bottom: 0cm">O <strong>servidor</strong> envia
+		um <strong>certificado digital</strong> para o cliente, contendo
+		uma chave p&uacute;blica e outros dados que o cliente usar&aacute;
+		para verificar a identidade do servidor.</p>
+		<li><p style="margin-bottom: 0cm">O <strong>cliente</strong> valida
+		o certificado (por exemplo, se foi assinado por uma autoridade de
+		certifica&ccedil;&atilde;o confi&aacute;vel).</p>
+	</ul>
+	<li><p><strong>Gera&ccedil;&atilde;o da chave de sess&atilde;o:</strong><br/>
+Ap&oacute;s
+	a autentica&ccedil;&atilde;o, o cliente e o servidor geram uma chave
+	secreta compartilhada (chave de sess&atilde;o) que ser&aacute; usada
+	para criptografar a comunica&ccedil;&atilde;o subsequente.</p>
+	<li><p><strong>Criptografia dos Dados:</strong><br/>
+Depois de
+	estabelecida a conex&atilde;o segura, todas as mensagens trocadas
+	entre cliente e servidor s&atilde;o criptografadas usando a chave de
+	sess&atilde;o.</p>
+	<li><p><strong>Encerramento:</strong><br/>
+Quando a comunica&ccedil;&atilde;o
+	&eacute; finalizada, o cliente e o servidor trocam mensagens para
+	encerrar a sess&atilde;o de forma segura.</p>
+</ol>
+<hr/>
+
+<h3 class="western"><strong>Exemplo Pr&aacute;tico:</strong></h3>
+<p>Aqui, vamos explorar um exemplo pr&aacute;tico utilizando <strong>Java</strong>
+para demonstrar a implementa&ccedil;&atilde;o de SSL/TLS em uma
+comunica&ccedil;&atilde;o cliente-servidor.</p>
+<h4 class="western"><strong>1. Gerar um Certificado SSL/TLS (usando
+OpenSSL):</strong></h4>
+<p>Para testar a comunica&ccedil;&atilde;o segura, voc&ecirc; pode
+gerar um certificado autoassinado. No ambiente de desenvolvimento,
+isso pode ser feito com o OpenSSL. Para produ&ccedil;&atilde;o,
+sempre use certificados assinados por uma Autoridade Certificadora
+(CA).</p>
+<pre class="western">bash
+Copiar c&oacute;digo
+<code class="western"># Gerar uma chave privada</code>
+<code class="western">openssl genpkey -algorithm RSA -out private_key.pem -aes256</code>
+
+<code class="western"># Criar uma CSR (Certificate Signing Request)</code>
+<code class="western">openssl req -new -key private_key.pem -out csr.pem</code>
+
+<code class="western"># Gerar um certificado autoassinado</code>
+<code class="western">openssl x509 -req -in csr.pem -signkey private_key.pem -out cert.pem</code></pre><h4 class="western">
+<strong>2. Servidor SSL/TLS (Java - usando </strong><strong><code class="western">SSLServerSocket</code></strong><strong>):</strong></h4>
+<p>Aqui, implementaremos um servidor SSL simples que escuta conex&otilde;es
+na porta 8443 e responde de maneira segura a um cliente.</p>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">import javax.net.ssl.*;</code>
+<code class="western">import java.io.*;</code>
+<code class="western">import java.security.KeyStore;</code>
+
+<code class="western">public class SSLServer {</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) throws Exception {</code>
+<code class="western">        </code><code class="western">// Carregar o keystore (armazenamento do certificado e chave)</code>
+<code class="western">        </code><code class="western">char[] password = &quot;password&quot;.toCharArray();</code>
+<code class="western">        </code><code class="western">KeyStore keyStore = KeyStore.getInstance(&quot;JKS&quot;);</code>
+<code class="western">        </code><code class="western">keyStore.load(new FileInputStream(&quot;keystore.jks&quot;), password);</code>
+
+<code class="western">        </code><code class="western">// Criar o gerenciador de chaves e inicializar o contexto SSL</code>
+<code class="western">        </code><code class="western">KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());</code>
+<code class="western">        </code><code class="western">keyManagerFactory.init(keyStore, password);</code>
+<code class="western">        </code><code class="western">SSLContext sslContext = SSLContext.getInstance(&quot;TLS&quot;);</code>
+<code class="western">        </code><code class="western">sslContext.init(keyManagerFactory.getKeyManagers(), null, null);</code>
+
+<code class="western">        </code><code class="western">// Criar o SSLServerSocketFactory e inicializar o servidor SSL</code>
+<code class="western">        </code><code class="western">SSLServerSocketFactory serverSocketFactory = sslContext.getServerSocketFactory();</code>
+<code class="western">        </code><code class="western">SSLServerSocket serverSocket = (SSLServerSocket) serverSocketFactory.createServerSocket(8443);</code>
+
+<code class="western">        </code><code class="western">// Aceitar conex&otilde;es e responder de forma segura</code>
+<code class="western">        </code><code class="western">while (true) {</code>
+<code class="western">            </code><code class="western">try (SSLSocket clientSocket = (SSLSocket) serverSocket.accept()) {</code>
+<code class="western">                </code><code class="western">BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));</code>
+<code class="western">                </code><code class="western">PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);</code>
+<code class="western">                </code>
+<code class="western">                </code><code class="western">// Leitura da mensagem do cliente</code>
+<code class="western">                </code><code class="western">String clientMessage = in.readLine();</code>
+<code class="western">                </code><code class="western">System.out.println(&quot;Mensagem recebida do cliente: &quot; + clientMessage);</code>
+
+<code class="western">                </code><code class="western">// Enviar resposta para o cliente</code>
+<code class="western">                </code><code class="western">out.println(&quot;Resposta segura do servidor: &quot; + clientMessage);</code>
+<code class="western">            </code><code class="western">}</code>
+<code class="western">        </code><code class="western">}</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><h4 class="western">
+<strong>3. Cliente SSL/TLS (Java - usando </strong><strong><code class="western">SSLSocket</code></strong><strong>):</strong></h4>
+<p>Agora, implementamos o cliente que se conecta ao servidor seguro
+usando SSL/TLS.</p>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">import javax.net.ssl.*;</code>
+<code class="western">import java.io.*;</code>
+<code class="western">import java.security.KeyStore;</code>
+
+<code class="western">public class SSLClient {</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) throws Exception {</code>
+<code class="western">        </code><code class="western">// Carregar o keystore (caso seja necess&aacute;rio autenticar o cliente)</code>
+<code class="western">        </code><code class="western">char[] password = &quot;password&quot;.toCharArray();</code>
+<code class="western">        </code><code class="western">KeyStore keyStore = KeyStore.getInstance(&quot;JKS&quot;);</code>
+<code class="western">        </code><code class="western">keyStore.load(new FileInputStream(&quot;keystore.jks&quot;), password);</code>
+
+<code class="western">        </code><code class="western">// Criar o gerenciador de chaves e inicializar o contexto SSL</code>
+<code class="western">        </code><code class="western">KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());</code>
+<code class="western">        </code><code class="western">keyManagerFactory.init(keyStore, password);</code>
+<code class="western">        </code><code class="western">SSLContext sslContext = SSLContext.getInstance(&quot;TLS&quot;);</code>
+<code class="western">        </code><code class="western">sslContext.init(keyManagerFactory.getKeyManagers(), null, null);</code>
+
+<code class="western">        </code><code class="western">// Criar o SSLSocketFactory</code>
+<code class="western">        </code><code class="western">SSLSocketFactory socketFactory = sslContext.getSocketFactory();</code>
+<code class="western">        </code><code class="western">SSLSocket socket = (SSLSocket) socketFactory.createSocket(&quot;localhost&quot;, 8443);</code>
+
+<code class="western">        </code><code class="western">// Enviar uma mensagem para o servidor</code>
+<code class="western">        </code><code class="western">PrintWriter out = new PrintWriter(socket.getOutputStream(), true);</code>
+<code class="western">        </code><code class="western">BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));</code>
+
+<code class="western">        </code><code class="western">out.println(&quot;Ol&aacute;, servidor seguro!&quot;);</code>
+<code class="western">        </code><code class="western">String response = in.readLine();</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;Resposta do servidor: &quot; + response);</code>
+
+<code class="western">        </code><code class="western">// Fechar a conex&atilde;o</code>
+<code class="western">        </code><code class="western">socket.close();</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><h3 class="western">
+<strong>Explica&ccedil;&atilde;o do C&oacute;digo:</strong></h3>
+<ol>
+	<li><p><strong>Servidor SSL (SSLServer):</strong></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">O servidor utiliza um
+		<strong><code class="western">SSLServerSocket</code></strong> para
+		aceitar conex&otilde;es seguras na porta <code class="western">8443</code>.</p>
+		<li><p style="margin-bottom: 0cm">O servidor carrega o <strong>keystore</strong>
+		(que cont&eacute;m o certificado SSL e a chave privada), configura
+		o contexto SSL com um <strong><code class="western">SSLContext</code></strong>
+		e aceita conex&otilde;es seguras.</p>
+		<li><p style="margin-bottom: 0cm">Para cada cliente, ele recebe uma
+		mensagem, exibe e responde com uma mensagem segura.</p>
+	</ul>
+	<li><p><strong>Cliente SSL (SSLClient):</strong></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">O cliente tamb&eacute;m usa um
+		<strong><code class="western">SSLSocket</code></strong> para se
+		conectar ao servidor na porta <code class="western">8443</code>.</p>
+		<li><p style="margin-bottom: 0cm">O cliente envia uma mensagem ao
+		servidor, recebe uma resposta criptografada e exibe a resposta de
+		forma segura.</p>
+	</ul>
+	<li><p><strong>Keystore:</strong> Ambos os exemplos assumem que o
+	<strong>keystore</strong> com o certificado SSL (<code class="western">keystore.jks</code>)
+	j&aacute; foi gerado.</p>
+</ol>
+<h3 class="western"><strong>Como Testar:</strong></h3>
+<ol>
+	<li><p style="margin-bottom: 0cm"><strong>Gere o keystore e o
+	certificado</strong> (se ainda n&atilde;o tiver).</p>
+	<li><p style="margin-bottom: 0cm"><strong>Execute o servidor SSL</strong>
+	no seu ambiente.</p>
+	<li><p><strong>Execute o cliente SSL</strong> e observe que ele se
+	conecta de maneira segura ao servidor, trocando dados
+	criptografados.</p>
+</ol>
+<hr/>
+
+<h3 class="western"><strong>Conclus&atilde;o:</strong></h3>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>SSL/TLS</strong> garante
+	que a comunica&ccedil;&atilde;o entre cliente e servidor seja
+	<strong>segura</strong>, <strong>autenticada</strong> e <strong>integrada</strong>.
+	Esses protocolos s&atilde;o fundamentais para a seguran&ccedil;a de
+	sistemas modernos, como e-commerce, servi&ccedil;os banc&aacute;rios
+	e sistemas corporativos.</p>
+	<li><p>O exemplo pr&aacute;tico ilustra como configurar uma
+	comunica&ccedil;&atilde;o segura simples entre cliente e servidor
+	utilizando SSL/TLS em Java.</p>
+</ul>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>

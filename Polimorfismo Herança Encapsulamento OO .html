@@ -1,0 +1,606 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.7.2 (Windows)"/>
+	<meta name="created" content="2024-11-14T14:17:38.649000000"/>
+	<meta name="changed" content="2024-11-14T14:58:53.261000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h4.cjk { font-family: "NSimSun"; font-size: 12pt; font-weight: bold }
+		h4.ctl { font-family: "Arial"; font-size: 12pt; font-weight: bold }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		h5 { margin-top: 0.21cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h5.western { font-family: "Liberation Serif", serif; font-size: 10pt; font-weight: bold }
+		h5.cjk { font-family: "NSimSun"; font-size: 10pt; font-weight: bold }
+		h5.ctl { font-family: "Arial"; font-size: 10pt; font-weight: bold }
+		h6 { margin-top: 0.11cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h6.western { font-family: "Liberation Serif", serif; font-size: 7pt; font-weight: bold }
+		h6.cjk { font-family: "NSimSun"; font-size: 7pt; font-weight: bold }
+		h6.ctl { font-family: "Arial"; font-size: 7pt; font-weight: bold }
+		strong { font-weight: bold }
+		em { font-style: italic }
+		code.western { font-family: "Liberation Mono", monospace }
+		code.cjk { font-family: "NSimSun", monospace }
+		code.ctl { font-family: "Liberation Mono", monospace }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p>O
+<strong>polimorfismo</strong> &eacute; um dos pilares da <strong>orienta&ccedil;&atilde;o
+a objetos</strong> (OO) e se refere &agrave; capacidade de um objeto
+responder de maneira diferente &agrave; mesma mensagem ou m&eacute;todo,
+dependendo de seu tipo espec&iacute;fico. Esse conceito permite que o
+mesmo m&eacute;todo ou opera&ccedil;&atilde;o se comporte de maneira
+distinta conforme o tipo do objeto em quest&atilde;o.</p>
+<p>O polimorfismo pode ser implementado de duas formas principais:</p>
+<ol>
+	<li><p style="margin-bottom: 0cm"><strong>Polimorfismo de sobrecarga</strong>
+	(ou <em>overloading</em>): onde o mesmo m&eacute;todo tem diferentes
+	implementa&ccedil;&otilde;es, dependendo dos par&acirc;metros
+	passados.</p>
+	<li><p><strong>Polimorfismo de substitui&ccedil;&atilde;o</strong>
+	(ou <em>overriding</em>): onde um m&eacute;todo na classe filha
+	substitui o comportamento do m&eacute;todo na classe pai.</p>
+</ol>
+<h3 class="western"><strong>Exemplo de Polimorfismo com Algoritmo em
+Java</strong></h3>
+<p>Vamos implementar um exemplo simples de <strong>polimorfismo de
+substitui&ccedil;&atilde;o</strong>, onde temos uma classe base
+<code class="western">Animal</code> e duas classes filhas: <code class="western">Cachorro</code>
+e <code class="western">Gato</code>. Ambas as classes filhas
+sobrescrevem o m&eacute;todo <code class="western">fazerSom()</code>
+da classe base, mas com comportamentos diferentes.</p>
+<h4 class="western"><strong>C&oacute;digo:</strong></h4>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">// Classe base</code>
+<code class="western">class Animal {</code>
+<code class="western">    </code><code class="western">// M&eacute;todo que ser&aacute; sobrescrito nas subclasses</code>
+<code class="western">    </code><code class="western">public void fazerSom() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O animal faz um som.&quot;);</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">// Classe derivada Cachorro</code>
+<code class="western">class Cachorro extends Animal {</code>
+<code class="western">    </code><code class="western">// Sobrescrita do m&eacute;todo fazerSom()</code>
+<code class="western">    </code><code class="western">@Override</code>
+<code class="western">    </code><code class="western">public void fazerSom() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O cachorro late.&quot;);</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">// Classe derivada Gato</code>
+<code class="western">class Gato extends Animal {</code>
+<code class="western">    </code><code class="western">// Sobrescrita do m&eacute;todo fazerSom()</code>
+<code class="western">    </code><code class="western">@Override</code>
+<code class="western">    </code><code class="western">public void fazerSom() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O gato mia.&quot;);</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">public class Main {</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) {</code>
+<code class="western">        </code><code class="western">// Criando inst&acirc;ncias de Cachorro e Gato</code>
+<code class="western">        </code><code class="western">Animal meuCachorro = new Cachorro();</code>
+<code class="western">        </code><code class="western">Animal meuGato = new Gato();</code>
+
+<code class="western">        </code><code class="western">// Polimorfismo: mesmo m&eacute;todo, mas comportamento diferente dependendo do tipo do objeto</code>
+<code class="western">        </code><code class="western">meuCachorro.fazerSom(); // Sa&iacute;da: O cachorro late.</code>
+<code class="western">        </code><code class="western">meuGato.fazerSom();     // Sa&iacute;da: O gato mia.</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><h3 class="western">
+<strong>Explica&ccedil;&atilde;o do Exemplo:</strong></h3>
+<ol>
+	<li><p><strong>Classe </strong><strong><code class="western">Animal</code></strong>:
+	Define um m&eacute;todo chamado <code class="western">fazerSom()</code>.
+	Este m&eacute;todo &eacute; a implementa&ccedil;&atilde;o padr&atilde;o,
+	mas nas subclasses ele ser&aacute; sobrescrito.</p>
+	<li><p><strong>Classe </strong><strong><code class="western">Cachorro</code></strong>:
+	Sobrescreve o m&eacute;todo <code class="western">fazerSom()</code>
+	da classe <code class="western">Animal</code> e fornece uma
+	implementa&ccedil;&atilde;o espec&iacute;fica para &quot;latir&quot;.
+	Ao chamar <code class="western">fazerSom()</code> em um objeto do
+	tipo <code class="western">Cachorro</code>, ser&aacute; exibido &quot;O
+	cachorro late.&quot;</p>
+	<li><p><strong>Classe </strong><strong><code class="western">Gato</code></strong>:
+	Similar &agrave; classe <code class="western">Cachorro</code>,
+	sobrescreve o m&eacute;todo <code class="western">fazerSom()</code>
+	da classe <code class="western">Animal</code> e fornece uma
+	implementa&ccedil;&atilde;o espec&iacute;fica para &quot;miau&quot;.
+	Quando chamamos <code class="western">fazerSom()</code> em um objeto
+	do tipo <code class="western">Gato</code>, ser&aacute; exibido &quot;O
+	gato mia.&quot;</p>
+	<li><p><strong>Polimorfismo</strong>: No m&eacute;todo <code class="western">main()</code>,
+	criamos vari&aacute;veis do tipo <code class="western">Animal</code>,
+	mas as instanciamos com objetos das subclasses <code class="western">Cachorro</code>
+	e <code class="western">Gato</code>. Apesar de ambas as vari&aacute;veis
+	serem do tipo <code class="western">Animal</code>, o Java ir&aacute;
+	chamar a vers&atilde;o do m&eacute;todo <code class="western">fazerSom()</code>
+	de acordo com o tipo real do objeto, ou seja, se o objeto &eacute;
+	um <code class="western">Cachorro</code> ou um <code class="western">Gato</code>.</p>
+</ol>
+<h3 class="western"><strong>Sa&iacute;da do Programa:</strong></h3>
+<pre class="western">mathematica
+Copiar c&oacute;digo
+<code class="western">O cachorro late.</code>
+<code class="western">O gato mia.</code></pre><h3 class="western">
+<strong>Por que isso &eacute; Polimorfismo?</strong></h3>
+<p>Neste exemplo, a mesma mensagem (<code class="western">fazerSom()</code>)
+&eacute; enviada para diferentes objetos (<code class="western">Cachorro</code>
+e <code class="western">Gato</code>), mas os objetos respondem de
+maneira diferente de acordo com seu tipo espec&iacute;fico. Esse
+comportamento &eacute; uma forma de <strong>polimorfismo de
+substitui&ccedil;&atilde;o</strong>. O m&eacute;todo <code class="western">fazerSom()</code>
+foi sobrescrito nas subclasses, e o Java garante que o m&eacute;todo
+correto seja chamado com base no tipo do objeto real em tempo de
+execu&ccedil;&atilde;o.</p>
+<hr/>
+
+<h3 class="western"><strong>Polimorfismo de Sobrecarga (Overloading)</strong></h3>
+<p>Um exemplo de <strong>polimorfismo de sobrecarga</strong> seria se
+tiv&eacute;ssemos um m&eacute;todo <code class="western">fazerSom()</code>
+com diferentes assinaturas (ou seja, diferentes par&acirc;metros) na
+mesma classe. Aqui est&aacute; um exemplo de como isso funciona:</p>
+<h4 class="western"><strong>Exemplo de Sobrecarga de M&eacute;todo:</strong></h4>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">class Animal {</code>
+<code class="western">    </code><code class="western">// M&eacute;todo sem par&acirc;metros</code>
+<code class="western">    </code><code class="western">public void fazerSom() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O animal faz um som.&quot;);</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// Sobrecarga do m&eacute;todo com um par&acirc;metro</code>
+<code class="western">    </code><code class="western">public void fazerSom(String som) {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O animal faz o som: &quot; + som);</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">public class Main {</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) {</code>
+<code class="western">        </code><code class="western">Animal animal = new Animal();</code>
+
+<code class="western">        </code><code class="western">// Chamando o m&eacute;todo sem par&acirc;metros</code>
+<code class="western">        </code><code class="western">animal.fazerSom();  // Sa&iacute;da: O animal faz um som.</code>
+
+<code class="western">        </code><code class="western">// Chamando o m&eacute;todo com um par&acirc;metro</code>
+<code class="western">        </code><code class="western">animal.fazerSom(&quot;roar&quot;);  // Sa&iacute;da: O animal faz o som: roar.</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><h3 class="western">
+<strong>Explica&ccedil;&atilde;o do Polimorfismo de Sobrecarga:</strong></h3>
+<ul>
+	<li><p>O m&eacute;todo <code class="western">fazerSom()</code> &eacute;
+	sobrecarregado, ou seja, h&aacute; dois m&eacute;todos com o mesmo
+	nome mas com diferentes par&acirc;metros. O Java decide qual m&eacute;todo
+	chamar com base no n&uacute;mero e tipo de argumentos passados para
+	o m&eacute;todo.</p>
+	<li><p>O polimorfismo de sobrecarga permite que voc&ecirc; use o
+	mesmo nome de m&eacute;todo para opera&ccedil;&otilde;es
+	semelhantes, mas com diferentes assinaturas.</p>
+</ul>
+<h3 class="western"><strong>Sa&iacute;da do Programa:</strong></h3>
+<pre class="western">mathematica
+Copiar c&oacute;digo
+<code class="western">O animal faz um som.</code>
+<code class="western">O animal faz o som: roar.</code></pre>
+<hr/>
+
+<h3 class="western"><strong>Conclus&atilde;o</strong></h3>
+<p>O <strong>polimorfismo</strong> &eacute; um conceito poderoso na
+programa&ccedil;&atilde;o orientada a objetos, pois permite que
+m&eacute;todos com o mesmo nome se comportem de maneira diferente,
+dependendo do tipo do objeto. Isso torna o c&oacute;digo mais
+flex&iacute;vel e extens&iacute;vel, pois o mesmo m&eacute;todo pode
+ser aplicado a diferentes tipos de objetos com comportamentos
+espec&iacute;ficos.</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p>A <strong>heran&ccedil;a</strong> &eacute; um dos pilares da
+programa&ccedil;&atilde;o orientada a objetos (OO) e permite que uma
+classe herde caracter&iacute;sticas e comportamentos de outra. Isso
+promove a reutiliza&ccedil;&atilde;o de c&oacute;digo e facilita a
+manuten&ccedil;&atilde;o e a extens&atilde;o de sistemas.</p>
+<h3 class="western"><strong>Como Funciona a Heran&ccedil;a?</strong></h3>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Classe Base</strong> (ou
+	Superclasse): A classe que fornece atributos e m&eacute;todos que
+	ser&atilde;o herdados.</p>
+	<li><p><strong>Classe Derivada</strong> (ou Subclasse): A classe que
+	herda os atributos e m&eacute;todos da classe base. Ela pode
+	adicionar novos comportamentos ou modificar os comportamentos
+	herdados.</p>
+</ul>
+<p>A heran&ccedil;a permite que voc&ecirc; crie uma nova classe
+baseada em uma classe existente, evitando a duplica&ccedil;&atilde;o
+de c&oacute;digo.</p>
+<h3 class="western"><strong>Exemplo de Heran&ccedil;a com Algoritmo
+em Java</strong></h3>
+<p>Vamos criar um exemplo simples que utiliza heran&ccedil;a. Teremos
+uma classe base chamada <code class="western">Animal</code> e duas
+classes derivadas: <code class="western">Cachorro</code> e <code class="western">Gato</code>.</p>
+<h4 class="western"><strong>C&oacute;digo:</strong></h4>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">// Classe base (superclasse)</code>
+<code class="western">class Animal {</code>
+<code class="western">    </code><code class="western">// Atributo</code>
+<code class="western">    </code><code class="western">protected String nome;</code>
+
+<code class="western">    </code><code class="western">// Construtor</code>
+<code class="western">    </code><code class="western">public Animal(String nome) {</code>
+<code class="western">        </code><code class="western">this.nome = nome;</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// M&eacute;todo da classe base</code>
+<code class="western">    </code><code class="western">public void fazerSom() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O animal faz um som.&quot;);</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// M&eacute;todo para mostrar o nome do animal</code>
+<code class="western">    </code><code class="western">public void mostrarNome() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O nome do animal &eacute;: &quot; + nome);</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">// Classe derivada (subclasse) Cachorro</code>
+<code class="western">class Cachorro extends Animal {</code>
+<code class="western">    </code><code class="western">// Construtor da classe Cachorro</code>
+<code class="western">    </code><code class="western">public Cachorro(String nome) {</code>
+<code class="western">        </code><code class="western">super(nome); // Chama o construtor da classe base</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// Sobrescreve o m&eacute;todo fazerSom()</code>
+<code class="western">    </code><code class="western">@Override</code>
+<code class="western">    </code><code class="western">public void fazerSom() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O cachorro late: Au Au!&quot;);</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">// Classe derivada (subclasse) Gato</code>
+<code class="western">class Gato extends Animal {</code>
+<code class="western">    </code><code class="western">// Construtor da classe Gato</code>
+<code class="western">    </code><code class="western">public Gato(String nome) {</code>
+<code class="western">        </code><code class="western">super(nome); // Chama o construtor da classe base</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// Sobrescreve o m&eacute;todo fazerSom()</code>
+<code class="western">    </code><code class="western">@Override</code>
+<code class="western">    </code><code class="western">public void fazerSom() {</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;O gato mia: Miau!&quot;);</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">public class Main {</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) {</code>
+<code class="western">        </code><code class="western">// Criando inst&acirc;ncias de Cachorro e Gato</code>
+<code class="western">        </code><code class="western">Animal meuCachorro = new Cachorro(&quot;Rex&quot;);</code>
+<code class="western">        </code><code class="western">Animal meuGato = new Gato(&quot;Mimi&quot;);</code>
+
+<code class="western">        </code><code class="western">// Chamando o m&eacute;todo fazerSom() para cada objeto</code>
+<code class="western">        </code><code class="western">meuCachorro.mostrarNome(); // Sa&iacute;da: O nome do animal &eacute;: Rex</code>
+<code class="western">        </code><code class="western">meuCachorro.fazerSom();    // Sa&iacute;da: O cachorro late: Au Au!</code>
+
+<code class="western">        </code><code class="western">meuGato.mostrarNome(); // Sa&iacute;da: O nome do animal &eacute;: Mimi</code>
+<code class="western">        </code><code class="western">meuGato.fazerSom();    // Sa&iacute;da: O gato mia: Miau!</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><h3 class="western">
+<strong>Explica&ccedil;&atilde;o do Exemplo:</strong></h3>
+<ol>
+	<li><p><strong>Classe </strong><strong><code class="western">Animal</code></strong><strong>
+	(superclasse):</strong></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">A classe <code class="western">Animal</code>
+		tem um atributo <code class="western">nome</code>, um m&eacute;todo
+		<code class="western">fazerSom()</code> e um m&eacute;todo
+		<code class="western">mostrarNome()</code>.</p>
+		<li><p style="margin-bottom: 0cm">O m&eacute;todo <code class="western">fazerSom()</code>
+		&eacute; implementado de forma gen&eacute;rica, dizendo apenas &quot;O
+		animal faz um som&quot;.</p>
+	</ul>
+	<li><p><strong>Classe </strong><strong><code class="western">Cachorro</code></strong><strong>
+	(subclasse):</strong></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">A classe <code class="western">Cachorro</code>
+		herda os atributos e m&eacute;todos da classe <code class="western">Animal</code>.</p>
+		<li><p style="margin-bottom: 0cm">O construtor da classe <code class="western">Cachorro</code>
+		chama o construtor da classe <code class="western">Animal</code>
+		para inicializar o nome do cachorro.</p>
+		<li><p style="margin-bottom: 0cm">O m&eacute;todo <code class="western">fazerSom()</code>
+		&eacute; <strong>sobrescrito</strong> (overridden) para fornecer um
+		comportamento espec&iacute;fico para a classe <code class="western">Cachorro</code>,
+		ou seja, o cachorro late.</p>
+	</ul>
+	<li><p><strong>Classe </strong><strong><code class="western">Gato</code></strong><strong>
+	(subclasse):</strong></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">A classe <code class="western">Gato</code>
+		tamb&eacute;m herda de <code class="western">Animal</code> e tem um
+		comportamento espec&iacute;fico para o m&eacute;todo <code class="western">fazerSom()</code>,
+		fazendo o gato miar.</p>
+	</ul>
+	<li><p><strong>Na classe </strong><strong><code class="western">Main</code></strong><strong>:</strong></p>
+	<ul>
+		<li><p>Criamos inst&acirc;ncias de <code class="western">Cachorro</code>
+		e <code class="western">Gato</code>, mas as vari&aacute;veis s&atilde;o
+		do tipo <code class="western">Animal</code>. Isso &eacute; um
+		exemplo de <strong>polimorfismo</strong>, onde o mesmo m&eacute;todo
+		(<code class="western">fazerSom()</code>) &eacute; chamado para
+		diferentes tipos de objetos (Cachorro e Gato), mas com
+		comportamentos distintos.</p>
+	</ul>
+</ol>
+<h3 class="western"><strong>Sa&iacute;da do Programa:</strong></h3>
+<pre class="western">mathematica
+Copiar c&oacute;digo
+<code class="western">O nome do animal &eacute;: Rex</code>
+<code class="western">O cachorro late: Au Au!</code>
+<code class="western">O nome do animal &eacute;: Mimi</code>
+<code class="western">O gato mia: Miau!</code></pre><h3 class="western">
+<strong>Detalhes Importantes sobre Heran&ccedil;a:</strong></h3>
+<ul>
+	<li><p><strong>Uso do </strong><strong><code class="western">super()</code></strong><strong>:</strong><br/>
+O
+	construtor da subclasse chama o construtor da superclasse com o
+	comando <code class="western">super(nome)</code> para garantir que o
+	atributo <code class="western">nome</code> seja inicializado
+	corretamente, uma vez que a classe base (<code class="western">Animal</code>)
+	&eacute; respons&aacute;vel por gerenciar o nome do animal.</p>
+	<li><p><strong>Sobrescrita de M&eacute;todos (</strong><strong><code class="western">@Override</code></strong><strong>):</strong><br/>
+As
+	classes <code class="western">Cachorro</code> e <code class="western">Gato</code>
+	sobrescrevem o m&eacute;todo <code class="western">fazerSom()</code>
+	da classe <code class="western">Animal</code>. O uso da anota&ccedil;&atilde;o
+	<code class="western">@Override</code> garante que o m&eacute;todo
+	da superclasse est&aacute; sendo corretamente sobrescrito, evitando
+	erros de digita&ccedil;&atilde;o ou de assinatura.</p>
+	<li><p><strong>Encapsulamento de Atributos:</strong><br/>
+O atributo
+	<code class="western">nome</code> foi declarado como <code class="western">protected</code>,
+	o que permite que ele seja acessado diretamente pelas classes
+	derivadas (subclasses), mas n&atilde;o por outras classes fora da
+	hierarquia de heran&ccedil;a. Voc&ecirc; pode usar o modificador
+	<code class="western">private</code> ou <code class="western">public</code>
+	dependendo das necessidades de acesso.</p>
+</ul>
+<hr/>
+
+<h3 class="western"><strong>Conclus&atilde;o sobre Heran&ccedil;a:</strong></h3>
+<ul>
+	<li><p style="margin-bottom: 0cm">A <strong>heran&ccedil;a</strong>
+	permite que voc&ecirc; crie novas classes baseadas em classes
+	existentes, reutilizando c&oacute;digo e melhorando a organiza&ccedil;&atilde;o
+	do sistema.</p>
+	<li><p style="margin-bottom: 0cm">As subclasses herdam atributos e
+	m&eacute;todos da superclasse, mas podem modificar ou adicionar
+	comportamentos conforme necess&aacute;rio.</p>
+	<li><p>A heran&ccedil;a facilita a <strong>extensibilidade</strong>
+	do c&oacute;digo, tornando-o mais modular e f&aacute;cil de manter.</p>
+</ul>
+<p>4o mini</p>
+<h5 class="western">Voc&ecirc; disse:</h5>
+<p>encapsulamento , exemplo com algoritmo 
+</p>
+<h6 class="western">O ChatGPT disse:</h6>
+<p>ChatGPT</p>
+<h3 class="western"><strong>Encapsulamento em Programa&ccedil;&atilde;o
+Orientada a Objetos</strong></h3>
+<p>O <strong>encapsulamento</strong> &eacute; um dos princ&iacute;pios
+fundamentais da programa&ccedil;&atilde;o orientada a objetos (OO).
+Ele consiste em <strong>ocultar os detalhes internos de implementa&ccedil;&atilde;o
+de uma classe e fornecer uma interface p&uacute;blica (m&eacute;todos
+p&uacute;blicos) para interagir com ela</strong>. O objetivo do
+encapsulamento &eacute; proteger os dados e evitar que sejam
+acessados ou modificados diretamente, sem o devido controle.</p>
+<h3 class="western"><strong>Caracter&iacute;sticas do Encapsulamento:</strong></h3>
+<ol>
+	<li><p style="margin-bottom: 0cm"><strong>Atributos privados:</strong>
+	Os dados de uma classe s&atilde;o geralmente declarados como
+	<code class="western">private</code>, de modo que n&atilde;o possam
+	ser acessados diretamente fora da classe.</p>
+	<li><p><strong>M&eacute;todos p&uacute;blicos (Getters e Setters):</strong>
+	Para manipular os dados, s&atilde;o fornecidos m&eacute;todos
+	p&uacute;blicos, conhecidos como <strong>getters</strong> (para
+	acessar valores) e <strong>setters</strong> (para modificar
+	valores).</p>
+</ol>
+<h3 class="western"><strong>Vantagens do Encapsulamento:</strong></h3>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Seguran&ccedil;a:</strong>
+	Protege os dados e evita que sejam acessados de forma indevida ou
+	alterados de maneira inconsistente.</p>
+	<li><p style="margin-bottom: 0cm"><strong>Controle:</strong> Permite
+	que voc&ecirc; controle como os dados s&atilde;o modificados, por
+	exemplo, validando entradas antes de alterar um valor.</p>
+	<li><p><strong>Flexibilidade:</strong> Voc&ecirc; pode alterar a
+	implementa&ccedil;&atilde;o interna de uma classe sem afetar o
+	c&oacute;digo que usa essa classe, desde que a interface (os m&eacute;todos
+	p&uacute;blicos) permane&ccedil;a a mesma.</p>
+</ul>
+<h3 class="western"><strong>Exemplo de Encapsulamento com Algoritmo
+em Java</strong></h3>
+<p>Vamos criar um exemplo de uma classe <code class="western">ContaBancaria</code>,
+onde vamos encapsular o saldo (com a restri&ccedil;&atilde;o de que
+ele n&atilde;o pode ser alterado diretamente) e permitir opera&ccedil;&otilde;es
+como <strong>depositar</strong> e <strong>sacar</strong> dinheiro de
+forma controlada.</p>
+<h4 class="western"><strong>C&oacute;digo:</strong></h4>
+<pre class="western">java
+Copiar c&oacute;digo
+<code class="western">// Classe ContaBancaria com encapsulamento</code>
+<code class="western">class ContaBancaria {</code>
+<code class="western">    </code><code class="western">// Atributo privado (n&atilde;o pode ser acessado diretamente de fora)</code>
+<code class="western">    </code><code class="western">private double saldo;</code>
+
+<code class="western">    </code><code class="western">// Construtor para inicializar a conta com um saldo inicial</code>
+<code class="western">    </code><code class="western">public ContaBancaria(double saldoInicial) {</code>
+<code class="western">        </code><code class="western">if (saldoInicial &gt;= 0) {</code>
+<code class="western">            </code><code class="western">this.saldo = saldoInicial;</code>
+<code class="western">        </code><code class="western">} else {</code>
+<code class="western">            </code><code class="western">this.saldo = 0;</code>
+<code class="western">            </code><code class="western">System.out.println(&quot;Saldo inicial inv&aacute;lido, a conta ser&aacute; iniciada com saldo zero.&quot;);</code>
+<code class="western">        </code><code class="western">}</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// Getter (acessador) para o saldo - permite ler o saldo</code>
+<code class="western">    </code><code class="western">public double getSaldo() {</code>
+<code class="western">        </code><code class="western">return saldo;</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// Setter (modificador) para o saldo - permite modificar o saldo de forma controlada</code>
+<code class="western">    </code><code class="western">public void depositar(double valor) {</code>
+<code class="western">        </code><code class="western">if (valor &gt; 0) {</code>
+<code class="western">            </code><code class="western">saldo += valor;</code>
+<code class="western">            </code><code class="western">System.out.println(&quot;Dep&oacute;sito realizado. Novo saldo: &quot; + saldo);</code>
+<code class="western">        </code><code class="western">} else {</code>
+<code class="western">            </code><code class="western">System.out.println(&quot;Valor de dep&oacute;sito inv&aacute;lido.&quot;);</code>
+<code class="western">        </code><code class="western">}</code>
+<code class="western">    </code><code class="western">}</code>
+
+<code class="western">    </code><code class="western">// M&eacute;todo para sacar dinheiro de forma controlada</code>
+<code class="western">    </code><code class="western">public void sacar(double valor) {</code>
+<code class="western">        </code><code class="western">if (valor &gt; 0 &amp;&amp; valor &lt;= saldo) {</code>
+<code class="western">            </code><code class="western">saldo -= valor;</code>
+<code class="western">            </code><code class="western">System.out.println(&quot;Saque realizado. Novo saldo: &quot; + saldo);</code>
+<code class="western">        </code><code class="western">} else {</code>
+<code class="western">            </code><code class="western">System.out.println(&quot;Saque inv&aacute;lido. Verifique o valor ou o saldo dispon&iacute;vel.&quot;);</code>
+<code class="western">        </code><code class="western">}</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+
+<code class="western">public class Main {</code>
+<code class="western">    </code><code class="western">public static void main(String[] args) {</code>
+<code class="western">        </code><code class="western">// Criando uma conta banc&aacute;ria com saldo inicial</code>
+<code class="western">        </code><code class="western">ContaBancaria minhaConta = new ContaBancaria(1000.00);</code>
+
+<code class="western">        </code><code class="western">// Acessando o saldo atrav&eacute;s do m&eacute;todo getter</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;Saldo inicial: &quot; + minhaConta.getSaldo());</code>
+
+<code class="western">        </code><code class="western">// Depositando dinheiro</code>
+<code class="western">        </code><code class="western">minhaConta.depositar(500.00);</code>
+
+<code class="western">        </code><code class="western">// Tentando sacar uma quantia maior que o saldo</code>
+<code class="western">        </code><code class="western">minhaConta.sacar(2000.00);</code>
+
+<code class="western">        </code><code class="western">// Sacando uma quantia v&aacute;lida</code>
+<code class="western">        </code><code class="western">minhaConta.sacar(300.00);</code>
+
+<code class="western">        </code><code class="western">// Verificando o saldo final</code>
+<code class="western">        </code><code class="western">System.out.println(&quot;Saldo final: &quot; + minhaConta.getSaldo());</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><h3 class="western">
+<strong>Explica&ccedil;&atilde;o do C&oacute;digo:</strong></h3>
+<ol>
+	<li><p><strong>Classe </strong><strong><code class="western">ContaBancaria</code></strong><strong>:</strong></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm"><strong>Atributo </strong><strong><code class="western">saldo</code></strong><strong>:</strong>
+		O saldo &eacute; um atributo <code class="western">private</code>,
+		o que significa que ele n&atilde;o pode ser acessado diretamente de
+		fora da classe. Apenas a pr&oacute;pria classe tem acesso a esse
+		dado.</p>
+		<li><p style="margin-bottom: 0cm"><strong>Construtor:</strong> O
+		construtor da classe permite inicializar a conta com um saldo
+		inicial. Se o valor passado for negativo, o saldo ser&aacute;
+		definido como 0, e uma mensagem de erro ser&aacute; exibida.</p>
+		<li><p style="margin-bottom: 0cm"><strong>Getter </strong><strong><code class="western">getSaldo()</code></strong><strong>:</strong>
+		Este m&eacute;todo retorna o saldo da conta. Ele fornece uma forma
+		de ler o valor do saldo de fora da classe, sem permitir modific&aacute;-lo
+		diretamente.</p>
+		<li><p style="margin-bottom: 0cm"><strong>Setter </strong><strong><code class="western">depositar()</code></strong><strong>:</strong>
+		O m&eacute;todo <code class="western">depositar()</code> permite
+		que um valor seja adicionado ao saldo. Se o valor for positivo, o
+		saldo &eacute; incrementado. Caso contr&aacute;rio, uma mensagem de
+		erro &eacute; exibida.</p>
+		<li><p style="margin-bottom: 0cm"><strong>M&eacute;todo </strong><strong><code class="western">sacar()</code></strong><strong>:</strong>
+		O m&eacute;todo <code class="western">sacar()</code> permite
+		retirar um valor da conta, mas s&oacute; pode realizar a opera&ccedil;&atilde;o
+		se o valor for v&aacute;lido e o saldo for suficiente. Se o valor
+		for maior que o saldo, o saque n&atilde;o &eacute; realizado e uma
+		mensagem de erro &eacute; exibida.</p>
+	</ul>
+	<li><p><strong>Classe </strong><strong><code class="western">Main</code></strong><strong>:</strong></p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">Criamos uma inst&acirc;ncia de
+		<code class="western">ContaBancaria</code> com um saldo inicial de
+		<code class="western">1000.00</code>.</p>
+		<li><p>Usamos os m&eacute;todos <code class="western">depositar()</code>,
+		<code class="western">sacar()</code> e <code class="western">getSaldo()</code>
+		para realizar opera&ccedil;&otilde;es na conta e verificar o saldo.</p>
+	</ul>
+</ol>
+<h3 class="western"><strong>Sa&iacute;da do Programa:</strong></h3>
+<pre class="western">yaml
+Copiar c&oacute;digo
+<code class="western">Saldo inicial: 1000.0</code>
+<code class="western">Dep&oacute;sito realizado. Novo saldo: 1500.0</code>
+<code class="western">Saque inv&aacute;lido. Verifique o valor ou o saldo dispon&iacute;vel.</code>
+<code class="western">Saque realizado. Novo saldo: 1200.0</code>
+<code class="western">Saldo final: 1200.0</code></pre><h3 class="western">
+<strong>Pontos Chave sobre o Encapsulamento:</strong></h3>
+<ol>
+	<li><p><strong>Prote&ccedil;&atilde;o dos Dados:</strong><br/>
+O
+	saldo da conta &eacute; armazenado de forma privada (<code class="western">private</code>)
+	e n&atilde;o pode ser acessado diretamente de fora da classe. Em vez
+	disso, a classe fornece m&eacute;todos p&uacute;blicos controlados
+	(<code class="western">depositar()</code>, <code class="western">sacar()</code>,
+	<code class="western">getSaldo()</code>) para interagir com o saldo.</p>
+	<li><p><strong>Valida&ccedil;&atilde;o:</strong><br/>
+O m&eacute;todo
+	<code class="western">sacar()</code> garante que um saque n&atilde;o
+	seja realizado caso o valor seja maior que o saldo dispon&iacute;vel.
+	Isso impede que a conta tenha um saldo negativo ou que opera&ccedil;&otilde;es
+	inv&aacute;lidas sejam realizadas.</p>
+	<li><p><strong>Facilidade de Modifica&ccedil;&atilde;o:</strong><br/>
+Se
+	no futuro voc&ecirc; precisar alterar a forma como o saldo &eacute;
+	calculado ou como os dep&oacute;sitos e saques s&atilde;o
+	realizados, pode fazer isso sem impactar o c&oacute;digo que usa a
+	classe <code class="western">ContaBancaria</code>, desde que a
+	interface p&uacute;blica (os m&eacute;todos <code class="western">depositar()</code>,
+	<code class="western">sacar()</code>, <code class="western">getSaldo()</code>)
+	permane&ccedil;a a mesma.</p>
+</ol>
+<h3 class="western"><strong>Vantagens do Encapsulamento:</strong></h3>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Seguran&ccedil;a:</strong>
+	Os dados s&atilde;o protegidos e n&atilde;o podem ser modificados
+	diretamente, prevenindo altera&ccedil;&otilde;es indesejadas ou
+	incorretas.</p>
+	<li><p style="margin-bottom: 0cm"><strong>Manuten&ccedil;&atilde;o:</strong>
+	A l&oacute;gica de valida&ccedil;&atilde;o e controle est&aacute;
+	centralizada nos m&eacute;todos da classe, facilitando futuras
+	modifica&ccedil;&otilde;es ou adi&ccedil;&otilde;es de
+	funcionalidades.</p>
+	<li><p><strong>Desacoplamento:</strong> O c&oacute;digo que utiliza
+	a classe n&atilde;o precisa saber como os dados s&atilde;o
+	armazenados internamente, apenas como interagir com os m&eacute;todos
+	p&uacute;blicos.</p>
+</ul>
+<h3 class="western"><strong>Conclus&atilde;o:</strong></h3>
+<p>O <strong>encapsulamento</strong> &eacute; uma das principais
+pr&aacute;ticas da programa&ccedil;&atilde;o orientada a objetos, e
+permite que voc&ecirc; controle o acesso aos dados de uma classe de
+maneira segura e eficiente. Ao esconder os detalhes internos e expor
+apenas os m&eacute;todos necess&aacute;rios, voc&ecirc; pode melhorar
+a seguran&ccedil;a, a modularidade e a flexibilidade do seu c&oacute;digo.</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>

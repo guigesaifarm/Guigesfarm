@@ -1,0 +1,565 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.7.2 (Windows)"/>
+	<meta name="created" content="2024-11-14T15:21:02.490000000"/>
+	<meta name="changed" content="2024-11-14T15:21:44.955000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		h5 { margin-top: 0.21cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h5.western { font-family: "Liberation Serif", serif; font-size: 10pt; font-weight: bold }
+		h5.cjk { font-family: "NSimSun"; font-size: 10pt; font-weight: bold }
+		h5.ctl { font-family: "Arial"; font-size: 10pt; font-weight: bold }
+		h6 { margin-top: 0.11cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h6.western { font-family: "Liberation Serif", serif; font-size: 7pt; font-weight: bold }
+		h6.cjk { font-family: "NSimSun"; font-size: 7pt; font-weight: bold }
+		h6.ctl { font-family: "Arial"; font-size: 7pt; font-weight: bold }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h4.cjk { font-family: "NSimSun"; font-size: 12pt; font-weight: bold }
+		h4.ctl { font-family: "Arial"; font-size: 12pt; font-weight: bold }
+		strong { font-weight: bold }
+		code.western { font-family: "Liberation Mono", monospace }
+		code.cjk { font-family: "NSimSun", monospace }
+		code.ctl { font-family: "Liberation Mono", monospace }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><h3 class="western">
+<strong>5 Padr&otilde;es: XML, XSLT, UDDI, REST e JSON - Resumos e
+Exemplos Pr&aacute;ticos</strong></h3>
+<p>A seguir, fornecerei resumos para os cinco padr&otilde;es
+solicitados, juntamente com exemplos pr&aacute;ticos de como cada um
+&eacute; utilizado.</p>
+<hr/>
+
+<h3 class="western"><strong>1. XML (Extensible Markup Language)</strong></h3>
+<p><strong>Resumo:</strong> O <strong>XML</strong> &eacute; uma
+linguagem de marca&ccedil;&atilde;o extens&iacute;vel usada para
+armazenar e transportar dados de forma leg&iacute;vel tanto para
+humanos quanto para m&aacute;quinas. Ele &eacute; amplamente
+utilizado para troca de dados entre sistemas e plataformas diferentes
+devido &agrave; sua estrutura hier&aacute;rquica e flex&iacute;vel.</p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Caracter&iacute;sticas</strong>:</p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">N&atilde;o &eacute; uma linguagem
+		de apresenta&ccedil;&atilde;o (como HTML), mas sim de dados.</p>
+		<li><p style="margin-bottom: 0cm">Usa tags personalizadas, ou seja,
+		o desenvolvedor pode criar tags para representar seus dados.</p>
+		<li><p>&Eacute; autodocumentado, ou seja, a estrutura do XML
+		descreve os dados de forma compreens&iacute;vel.</p>
+	</ul>
+</ul>
+<p><strong>Exemplo XML:</strong></p>
+<pre class="western">xml
+Copiar c&oacute;digo
+<code class="western">&lt;livros&gt;</code>
+<code class="western">  </code><code class="western">&lt;livro&gt;</code>
+<code class="western">    </code><code class="western">&lt;titulo&gt;O Senhor dos An&eacute;is&lt;/titulo&gt;</code>
+<code class="western">    </code><code class="western">&lt;autor&gt;J.R.R. Tolkien&lt;/autor&gt;</code>
+<code class="western">    </code><code class="western">&lt;ano&gt;1954&lt;/ano&gt;</code>
+<code class="western">  </code><code class="western">&lt;/livro&gt;</code>
+<code class="western">  </code><code class="western">&lt;livro&gt;</code>
+<code class="western">    </code><code class="western">&lt;titulo&gt;Harry Potter e a Pedra Filosofal&lt;/titulo&gt;</code>
+<code class="western">    </code><code class="western">&lt;autor&gt;J.K. Rowling&lt;/autor&gt;</code>
+<code class="western">    </code><code class="western">&lt;ano&gt;1997&lt;/ano&gt;</code>
+<code class="western">  </code><code class="western">&lt;/livro&gt;</code>
+<code class="western">&lt;/livros&gt;</code></pre><p>
+<strong>Explica&ccedil;&atilde;o:</strong></p>
+<ul>
+	<li><p style="margin-bottom: 0cm">O XML descreve uma lista de
+	livros, cada um com um t&iacute;tulo, autor e ano de publica&ccedil;&atilde;o.</p>
+	<li><p>As tags <code class="western">&lt;livros&gt;</code>, <code class="western">&lt;livro&gt;</code>,
+	<code class="western">&lt;titulo&gt;</code>, <code class="western">&lt;autor&gt;</code>
+	e <code class="western">&lt;ano&gt;</code> representam as
+	informa&ccedil;&otilde;es de cada livro.</p>
+</ul>
+<hr/>
+
+<h3 class="western"><strong>2. XSLT (Extensible Stylesheet Language
+Transformations)</strong></h3>
+<p><strong>Resumo:</strong> O <strong>XSLT</strong> &eacute; uma
+linguagem usada para transformar documentos XML em outros formatos,
+como HTML, texto ou at&eacute; mesmo outros documentos XML. XSLT &eacute;
+parte do padr&atilde;o XSL e permite aplicar transforma&ccedil;&otilde;es
+aos dados XML com base em uma folha de estilo (stylesheet).</p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Caracter&iacute;sticas</strong>:</p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">Utiliza um arquivo <strong>XSL</strong>
+		para definir como o XML ser&aacute; transformado.</p>
+		<li><p style="margin-bottom: 0cm">Pode ser usado para converter XML
+		para formatos leg&iacute;veis na web (como HTML).</p>
+		<li><p>Baseado em regras de transforma&ccedil;&atilde;o que se
+		aplicam a elementos do XML.</p>
+	</ul>
+</ul>
+<p><strong>Exemplo XSLT:</strong></p>
+<p>Aqui est&aacute; um exemplo de transforma&ccedil;&atilde;o XML
+para HTML usando XSLT.</p>
+<p><strong>XML (entrada):</strong></p>
+<pre class="western">xml
+Copiar c&oacute;digo
+<code class="western">&lt;livros&gt;</code>
+<code class="western">  </code><code class="western">&lt;livro&gt;</code>
+<code class="western">    </code><code class="western">&lt;titulo&gt;O Senhor dos An&eacute;is&lt;/titulo&gt;</code>
+<code class="western">    </code><code class="western">&lt;autor&gt;J.R.R. Tolkien&lt;/autor&gt;</code>
+<code class="western">    </code><code class="western">&lt;ano&gt;1954&lt;/ano&gt;</code>
+<code class="western">  </code><code class="western">&lt;/livro&gt;</code>
+<code class="western">  </code><code class="western">&lt;livro&gt;</code>
+<code class="western">    </code><code class="western">&lt;titulo&gt;Harry Potter e a Pedra Filosofal&lt;/titulo&gt;</code>
+<code class="western">    </code><code class="western">&lt;autor&gt;J.K. Rowling&lt;/autor&gt;</code>
+<code class="western">    </code><code class="western">&lt;ano&gt;1997&lt;/ano&gt;</code>
+<code class="western">  </code><code class="western">&lt;/livro&gt;</code>
+<code class="western">&lt;/livros&gt;</code></pre><p>
+<strong>XSLT (folha de estilo):</strong></p>
+<pre class="western">xml
+Copiar c&oacute;digo
+<code class="western">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</code>
+<code class="western">&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</code>
+<code class="western">  </code><code class="western">&lt;xsl:template match=&quot;/livros&quot;&gt;</code>
+<code class="western">    </code><code class="western">&lt;html&gt;</code>
+<code class="western">      </code><code class="western">&lt;body&gt;</code>
+<code class="western">        </code><code class="western">&lt;h2&gt;Lista de Livros&lt;/h2&gt;</code>
+<code class="western">        </code><code class="western">&lt;table border=&quot;1&quot;&gt;</code>
+<code class="western">          </code><code class="western">&lt;tr&gt;</code>
+<code class="western">            </code><code class="western">&lt;th&gt;T&iacute;tulo&lt;/th&gt;</code>
+<code class="western">            </code><code class="western">&lt;th&gt;Autor&lt;/th&gt;</code>
+<code class="western">            </code><code class="western">&lt;th&gt;Ano&lt;/th&gt;</code>
+<code class="western">          </code><code class="western">&lt;/tr&gt;</code>
+<code class="western">          </code><code class="western">&lt;xsl:for-each select=&quot;livro&quot;&gt;</code>
+<code class="western">            </code><code class="western">&lt;tr&gt;</code>
+<code class="western">              </code><code class="western">&lt;td&gt;&lt;xsl:value-of select=&quot;titulo&quot; /&gt;&lt;/td&gt;</code>
+<code class="western">              </code><code class="western">&lt;td&gt;&lt;xsl:value-of select=&quot;autor&quot; /&gt;&lt;/td&gt;</code>
+<code class="western">              </code><code class="western">&lt;td&gt;&lt;xsl:value-of select=&quot;ano&quot; /&gt;&lt;/td&gt;</code>
+<code class="western">            </code><code class="western">&lt;/tr&gt;</code>
+<code class="western">          </code><code class="western">&lt;/xsl:for-each&gt;</code>
+<code class="western">        </code><code class="western">&lt;/table&gt;</code>
+<code class="western">      </code><code class="western">&lt;/body&gt;</code>
+<code class="western">    </code><code class="western">&lt;/html&gt;</code>
+<code class="western">  </code><code class="western">&lt;/xsl:template&gt;</code>
+<code class="western">&lt;/xsl:stylesheet&gt;</code></pre><p>
+<strong>Explica&ccedil;&atilde;o:</strong></p>
+<ul>
+	<li><p style="margin-bottom: 0cm">A transforma&ccedil;&atilde;o pega
+	o documento XML com informa&ccedil;&otilde;es de livros e cria uma
+	tabela HTML com esses dados.</p>
+	<li><p>O elemento <code class="western">&lt;xsl:for-each&gt;</code>
+	percorre cada <code class="western">&lt;livro&gt;</code> e insere
+	seus dados em uma linha de tabela HTML.</p>
+</ul>
+<hr/>
+
+<h3 class="western"><strong>3. UDDI (Universal Description,
+Discovery, and Integration)</strong></h3>
+<p><strong>Resumo:</strong> O <strong>UDDI</strong> &eacute; um
+padr&atilde;o baseado em web para descrever, descobrir e integrar
+servi&ccedil;os web. Ele atua como um diret&oacute;rio central onde
+os servi&ccedil;os web podem ser registrados, permitindo que outros
+sistemas descubram esses servi&ccedil;os de forma din&acirc;mica.</p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Caracter&iacute;sticas</strong>:</p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">Permite o registro de servi&ccedil;os
+		web.</p>
+		<li><p style="margin-bottom: 0cm">Usado para descoberta de
+		servi&ccedil;os.</p>
+		<li><p>Funciona de forma similar a um cat&aacute;logo online de
+		servi&ccedil;os.</p>
+	</ul>
+</ul>
+<p><strong>Exemplo UDDI:</strong></p>
+<p>Aqui est&aacute; um exemplo b&aacute;sico de como um servi&ccedil;o
+pode ser registrado em um reposit&oacute;rio UDDI. O formato usado &eacute;
+XML.</p>
+<pre class="western">xml
+Copiar c&oacute;digo
+<code class="western">&lt;uddi:businessService xmlns:uddi=&quot;urn:uddi-org:api&quot;&gt;</code>
+<code class="western">  </code><code class="western">&lt;uddi:name&gt;Servi&ccedil;o de Consulta de Produtos&lt;/uddi:name&gt;</code>
+<code class="western">  </code><code class="western">&lt;uddi:description&gt;Consulta informa&ccedil;&otilde;es sobre produtos em estoque.&lt;/uddi:description&gt;</code>
+<code class="western">  </code><code class="western">&lt;uddi:bindingTemplate&gt;</code>
+<code class="western">    </code><code class="western">&lt;uddi:accessPoint&gt;http://www.exemplo.com/consultaProdutos&lt;/uddi:accessPoint&gt;</code>
+<code class="western">    </code><code class="western">&lt;uddi:bindingKey&gt;ConsultaProd01&lt;/uddi:bindingKey&gt;</code>
+<code class="western">  </code><code class="western">&lt;/uddi:bindingTemplate&gt;</code>
+<code class="western">&lt;/uddi:businessService&gt;</code></pre><p>
+<strong>Explica&ccedil;&atilde;o:</strong></p>
+<ul>
+	<li><p style="margin-bottom: 0cm">Esse registro descreve um servi&ccedil;o
+	de consulta de produtos.</p>
+	<li><p>Cont&eacute;m o nome do servi&ccedil;o, uma descri&ccedil;&atilde;o
+	e o ponto de acesso (URL) para o servi&ccedil;o web.</p>
+</ul>
+<hr/>
+
+<h3 class="western"><strong>4. REST (Representational State Transfer)</strong></h3>
+<p><strong>Resumo:</strong> O <strong>REST</strong> &eacute; um
+estilo arquitetural para comunica&ccedil;&atilde;o entre sistemas,
+principalmente usado para construir servi&ccedil;os web. Diferente de
+m&eacute;todos baseados em SOAP (como em UDDI), o REST utiliza os
+m&eacute;todos HTTP tradicionais (GET, POST, PUT, DELETE) para
+interagir com recursos que s&atilde;o identificados por URIs (Uniform
+Resource Identifiers).</p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Caracter&iacute;sticas</strong>:</p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">Simples e baseado em HTTP.</p>
+		<li><p style="margin-bottom: 0cm">Usa os m&eacute;todos HTTP para
+		realizar opera&ccedil;&otilde;es (GET, POST, PUT, DELETE).</p>
+		<li><p style="margin-bottom: 0cm">Sem estado (stateless), ou seja,
+		cada requisi&ccedil;&atilde;o &eacute; independente e cont&eacute;m
+		todas as informa&ccedil;&otilde;es necess&aacute;rias.</p>
+		<li><p>Os recursos s&atilde;o identificados por URLs.</p>
+	</ul>
+</ul>
+<p><strong>Exemplo REST:</strong></p>
+<p>Aqui est&aacute; um exemplo de como fazer uma requisi&ccedil;&atilde;o
+<strong>GET</strong> para obter informa&ccedil;&otilde;es de um
+usu&aacute;rio usando REST, com a URL sendo o identificador do
+recurso.</p>
+<pre class="western">bash
+Copiar c&oacute;digo
+<code class="western">GET http://api.exemplo.com/usuarios/123</code></pre><p>
+Resposta (JSON):</p>
+<pre class="western">json
+Copiar c&oacute;digo
+<code class="western">{</code>
+<code class="western">  </code><code class="western">&quot;id&quot;: 123,</code>
+<code class="western">  </code><code class="western">&quot;nome&quot;: &quot;Jo&atilde;o Silva&quot;,</code>
+<code class="western">  </code><code class="western">&quot;email&quot;: &quot;joao@exemplo.com&quot;</code>
+<code class="western">}</code></pre><p>
+<strong>Explica&ccedil;&atilde;o:</strong></p>
+<ul>
+	<li><p style="margin-bottom: 0cm">A URL
+	<code class="western">http://api.exemplo.com/usuarios/123</code> &eacute;
+	um recurso REST que identifica um usu&aacute;rio com ID 123.</p>
+	<li><p>A requisi&ccedil;&atilde;o <strong>GET</strong> retorna as
+	informa&ccedil;&otilde;es do usu&aacute;rio no formato JSON.</p>
+</ul>
+<hr/>
+
+<h3 class="western"><strong>5. JSON (JavaScript Object Notation)</strong></h3>
+<p><strong>Resumo:</strong> O <strong>JSON</strong> &eacute; um
+formato leve e f&aacute;cil de ler e escrever para troca de dados.
+Ele &eacute; amplamente utilizado em APIs web e comunica&ccedil;&atilde;o
+entre sistemas, especialmente em ambientes web. JSON &eacute; baseado
+em uma estrutura de objetos e arrays, o que o torna ideal para
+representar dados hier&aacute;rquicos.</p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>Caracter&iacute;sticas</strong>:</p>
+	<ul>
+		<li><p style="margin-bottom: 0cm">Leve e f&aacute;cil de ler.</p>
+		<li><p style="margin-bottom: 0cm">Representa&ccedil;&atilde;o de
+		dados baseada em objetos e arrays.</p>
+		<li><p>Comumente usado em servi&ccedil;os RESTful e APIs.</p>
+	</ul>
+</ul>
+<p><strong>Exemplo JSON:</strong></p>
+<pre class="western">json
+Copiar c&oacute;digo
+<code class="western">{</code>
+<code class="western">  </code><code class="western">&quot;usuario&quot;: {</code>
+<code class="western">    </code><code class="western">&quot;id&quot;: 123,</code>
+<code class="western">    </code><code class="western">&quot;nome&quot;: &quot;Jo&atilde;o Silva&quot;,</code>
+<code class="western">    </code><code class="western">&quot;email&quot;: &quot;joao@exemplo.com&quot;</code>
+<code class="western">  </code><code class="western">},</code>
+<code class="western">  </code><code class="western">&quot;endereco&quot;: {</code>
+<code class="western">    </code><code class="western">&quot;rua&quot;: &quot;Rua Principal&quot;,</code>
+<code class="western">    </code><code class="western">&quot;numero&quot;: 100,</code>
+<code class="western">    </code><code class="western">&quot;cidade&quot;: &quot;S&atilde;o Paulo&quot;,</code>
+<code class="western">    </code><code class="western">&quot;estado&quot;: &quot;SP&quot;</code>
+<code class="western">  </code><code class="western">}</code>
+<code class="western">}</code></pre><p>
+<strong>Explica&ccedil;&atilde;o:</strong></p>
+<ul>
+	<li><p style="margin-bottom: 0cm">O JSON acima representa
+	informa&ccedil;&otilde;es de um usu&aacute;rio e seu endere&ccedil;o.
+	O objeto cont&eacute;m sub-objetos, como &quot;usuario&quot; e
+	&quot;endereco&quot;.</p>
+	<li><p>O formato &eacute; simples, utilizando chave-valor, onde cada
+	chave &eacute; uma string e o valor pode ser de v&aacute;rios tipos
+	(string, n&uacute;mero, objeto, array, etc.).</p>
+</ul>
+<hr/>
+
+<h3 class="western"><strong>Considera&ccedil;&otilde;es Finais:</strong></h3>
+<p>Esses cinco padr&otilde;es (XML, XSLT, UDDI, REST e JSON) s&atilde;o
+fundamentais para a constru&ccedil;&atilde;o de sistemas distribu&iacute;dos
+modernos, especialmente em contextos de <strong>integra&ccedil;&atilde;o
+de sistemas</strong> e <strong>comunica&ccedil;&atilde;o via web</strong>.
+Eles s&atilde;o usados em diferentes aspectos, como troca de dados
+(XML e JSON), transforma&ccedil;&atilde;o de dados (XSLT), descoberta
+de servi&ccedil;os (UDDI) e constru&ccedil;&atilde;o de APIs (REST).</p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><strong>XML</strong> e <strong>JSON</strong>
+	s&atilde;o os formatos de dados mais comuns para troca de
+	informa&ccedil;&otilde;es.</p>
+	<li><p style="margin-bottom: 0cm"><strong>XSLT</strong> &eacute;
+	&uacute;til para transformar XML em outros formatos, como HTML.</p>
+	<li><p style="margin-bottom: 0cm"><strong>UDDI</strong> permite o
+	registro e a descoberta de servi&ccedil;os em uma rede.</p>
+	<li><p><strong>REST</strong> tornou-se a arquitetura predominante
+	para servi&ccedil;os web devido &agrave; sua simplicidade e uso de
+	HTTP.</p>
+</ul>
+<p>Esses padr&otilde;es s&atilde;o usados em muitos sistemas
+modernos, como <strong>APIs RESTful</strong>, <strong>servi&ccedil;os
+web</strong> e <strong>integra&ccedil;&atilde;o de dados</strong>
+entre diferentes plataformas.</p>
+<p>4o mini</p>
+<h5 class="western">Voc&ecirc; disse:</h5>
+<p>10 quest&otilde;es Padr&otilde;es XML, XSLT, UDDI, REST e JSON.
+m&uacute;ltipla escolha , banca FGV , respostas explicadas 
+</p>
+<h6 class="western">O ChatGPT disse:</h6>
+<p>ChatGPT</p>
+<p>Aqui est&atilde;o 10 quest&otilde;es de m&uacute;ltipla escolha
+sobre <strong>Padr&otilde;es XML, XSLT, UDDI, REST e JSON</strong> no
+estilo da <strong>banca FGV</strong>, com as respostas explicadas.</p>
+<hr/>
+
+<h3 class="western"><strong>Quest&otilde;es</strong></h3>
+<h4 class="western"><strong>1. Qual das alternativas abaixo descreve
+corretamente o formato de dados utilizado pelo XML?</strong></h4>
+<p>A) XML &eacute; uma linguagem de marca&ccedil;&atilde;o utilizada
+para representar dados em formato bin&aacute;rio.<br/>
+B) XML &eacute;
+uma linguagem de marca&ccedil;&atilde;o que utiliza tags fixas para
+estruturar dados.<br/>
+C) XML &eacute; uma linguagem de marca&ccedil;&atilde;o
+que permite a defini&ccedil;&atilde;o de tags customizadas para
+representar dados.<br/>
+D) XML &eacute; uma linguagem de estilo
+utilizada para definir a formata&ccedil;&atilde;o de documentos web.</p>
+<p><strong>Resposta correta:</strong> C) <strong>XML &eacute; uma
+linguagem de marca&ccedil;&atilde;o que permite a defini&ccedil;&atilde;o
+de tags customizadas para representar dados.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+XML (Extensible
+Markup Language) &eacute; uma linguagem de marca&ccedil;&atilde;o que
+permite aos desenvolvedores criar suas pr&oacute;prias tags para
+representar dados de maneira hier&aacute;rquica. Diferentemente de
+HTML, que possui um conjunto fixo de tags, XML permite que o
+desenvolvedor crie tags personalizadas.</p>
+<hr/>
+
+<h4 class="western"><strong>2. O que &eacute; XSLT?</strong></h4>
+<p>A) &Eacute; um formato de dados utilizado para representar
+informa&ccedil;&otilde;es hier&aacute;rquicas.<br/>
+B) &Eacute; uma
+linguagem de estilo que define a apar&ecirc;ncia dos documentos
+XML.<br/>
+C) &Eacute; uma linguagem de transforma&ccedil;&atilde;o
+utilizada para converter documentos XML em outros formatos, como
+HTML.<br/>
+D) &Eacute; um protocolo de comunica&ccedil;&atilde;o
+usado para integrar sistemas distribu&iacute;dos.</p>
+<p><strong>Resposta correta:</strong> C) <strong>&Eacute; uma
+linguagem de transforma&ccedil;&atilde;o utilizada para converter
+documentos XML em outros formatos, como HTML.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+XSLT (Extensible
+Stylesheet Language Transformations) &eacute; uma linguagem utilizada
+para transformar documentos XML em outros formatos, como HTML ou
+outro XML. Ao aplicar uma folha de estilo XSLT a um documento XML, &eacute;
+poss&iacute;vel gerar representa&ccedil;&otilde;es diferentes, como
+tabelas HTML.</p>
+<hr/>
+
+<h4 class="western"><strong>3. O padr&atilde;o UDDI (Universal
+Description, Discovery, and Integration) &eacute; utilizado para:</strong></h4>
+<p>A) Registrar e descobrir servi&ccedil;os web em uma rede.<br/>
+B)
+Transformar documentos XML em HTML.<br/>
+C) Representar dados em um
+formato estruturado.<br/>
+D) Identificar objetos em uma aplica&ccedil;&atilde;o
+orientada a objetos.</p>
+<p><strong>Resposta correta:</strong> A) <strong>Registrar e
+descobrir servi&ccedil;os web em uma rede.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+UDDI &eacute; um
+padr&atilde;o para registro de servi&ccedil;os web. Ele permite que
+as empresas publiquem seus servi&ccedil;os web em um diret&oacute;rio
+para que outros sistemas ou empresas possam descobrir e integrar
+esses servi&ccedil;os. UDDI n&atilde;o lida com a transforma&ccedil;&atilde;o
+ou estrutura&ccedil;&atilde;o de dados, mas sim com a publica&ccedil;&atilde;o
+e busca de servi&ccedil;os.</p>
+<hr/>
+
+<h4 class="western"><strong>4. Qual das alternativas a seguir
+descreve a principal vantagem do uso de JSON em sistemas modernos?</strong></h4>
+<p>A) JSON &eacute; menos eficiente em termos de espa&ccedil;o de
+armazenamento em compara&ccedil;&atilde;o com XML.<br/>
+B) JSON &eacute;
+mais f&aacute;cil de entender e escrever para humanos do que XML.<br/>
+C)
+JSON exige mais processamento para ser analisado do que XML.<br/>
+D)
+JSON n&atilde;o &eacute; compat&iacute;vel com a maioria das
+linguagens de programa&ccedil;&atilde;o modernas.</p>
+<p><strong>Resposta correta:</strong> B) <strong>JSON &eacute; mais
+f&aacute;cil de entender e escrever para humanos do que XML.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+JSON (JavaScript
+Object Notation) &eacute; um formato leve e f&aacute;cil de ler para
+humanos. Ele usa uma sintaxe simples baseada em objetos e arrays,
+tornando-o intuitivo e mais compacto do que o XML. Al&eacute;m disso,
+JSON &eacute; amplamente utilizado em APIs web por ser de f&aacute;cil
+manipula&ccedil;&atilde;o.</p>
+<hr/>
+
+<h4 class="western"><strong>5. O que caracteriza uma arquitetura
+RESTful?</strong></h4>
+<p>A) A utiliza&ccedil;&atilde;o de mensagens SOAP para comunica&ccedil;&atilde;o
+entre clientes e servidores.<br/>
+B) A utiliza&ccedil;&atilde;o de
+m&eacute;todos HTTP padr&atilde;o (GET, POST, PUT, DELETE) para
+realizar opera&ccedil;&otilde;es sobre recursos.<br/>
+C) O uso de XML
+como formato obrigat&oacute;rio de dados trocados.<br/>
+D) A
+necessidade de um servidor intermedi&aacute;rio para garantir a
+seguran&ccedil;a da comunica&ccedil;&atilde;o.</p>
+<p><strong>Resposta correta:</strong> B) <strong>A utiliza&ccedil;&atilde;o
+de m&eacute;todos HTTP padr&atilde;o (GET, POST, PUT, DELETE) para
+realizar opera&ccedil;&otilde;es sobre recursos.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+REST
+(Representational State Transfer) &eacute; uma arquitetura que
+utiliza os m&eacute;todos HTTP padr&atilde;o para operar sobre
+recursos. Isso inclui opera&ccedil;&otilde;es como GET (recuperar),
+POST (criar), PUT (atualizar) e DELETE (excluir). O formato de dados
+pode ser JSON ou XML, mas REST n&atilde;o imp&otilde;e o uso de XML.</p>
+<hr/>
+
+<h4 class="western"><strong>6. Qual &eacute; a principal diferen&ccedil;a
+entre o XML e o JSON?</strong></h4>
+<p>A) O XML &eacute; uma linguagem de marca&ccedil;&atilde;o,
+enquanto o JSON &eacute; uma nota&ccedil;&atilde;o de objeto.<br/>
+B)
+O JSON &eacute; mais complexo e requer mais processamento para ser
+lido do que o XML.<br/>
+C) O XML &eacute; mais utilizado em ambientes
+de desenvolvimento web do que o JSON.<br/>
+D) O JSON &eacute; uma
+linguagem de marca&ccedil;&atilde;o, enquanto o XML &eacute; uma
+nota&ccedil;&atilde;o de objeto.</p>
+<p><strong>Resposta correta:</strong> A) <strong>O XML &eacute; uma
+linguagem de marca&ccedil;&atilde;o, enquanto o JSON &eacute; uma
+nota&ccedil;&atilde;o de objeto.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O XML &eacute; uma
+linguagem de marca&ccedil;&atilde;o, que utiliza tags para
+representar dados de forma hier&aacute;rquica. J&aacute; o JSON &eacute;
+uma nota&ccedil;&atilde;o de objetos que usa uma sintaxe mais
+simples, baseada em pares de chave-valor e arrays. JSON &eacute; mais
+compactado e leg&iacute;vel em compara&ccedil;&atilde;o com XML.</p>
+<hr/>
+
+<h4 class="western"><strong>7. Qual das afirma&ccedil;&otilde;es a
+seguir &eacute; verdadeira sobre o padr&atilde;o XSLT?</strong></h4>
+<p>A) O XSLT &eacute; utilizado exclusivamente para transformar
+documentos JSON em XML.<br/>
+B) O XSLT &eacute; uma linguagem de
+transforma&ccedil;&atilde;o que pode converter documentos XML em
+HTML, texto ou outros documentos XML.<br/>
+C) O XSLT utiliza um
+formato fixo de entrada e n&atilde;o pode ser adaptado para
+diferentes tipos de dados.<br/>
+D) O XSLT n&atilde;o &eacute;
+compat&iacute;vel com o padr&atilde;o XML, pois s&atilde;o
+tecnologias independentes.</p>
+<p><strong>Resposta correta:</strong> B) <strong>O XSLT &eacute; uma
+linguagem de transforma&ccedil;&atilde;o que pode converter
+documentos XML em HTML, texto ou outros documentos XML.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+XSLT &eacute; uma
+linguagem de transforma&ccedil;&atilde;o usada para converter
+documentos XML em outros formatos, como HTML ou texto. Ela permite a
+defini&ccedil;&atilde;o de um estilo de transforma&ccedil;&atilde;o
+que altera a estrutura do XML para o formato desejado.</p>
+<hr/>
+
+<h4 class="western"><strong>8. Em uma API RESTful, qual verbo HTTP &eacute;
+utilizado para excluir um recurso?</strong></h4>
+<p>A) GET<br/>
+B) POST<br/>
+C) PUT<br/>
+D) DELETE</p>
+<p><strong>Resposta correta:</strong> D) <strong>DELETE</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+O verbo HTTP
+<strong>DELETE</strong> &eacute; utilizado para excluir um recurso em
+uma API RESTful. Outros verbos incluem <strong>GET</strong> (para
+obter dados), <strong>POST</strong> (para criar dados) e <strong>PUT</strong>
+(para atualizar dados).</p>
+<hr/>
+
+<h4 class="western"><strong>9. Em um arquivo JSON, como seria
+representado um objeto que cont&eacute;m um nome e idade?</strong></h4>
+<p>A) <code class="western">{nome, &quot;Jo&atilde;o&quot;, idade,
+25}</code><br/>
+B) <code class="western">{&quot;nome&quot;: &quot;Jo&atilde;o&quot;,
+&quot;idade&quot;: 25}</code><br/>
+C) <code class="western">[nome=&quot;Jo&atilde;o&quot;,
+idade=25]</code><br/>
+D) <code class="western">(&quot;nome&quot;:
+&quot;Jo&atilde;o&quot;, &quot;idade&quot;: 25)</code></p>
+<p><strong>Resposta correta:</strong> B) <strong>{&quot;nome&quot;:
+&quot;Jo&atilde;o&quot;, &quot;idade&quot;: 25}</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Em JSON, um objeto
+&eacute; representado por uma chave e valor, onde a chave &eacute;
+uma string e o valor pode ser de diferentes tipos (string, n&uacute;mero,
+objeto, etc.). A sintaxe correta &eacute; <code class="western">{&quot;nome&quot;:
+&quot;Jo&atilde;o&quot;, &quot;idade&quot;: 25}</code>, onde <code class="western">&quot;nome&quot;</code>
+e <code class="western">&quot;idade&quot;</code> s&atilde;o as
+chaves, e <code class="western">&quot;Jo&atilde;o&quot;</code> e <code class="western">25</code>
+s&atilde;o os valores correspondentes.</p>
+<hr/>
+
+<h4 class="western"><strong>10. Em rela&ccedil;&atilde;o ao UDDI,
+qual &eacute; a principal fun&ccedil;&atilde;o dessa tecnologia?</strong></h4>
+<p>A) Proteger os dados em sistemas distribu&iacute;dos.<br/>
+B)
+Registrar e localizar servi&ccedil;os web em uma rede.<br/>
+C)
+Transformar dados XML em HTML.<br/>
+D) Garantir a integridade dos
+dados transmitidos.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Registrar e
+localizar servi&ccedil;os web em uma rede.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+UDDI (Universal
+Description, Discovery, and Integration) &eacute; um diret&oacute;rio
+de servi&ccedil;os web. Ele permite que os provedores de servi&ccedil;os
+publiquem seus servi&ccedil;os e que os consumidores de servi&ccedil;os
+os localizem facilmente. UDDI n&atilde;o lida com a transforma&ccedil;&atilde;o
+de dados nem com a seguran&ccedil;a diretamente.</p>
+<hr/>
+
+<h3 class="western"><strong>Conclus&atilde;o</strong></h3>
+<p>Essas quest&otilde;es abordam os padr&otilde;es <strong>XML, XSLT,
+UDDI, REST e JSON</strong>, com foco em conceitos fundamentais, como
+a estrutura de dados, a transforma&ccedil;&atilde;o de dados, a
+descoberta de servi&ccedil;os e a comunica&ccedil;&atilde;o via APIs.
+O estilo das quest&otilde;es foi baseado no formato t&iacute;pico de
+provas da <strong>banca FGV</strong>, que geralmente cobra
+compreens&atilde;o dos conceitos e a aplica&ccedil;&atilde;o pr&aacute;tica
+desses padr&otilde;es em sistemas modernos.</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>

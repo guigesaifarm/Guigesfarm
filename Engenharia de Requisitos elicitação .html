@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.7.2 (Windows)"/>
+	<meta name="created" content="2024-11-14T15:25:09.674000000"/>
+	<meta name="changed" content="2024-11-14T15:25:36.347000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: bold }
+		h4.cjk { font-family: "NSimSun"; font-size: 12pt; font-weight: bold }
+		h4.ctl { font-family: "Arial"; font-size: 12pt; font-weight: bold }
+		h5 { margin-top: 0.21cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h5.western { font-family: "Liberation Serif", serif; font-size: 10pt; font-weight: bold }
+		h5.cjk { font-family: "NSimSun"; font-size: 10pt; font-weight: bold }
+		h5.ctl { font-family: "Arial"; font-size: 10pt; font-weight: bold }
+		h6 { margin-top: 0.11cm; margin-bottom: 0.11cm; background: transparent; page-break-after: avoid }
+		h6.western { font-family: "Liberation Serif", serif; font-size: 7pt; font-weight: bold }
+		h6.cjk { font-family: "NSimSun"; font-size: 7pt; font-weight: bold }
+		h6.ctl { font-family: "Arial"; font-size: 7pt; font-weight: bold }
+		strong { font-weight: bold }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><h3 class="western">
+<strong>Engenharia de Requisitos: Resumo com Exemplos Pr&aacute;ticos</strong></h3>
+<p>A <strong>Engenharia de Requisitos</strong> &eacute; um campo
+crucial dentro do desenvolvimento de software, focado na defini&ccedil;&atilde;o,
+documenta&ccedil;&atilde;o e gest&atilde;o dos requisitos de um
+sistema. Esses requisitos s&atilde;o as necessidades e expectativas
+dos stakeholders (partes interessadas), e eles direcionam todo o
+processo de desenvolvimento de software. A engenharia de requisitos
+busca garantir que o sistema desenvolvido atenda de forma eficiente e
+completa &agrave;s necessidades do cliente e dos usu&aacute;rios.</p>
+<hr/>
+
+<h3 class="western"><strong>1. Classifica&ccedil;&atilde;o de
+Requisitos</strong></h3>
+<p>Os <strong>requisitos</strong> podem ser classificados de diversas
+formas, e essa classifica&ccedil;&atilde;o ajuda a organiz&aacute;-los
+e a compreend&ecirc;-los melhor. Aqui est&atilde;o algumas das
+classifica&ccedil;&otilde;es mais comuns:</p>
+<h4 class="western"><strong>1.1. Requisitos Funcionais</strong></h4>
+<p>Os <strong>requisitos funcionais</strong> definem o comportamento
+do sistema, ou seja, o que o sistema deve fazer. Eles descrevem as
+fun&ccedil;&otilde;es que o software deve realizar para atender &agrave;s
+necessidades dos usu&aacute;rios ou stakeholders.</p>
+<p><strong>Exemplo de Requisito Funcional</strong>:</p>
+<ul>
+	<li><p style="margin-bottom: 0cm">O sistema deve permitir que o
+	usu&aacute;rio fa&ccedil;a login com seu nome de usu&aacute;rio e
+	senha.</p>
+	<li><p>O sistema deve gerar um relat&oacute;rio de vendas semanal
+	com base nas transa&ccedil;&otilde;es registradas.</p>
+</ul>
+<h4 class="western"><strong>1.2. Requisitos N&atilde;o Funcionais</strong></h4>
+<p>Os <strong>requisitos n&atilde;o funcionais</strong> especificam
+como o sistema deve operar. Eles tratam de aspectos como desempenho,
+usabilidade, seguran&ccedil;a e confiabilidade, entre outros.</p>
+<p><strong>Exemplo de Requisito N&atilde;o Funcional</strong>:</p>
+<ul>
+	<li><p style="margin-bottom: 0cm">O sistema deve ser capaz de
+	processar 1.000 transa&ccedil;&otilde;es por minuto.</p>
+	<li><p style="margin-bottom: 0cm">O tempo de resposta do sistema n&atilde;o
+	deve exceder 2 segundos por requisi&ccedil;&atilde;o.</p>
+	<li><p>O sistema deve garantir a confidencialidade dos dados atrav&eacute;s
+	de criptografia.</p>
+</ul>
+<h4 class="western"><strong>1.3. Requisitos de Dom&iacute;nio</strong></h4>
+<p>Esses requisitos s&atilde;o espec&iacute;ficos do <strong>dom&iacute;nio</strong>
+ou contexto do sistema, refletindo as regras ou pr&aacute;ticas de
+neg&oacute;cios aplic&aacute;veis ao projeto.</p>
+<p><strong>Exemplo de Requisito de Dom&iacute;nio</strong>:</p>
+<ul>
+	<li><p>O sistema de gerenciamento de estoque deve seguir a
+	regulamenta&ccedil;&atilde;o fiscal de vendas de produtos para
+	consumidores finais no Brasil.</p>
+</ul>
+<h4 class="western"><strong>1.4. Requisitos de Interface</strong></h4>
+<p>Definem como o sistema interage com outros sistemas, usu&aacute;rios
+ou dispositivos. Estes requisitos s&atilde;o fundamentais para
+sistemas integrados.</p>
+<p><strong>Exemplo de Requisito de Interface</strong>:</p>
+<ul>
+	<li><p style="margin-bottom: 0cm">O sistema deve ser capaz de
+	importar dados do sistema de contabilidade por meio de um arquivo
+	CSV.</p>
+	<li><p>O sistema deve fornecer uma interface gr&aacute;fica (GUI)
+	para os usu&aacute;rios interagirem com o sistema.</p>
+</ul>
+<hr/>
+
+<h3 class="western"><strong>2. Processo de Engenharia de Requisitos</strong></h3>
+<p>O <strong>processo de Engenharia de Requisitos</strong> &eacute;
+um conjunto de atividades estruturadas e interdependentes que incluem
+a coleta, an&aacute;lise, documenta&ccedil;&atilde;o, valida&ccedil;&atilde;o
+e gest&atilde;o dos requisitos ao longo do ciclo de vida do projeto.
+As principais etapas incluem:</p>
+<h4 class="western"><strong>2.1. Elicita&ccedil;&atilde;o de
+Requisitos</strong></h4>
+<p>A <strong>elicita&ccedil;&atilde;o de requisitos</strong> envolve
+a coleta de informa&ccedil;&otilde;es e expectativas dos
+stakeholders. Esta fase pode ser feita de v&aacute;rias formas, como
+entrevistas, workshops, observa&ccedil;&otilde;es e question&aacute;rios.</p>
+<p><strong>Exemplo</strong>: Durante uma entrevista com um cliente de
+um sistema banc&aacute;rio, um dos requisitos identificados pode ser:
+&quot;O sistema deve permitir que o cliente visualize o saldo da
+conta corrente em tempo real.&quot;</p>
+<h4 class="western"><strong>2.2. An&aacute;lise de Requisitos</strong></h4>
+<p>Ap&oacute;s a coleta dos requisitos, &eacute; necess&aacute;rio
+analis&aacute;-los para garantir que s&atilde;o claros, completos e
+vi&aacute;veis. A an&aacute;lise envolve a revis&atilde;o, a
+identifica&ccedil;&atilde;o de conflitos, a verifica&ccedil;&atilde;o
+da consist&ecirc;ncia e a prioriza&ccedil;&atilde;o dos requisitos.</p>
+<p><strong>Exemplo</strong>: Durante a an&aacute;lise, o time de
+requisitos pode identificar que o requisito &quot;O sistema deve ser
+capaz de processar transa&ccedil;&otilde;es em tempo real&quot; &eacute;
+vago. Ser&aacute; necess&aacute;rio especificar o tempo m&aacute;ximo
+de lat&ecirc;ncia.</p>
+<h4 class="western"><strong>2.3. Especifica&ccedil;&atilde;o de
+Requisitos</strong></h4>
+<p>A especifica&ccedil;&atilde;o dos requisitos &eacute; a
+documenta&ccedil;&atilde;o detalhada de todos os requisitos do
+sistema. A documenta&ccedil;&atilde;o deve ser clara e precisa para
+que todos os envolvidos no projeto compreendam o que est&aacute;
+sendo solicitado.</p>
+<p><strong>Exemplo</strong>: A documenta&ccedil;&atilde;o de
+requisitos pode incluir a descri&ccedil;&atilde;o de um caso de uso,
+como &quot;Login de Usu&aacute;rio&quot;, detalhando os passos e as
+intera&ccedil;&otilde;es entre o sistema e o usu&aacute;rio.</p>
+<h4 class="western"><strong>2.4. Valida&ccedil;&atilde;o de
+Requisitos</strong></h4>
+<p>A valida&ccedil;&atilde;o &eacute; o processo de garantir que os
+requisitos s&atilde;o corretos e atendem &agrave;s necessidades dos
+stakeholders. Isso envolve revisar os requisitos com os stakeholders
+e test&aacute;-los em cen&aacute;rios reais ou hipot&eacute;ticos.</p>
+<p><strong>Exemplo</strong>: Ap&oacute;s a especifica&ccedil;&atilde;o
+do requisito &quot;O sistema deve permitir o login de usu&aacute;rios
+com senha e nome de usu&aacute;rio&quot;, o cliente confirma se a
+exig&ecirc;ncia est&aacute; de acordo com sua expectativa.</p>
+<h4 class="western"><strong>2.5. Gest&atilde;o de Requisitos</strong></h4>
+<p>A gest&atilde;o de requisitos envolve o controle e rastreamento
+dos requisitos durante todo o ciclo de vida do sistema. Isso inclui
+garantir que os requisitos n&atilde;o mudem sem o devido controle e
+que todas as vers&otilde;es de requisitos sejam documentadas.</p>
+<p><strong>Exemplo</strong>: Durante o desenvolvimento de um sistema
+de e-commerce, um novo requisito pode ser adicionado, como &quot;O
+sistema deve suportar promo&ccedil;&otilde;es especiais para datas
+comemorativas.&quot; A equipe deve gerenciar a adi&ccedil;&atilde;o
+dessa exig&ecirc;ncia e garantir que o impacto seja bem entendido.</p>
+<hr/>
+
+<h3 class="western"><strong>3. T&eacute;cnicas de Elicita&ccedil;&atilde;o
+de Requisitos</strong></h3>
+<p>Existem v&aacute;rias <strong>t&eacute;cnicas de elicita&ccedil;&atilde;o
+de requisitos</strong> que podem ser utilizadas para coletar as
+necessidades dos stakeholders. A escolha da t&eacute;cnica depende do
+contexto e dos objetivos do projeto.</p>
+<h4 class="western"><strong>3.1. Entrevistas</strong></h4>
+<p>As <strong>entrevistas</strong> s&atilde;o uma t&eacute;cnica
+tradicional onde um analista de requisitos conversa diretamente com
+stakeholders individuais ou grupos para coletar informa&ccedil;&otilde;es
+sobre o que eles esperam do sistema.</p>
+<p><strong>Exemplo</strong>: Um analista de requisitos entrevista um
+gerente de vendas para entender as necessidades de relat&oacute;rios
+de vendas, como a necessidade de gerar relat&oacute;rios detalhados e
+agregados para diferentes per&iacute;odos.</p>
+<h4 class="western"><strong>3.2. Workshops</strong></h4>
+<p>Os <strong>workshops</strong> s&atilde;o sess&otilde;es
+interativas com grupos de stakeholders para discutir e refinar os
+requisitos. Essa t&eacute;cnica &eacute; &uacute;til para esclarecer
+pontos de ambiguidade e obter consenso entre os stakeholders.</p>
+<p><strong>Exemplo</strong>: Um workshop pode ser organizado com a
+equipe de marketing, desenvolvedores e clientes para definir os
+requisitos do sistema de promo&ccedil;&otilde;es de produtos no
+e-commerce.</p>
+<h4 class="western"><strong>3.3. Question&aacute;rios</strong></h4>
+<p>Os <strong>question&aacute;rios</strong> s&atilde;o usados para
+coletar requisitos de um grande n&uacute;mero de stakeholders de
+forma mais eficiente. Eles consistem em uma s&eacute;rie de perguntas
+que ajudam a entender as necessidades e expectativas dos usu&aacute;rios.</p>
+<p><strong>Exemplo</strong>: Em um sistema de gerenciamento de
+biblioteca, um question&aacute;rio pode ser enviado aos usu&aacute;rios
+para entender suas prefer&ecirc;ncias quanto a funcionalidades como
+&quot;Reserva de livros&quot; ou &quot;Renova&ccedil;&atilde;o
+online&quot;.</p>
+<h4 class="western"><strong>3.4. Observa&ccedil;&atilde;o</strong></h4>
+<p>A <strong>observa&ccedil;&atilde;o</strong> envolve analisar como
+os usu&aacute;rios interagem com sistemas ou processos existentes
+para identificar poss&iacute;veis melhorias ou requisitos n&atilde;o
+documentados.</p>
+<p><strong>Exemplo</strong>: Em um sistema de controle de estoque, um
+analista pode observar os funcion&aacute;rios durante o processo de
+entrada de novos produtos para entender quais tarefas podem ser
+automatizadas no novo sistema.</p>
+<h4 class="western"><strong>3.5. Prototipagem</strong></h4>
+<p>A <strong>prototipagem</strong> envolve a cria&ccedil;&atilde;o de
+vers&otilde;es preliminares (prot&oacute;tipos) do sistema para que
+os stakeholders possam visualizar e interagir com as funcionalidades
+antes de sua implementa&ccedil;&atilde;o completa. Isso ajuda a obter
+feedback r&aacute;pido e esclarecer requisitos.</p>
+<p><strong>Exemplo</strong>: Para um sistema de interface de usu&aacute;rio
+(UI), um prot&oacute;tipo interativo pode ser criado para mostrar
+como os fluxos de navega&ccedil;&atilde;o e as telas de login
+funcionar&atilde;o, permitindo que os stakeholders forne&ccedil;am
+feedback.</p>
+<hr/>
+
+<h3 class="western"><strong>Conclus&atilde;o</strong></h3>
+<p>A <strong>Engenharia de Requisitos</strong> &eacute; essencial
+para o sucesso de qualquer projeto de software, pois garante que o
+sistema seja desenvolvido de acordo com as necessidades reais dos
+usu&aacute;rios e stakeholders. O processo inclui desde a elicita&ccedil;&atilde;o
+e an&aacute;lise at&eacute; a especifica&ccedil;&atilde;o e valida&ccedil;&atilde;o
+de requisitos. T&eacute;cnicas como entrevistas, workshops,
+question&aacute;rios, observa&ccedil;&atilde;o e prototipagem s&atilde;o
+utilizadas para coletar e refinar as necessidades dos stakeholders.
+Al&eacute;m disso, a classifica&ccedil;&atilde;o de requisitos em
+funcionais, n&atilde;o funcionais, de dom&iacute;nio e de interface
+ajuda a organizar as expectativas e orientar o desenvolvimento de
+maneira estruturada.</p>
+<p>O objetivo final da Engenharia de Requisitos &eacute; garantir que
+os sistemas atendam &agrave;s expectativas dos usu&aacute;rios e que
+o software seja constru&iacute;do de forma eficiente, sem surpresas
+durante o desenvolvimento ou ap&oacute;s a entrega.</p>
+<p>4o mini</p>
+<h5 class="western">Voc&ecirc; disse:</h5>
+<p>Engenharia de Requisitos. Classificac&#807;a&#771;o de Requisitos.
+Processo de Engenharia de Requisitos. T&eacute;cnicas de Elicitac&#807;a&#771;o
+de Requisitos. 10 quest&otilde;es multipla escola , banca FGV ,
+respostas explicadas 
+</p>
+<h6 class="western">O ChatGPT disse:</h6>
+<p>ChatGPT</p>
+<p>Aqui est&atilde;o <strong>10 quest&otilde;es de m&uacute;ltipla
+escolha</strong> sobre <strong>Engenharia de Requisitos</strong>,
+incluindo <strong>Classifica&ccedil;&atilde;o de Requisitos</strong>,
+<strong>Processo de Engenharia de Requisitos</strong>, e <strong>T&eacute;cnicas
+de Elicita&ccedil;&atilde;o de Requisitos</strong>, no estilo de
+prova da <strong>banca FGV</strong>, com <strong>respostas
+explicadas</strong>:</p>
+<hr/>
+
+<h3 class="western"><strong>Quest&otilde;es de M&uacute;ltipla
+Escolha</strong></h3>
+<h4 class="western"><strong>1. O que caracteriza um requisito
+funcional em um projeto de software?</strong></h4>
+<p>A) Define como o sistema deve ser implementado.<br/>
+B) Estabelece
+o que o sistema deve fazer, ou seja, seu comportamento.<br/>
+C)
+Relaciona-se aos requisitos de desempenho e escalabilidade.<br/>
+D)
+Descreve a arquitetura do sistema e suas intera&ccedil;&otilde;es com
+outros sistemas.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Estabelece o que o
+sistema deve fazer, ou seja, seu comportamento.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Requisitos
+<strong>funcionais</strong> definem o que o sistema deve realizar em
+termos de funcionalidades, ou seja, o comportamento esperado.
+Exemplos incluem &quot;o sistema deve permitir o cadastro de novos
+usu&aacute;rios&quot; ou &quot;o sistema deve gerar um relat&oacute;rio
+mensal de vendas&quot;.</p>
+<hr/>
+
+<h4 class="western"><strong>2. Quais s&atilde;o os principais
+objetivos da Elicita&ccedil;&atilde;o de Requisitos no contexto da
+engenharia de requisitos?</strong></h4>
+<p>A) Documentar os requisitos j&aacute; estabelecidos pelo
+cliente.<br/>
+B) Identificar as necessidades dos stakeholders e
+traduzi-las em requisitos detalhados.<br/>
+C) Validar os requisitos
+com os desenvolvedores.<br/>
+D) Especificar os casos de uso do
+sistema.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Identificar as
+necessidades dos stakeholders e traduzi-las em requisitos detalhados.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>elicita&ccedil;&atilde;o
+de requisitos</strong> &eacute; o processo de coleta de informa&ccedil;&otilde;es
+dos stakeholders sobre suas necessidades, expectativas e restri&ccedil;&otilde;es
+para o sistema. Isso pode ser feito atrav&eacute;s de entrevistas,
+workshops, prot&oacute;tipos e outras t&eacute;cnicas. O objetivo &eacute;
+transformar essas informa&ccedil;&otilde;es em requisitos detalhados
+e compreens&iacute;veis.</p>
+<hr/>
+
+<h4 class="western"><strong>3. Qual dos seguintes &eacute; um exemplo
+de requisito n&atilde;o funcional?</strong></h4>
+<p>A) O sistema deve permitir que os usu&aacute;rios fa&ccedil;am
+login com nome de usu&aacute;rio e senha.<br/>
+B) O sistema deve ser
+capaz de processar 500 transa&ccedil;&otilde;es por segundo.<br/>
+C)
+O sistema deve permitir que os usu&aacute;rios criem novos registros
+no banco de dados.<br/>
+D) O sistema deve permitir que os
+administradores excluam registros de clientes.</p>
+<p><strong>Resposta correta:</strong> B) <strong>O sistema deve ser
+capaz de processar 500 transa&ccedil;&otilde;es por segundo.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Requisitos <strong>n&atilde;o
+funcionais</strong> especificam como o sistema deve se comportar,
+abordando aspectos como desempenho, seguran&ccedil;a, usabilidade e
+confiabilidade. O exemplo dado sobre processamento de transa&ccedil;&otilde;es
+trata de um requisito de <strong>desempenho</strong>.</p>
+<hr/>
+
+<h4 class="western"><strong>4. Qual &eacute; a principal diferen&ccedil;a
+entre requisitos de dom&iacute;nio e requisitos funcionais?</strong></h4>
+<p>A) Requisitos de dom&iacute;nio descrevem o comportamento do
+sistema, enquanto requisitos funcionais abordam a &aacute;rea de
+neg&oacute;cio.<br/>
+B) Requisitos de dom&iacute;nio s&atilde;o
+espec&iacute;ficos do contexto de neg&oacute;cios e atividades da
+organiza&ccedil;&atilde;o, enquanto requisitos funcionais descrevem o
+que o sistema deve fazer.<br/>
+C) Requisitos de dom&iacute;nio s&atilde;o
+apenas t&eacute;cnicos, enquanto requisitos funcionais s&atilde;o
+relacionados ao usu&aacute;rio final.<br/>
+D) N&atilde;o h&aacute;
+diferen&ccedil;a entre requisitos de dom&iacute;nio e requisitos
+funcionais.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Requisitos de
+dom&iacute;nio s&atilde;o espec&iacute;ficos do contexto de neg&oacute;cios
+e atividades da organiza&ccedil;&atilde;o, enquanto requisitos
+funcionais descrevem o que o sistema deve fazer.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+<strong>Requisitos
+de dom&iacute;nio</strong> s&atilde;o espec&iacute;ficos do contexto
+do neg&oacute;cio, refletindo regras, regulamenta&ccedil;&otilde;es
+ou pr&aacute;ticas do setor. J&aacute; <strong>requisitos funcionais</strong>
+descrevem as funcionalidades que o sistema deve implementar para
+atender &agrave;s necessidades dos usu&aacute;rios.</p>
+<hr/>
+
+<h4 class="western"><strong>5. Durante o processo de valida&ccedil;&atilde;o
+de requisitos, o que deve ser verificado?</strong></h4>
+<p>A) Se os requisitos est&atilde;o em conformidade com as leis e
+regulamenta&ccedil;&otilde;es do setor.<br/>
+B) Se os requisitos
+atendem aos objetivos do projeto e &agrave;s necessidades dos
+stakeholders.<br/>
+C) Se os requisitos foram implementados
+corretamente no c&oacute;digo do sistema.<br/>
+D) Se os requisitos
+foram definidos pelo gerente de projeto.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Se os requisitos
+atendem aos objetivos do projeto e &agrave;s necessidades dos
+stakeholders.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>valida&ccedil;&atilde;o
+de requisitos</strong> envolve garantir que os requisitos definidos
+atendem &agrave;s necessidades e expectativas dos stakeholders. &Eacute;
+uma forma de garantir que o sistema desenvolvido realmente resolver&aacute;
+os problemas ou necessidades identificadas.</p>
+<hr/>
+
+<h4 class="western"><strong>6. Qual &eacute; o principal objetivo da
+t&eacute;cnica de prototipagem na elicita&ccedil;&atilde;o de
+requisitos?</strong></h4>
+<p>A) Validar se os requisitos est&atilde;o completos e corretos.<br/>
+B)
+Permitir que os stakeholders vejam e interajam com uma vers&atilde;o
+preliminar do sistema.<br/>
+C) Acelerar o desenvolvimento do
+c&oacute;digo-fonte do sistema.<br/>
+D) Gerar uma documenta&ccedil;&atilde;o
+detalhada dos requisitos.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Permitir que os
+stakeholders vejam e interajam com uma vers&atilde;o preliminar do
+sistema.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>prototipagem</strong>
+&eacute; uma t&eacute;cnica de elicita&ccedil;&atilde;o de requisitos
+onde um prot&oacute;tipo (uma vers&atilde;o preliminar do sistema) &eacute;
+constru&iacute;do para que os stakeholders possam interagir com ele e
+fornecer feedback sobre o design, funcionalidades e necessidades
+adicionais. Isso ajuda a refinar os requisitos de forma iterativa.</p>
+<hr/>
+
+<h4 class="western"><strong>7. Qual das seguintes atividades &eacute;
+parte do processo de an&aacute;lise de requisitos?</strong></h4>
+<p>A) Definir os requisitos iniciais com base nos inputs dos
+desenvolvedores.<br/>
+B) Identificar e resolver conflitos entre
+requisitos, al&eacute;m de prioriz&aacute;-los.<br/>
+C) Desenvolver o
+prot&oacute;tipo do sistema.<br/>
+D) Documentar todos os requisitos
+em um &uacute;nico documento.</p>
+<p><strong>Resposta correta:</strong> B) <strong>Identificar e
+resolver conflitos entre requisitos, al&eacute;m de prioriz&aacute;-los.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Durante a <strong>an&aacute;lise
+de requisitos</strong>, o objetivo &eacute; garantir que os
+requisitos sejam consistentes, claros e vi&aacute;veis. A an&aacute;lise
+inclui identificar e resolver conflitos, verificar se os requisitos
+s&atilde;o completos e priorizar as funcionalidades com base em seu
+valor para o neg&oacute;cio ou usu&aacute;rios.</p>
+<hr/>
+
+<h4 class="western"><strong>8. A t&eacute;cnica de entrevistas na
+elicita&ccedil;&atilde;o de requisitos &eacute; mais adequada quando:</strong></h4>
+<p>A) &Eacute; necess&aacute;rio coletar informa&ccedil;&otilde;es de
+muitos stakeholders ao mesmo tempo.<br/>
+B) As necessidades dos
+stakeholders s&atilde;o bem compreendidas e precisam ser
+formalizadas.<br/>
+C) O n&uacute;mero de stakeholders &eacute;
+pequeno e h&aacute; a necessidade de informa&ccedil;&otilde;es
+detalhadas de cada um.<br/>
+D) H&aacute; necessidade de um prot&oacute;tipo
+r&aacute;pido para validar os requisitos.</p>
+<p><strong>Resposta correta:</strong> C) <strong>O n&uacute;mero de
+stakeholders &eacute; pequeno e h&aacute; a necessidade de
+informa&ccedil;&otilde;es detalhadas de cada um.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+As <strong>entrevistas</strong>
+s&atilde;o uma t&eacute;cnica eficaz quando se trata de coletar
+informa&ccedil;&otilde;es detalhadas de um n&uacute;mero pequeno de
+stakeholders. Elas permitem que o analista explore profundamente as
+necessidades e expectativas de cada stakeholder individualmente.</p>
+<hr/>
+
+<h4 class="western"><strong>9. Qual das alternativas a seguir
+representa um exemplo de requisito de interface?</strong></h4>
+<p>A) O sistema deve ser capaz de processar at&eacute; 1.000
+transa&ccedil;&otilde;es por minuto.<br/>
+B) O sistema deve ser capaz
+de exportar dados para um arquivo CSV.<br/>
+C) O sistema deve
+permitir que os usu&aacute;rios se autentiquem via login e senha.<br/>
+D)
+O sistema deve permitir que o administrador visualize todos os
+relat&oacute;rios gerados.</p>
+<p><strong>Resposta correta:</strong> B) <strong>O sistema deve ser
+capaz de exportar dados para um arquivo CSV.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+Requisitos de
+<strong>interface</strong> tratam da intera&ccedil;&atilde;o do
+sistema com outros sistemas ou com os usu&aacute;rios. O exemplo de
+exporta&ccedil;&atilde;o de dados para um arquivo CSV &eacute; um
+exemplo cl&aacute;ssico de requisito de interface, pois envolve a
+troca de dados com outros sistemas ou formatos.</p>
+<hr/>
+
+<h4 class="western"><strong>10. Qual das op&ccedil;&otilde;es a
+seguir &eacute; uma caracter&iacute;stica importante do processo de
+gest&atilde;o de requisitos?</strong></h4>
+<p>A) Os requisitos n&atilde;o precisam ser documentados, pois s&atilde;o
+entendidos pelas equipes.<br/>
+B) Mudan&ccedil;as nos requisitos
+devem ser feitas sem muita formalidade, para n&atilde;o atrasar o
+projeto.<br/>
+C) Os requisitos devem ser rastreados e controlados
+durante todo o ciclo de vida do projeto.<br/>
+D) Ap&oacute;s a
+defini&ccedil;&atilde;o inicial, os requisitos n&atilde;o podem ser
+alterados.</p>
+<p><strong>Resposta correta:</strong> C) <strong>Os requisitos devem
+ser rastreados e controlados durante todo o ciclo de vida do projeto.</strong></p>
+<p><strong>Explica&ccedil;&atilde;o:</strong><br/>
+A <strong>gest&atilde;o
+de requisitos</strong> envolve o controle de mudan&ccedil;as e o
+rastreamento de requisitos durante todo o ciclo de vida do projeto.
+Isso &eacute; importante para garantir que o sistema final atenda aos
+requisitos de forma consistente, al&eacute;m de lidar com poss&iacute;veis
+altera&ccedil;&otilde;es que podem surgir durante o desenvolvimento.</p>
+<hr/>
+
+<h3 class="western"><strong>Conclus&atilde;o</strong></h3>
+<p>Essas quest&otilde;es de m&uacute;ltipla escolha abordam aspectos
+fundamentais da <strong>engenharia de requisitos</strong>, como
+<strong>classifica&ccedil;&atilde;o de requisitos</strong>, <strong>processo
+de elicita&ccedil;&atilde;o</strong>, e as <strong>t&eacute;cnicas</strong>
+utilizadas para entender e definir as necessidades dos stakeholders.
+As respostas fornecem uma vis&atilde;o detalhada de como essas
+atividades s&atilde;o aplicadas no contexto de um projeto de
+software, ajudando a garantir que o produto final atenda &agrave;s
+expectativas e requisitos dos usu&aacute;rios.</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>
